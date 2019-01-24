@@ -29,6 +29,7 @@ class CameraManager:
         print("serial port open :)")
         self.packetBuffer = bytearray(1000)
         self.readIndex = 0
+	self.waitingForCycle = True
 
     def __del__(self):
         self.port.close()
@@ -58,7 +59,18 @@ class CameraManager:
             print(self.port.readline())
 
     def parseBuffer(self, buffer):
-        print("parse buffer " + str(buffer))
+        if self.waitingForCycle:
+		packet = literal_eval(buffer)
+		if packet.cam:
+			self.timestamp = packet.time
+			self.waitingForCycle = False
+			self.data = []
+	else:
+		packet = literal_eval(buffer)
+		if packet.end == 0:
+			self.waitingForCycle = True
+		else:
+			self.append(packet)
         return True
 
     def processData(self):
@@ -66,27 +78,24 @@ class CameraManager:
         view = memoryview(self.packetBuffer);
         bytesRead = self.port.readinto(view[self.readIndex:])
         self.readIndex += bytesRead
-        #print(self.readIndex, bytesRead)
-        #if bytesRead > 0:
-        #    print(bytes(view[0:self.readIndex]))
         parts = self.packetBuffer[0:self.readIndex].partition(endOfPacket)
-        #print(parts)
         while len(parts[1]) > 0:
             self.parseBuffer(parts[0])
             view[0:len(parts[2])] = parts[2]
             self.readIndex = len(parts[2])
             parts = self.packetBuffer[0:self.readIndex].partition(endOfPacket)
             
+if __name__ == "__main__":
+	cam = CameraManager("/dev/ttyACM0")
+	print("CAMERAMANAGER CLASS")
+	#if cam.init("lines"):
+	if cam.init("autoColorTrack"):
+	    print("init okay")
+	else:
+	    print("init failed")
+	    
+	while True:
+	    cam.processData()
+	    #print("loop working")
 
 
-cam = CameraManager("/dev/ttyACM0")
-print("CAMERAMANAGER CLASS")
-#if cam.init("lines"):
-if cam.init("autoColorTrack"):
-    print("init okay")
-else:
-    print("init failed")
-    
-while True:
-    cam.processData()
-    #print("loop working")

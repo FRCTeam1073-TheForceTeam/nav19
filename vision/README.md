@@ -21,3 +21,13 @@
 
 	- inputs: cam_mode
 	- outputs: cam_frame, cam_status, cam_lineseg, cam_blobs, cam_etc.
+
+
+= openmv serial protocol:
+After each vision cycle, the camera sends a start of frame packet, followed by n data packets for each frame. 
+startOfFrame = '{"cam": <number>, "time": <number2>}' where number is the assigned camera number and time is the timestamp of the frame in the camera.
+At the end of each vision cycle we send the endOfFrame packet.
+endOfFrame '{"end": 0}'.
+
+example packet from openmv: bytearray(b'{"x":0, "y":0, "w":319, "h":239, "pixels":22589, "cx":122, "cy":111, "rotation":1.326613, "code":1, "count":6}')
+

@@ -22,14 +22,23 @@ def run():
     clock = time.clock()
     min_degree = 0
     max_degree = 179
+    startOfPacket = { "cam": 0, "time": pyb.elapsed_millis(0)}
+    endOfPacket = { "end": 0}
 
     while(True):
         clock.tick()
         img = sensor.snapshot()
         if enable_lens_corr: img.lens_corr(1.8) # for 2.8mm lens...
+	
+	startOfPacket["time"] = pyb.elapsed_millis(0)
+	print(startOfPacket)
 
         for l in img.find_lines(threshold = 1000, theta_margin = 16, rho_margin = 16):
             if (min_degree <= l.theta()) and (l.theta() <= max_degree):
                 img.draw_line(l.line(), color = (255, 0, 0))
-                print(pyb.elapsed_millis(0))
                 print(l)
+
+	print(endOfPacket)
+
+
+
