@@ -1,5 +1,8 @@
 import sys
 import serial
+import ast
+
+
 
 class CameraManager:
 
@@ -29,7 +32,9 @@ class CameraManager:
         print("serial port open :)")
         self.packetBuffer = bytearray(1000)
         self.readIndex = 0
-	self.waitingForCycle = True
+        self.waitingForCycle = True
+        self.firstPacket = True
+        self.data = []
 
     def __del__(self):
         self.port.close()
@@ -52,6 +57,8 @@ class CameraManager:
         send = "%s.run()\r\n" % command
        # print(send)
         self.port.write(send.encode())
+        self.firstPacket = True
+        self.data = []
         return True
 
     def readLoop(self):
@@ -59,18 +66,24 @@ class CameraManager:
             print(self.port.readline())
 
     def parseBuffer(self, buffer):
+        if self.firstPacket:
+            self.firstPacket = False
+            return True
         if self.waitingForCycle:
-		packet = literal_eval(buffer)
-		if packet.cam:
-			self.timestamp = packet.time
-			self.waitingForCycle = False
-			self.data = []
-	else:
-		packet = literal_eval(buffer)
-		if packet.end == 0:
-			self.waitingForCycle = True
-		else:
-			self.append(packet)
+            packet = eval(buffer)
+            if 'cam' in packet:
+                self.cam = packet['cam']
+                self.res = packet['res']
+                self.fmt = packet['fmt']
+                self.timestamp = packet['time']
+                self.waitingForCycle = False
+                self.data = []
+        else:
+            packet = eval(buffer)
+            if 'end' in packet:
+                self.waitingForCycle = True
+            else:
+                self.data.append(packet)
         return True
 
     def processData(self):

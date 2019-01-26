@@ -25,7 +25,7 @@
 
 = openmv serial protocol:
 After each vision cycle, the camera sends a start of frame packet, followed by n data packets for each frame. 
-startOfFrame = '{"cam": <number>, "time": <number2>}' where number is the assigned camera number and time is the timestamp of the frame in the camera.
+startOfFrame = '{"cam": <number>, "time": <number2>, "res": <num3>, "fmt": <num4>}' where number is the assigned camera number and time is the timestamp of the frame in the camera. Res and fmt are the resolution and format.
 At the end of each vision cycle we send the endOfFrame packet.
 endOfFrame '{"end": 0}'.
 

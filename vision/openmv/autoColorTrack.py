@@ -6,15 +6,21 @@ import sensor, image, time
 import pyb
 #print("Letting auto algorithms run. Don't put anything in front of the camera!")
 
+fmt = sensor.RGB565
+res = sensor.QVGA
+
 def run():
+        file = open("camId.txt")
+        cam = int(file.readline())
+        file.close()
 	sensor.reset()
-	sensor.set_pixformat(sensor.RGB565)
-	sensor.set_framesize(sensor.QVGA)
+	sensor.set_pixformat(fmt)
+	sensor.set_framesize(res)
 	sensor.skip_frames(time = 2000)
 	sensor.set_auto_gain(False) # must be turned off for color tracking
 	sensor.set_auto_whitebal(False) # must be turned off for color tracking
 	clock = time.clock()
-	startOfPacket = { "cam": 0, "time": pyb.elapsed_millis(0)}
+	startOfPacket = { "cam": cam, "time": pyb.elapsed_millis(0), "fmt": fmt, "res": res}
 	endOfPacket = { "end": 0}
 	
 # Capture the color thresholds for whatever was in the center of the image.

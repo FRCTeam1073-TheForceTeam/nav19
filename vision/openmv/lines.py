@@ -15,14 +15,19 @@ import sensor, image, time
 import pyb
 
 def run():
+    file = open("camId.txt")
+    cam = int(file.readline())
+    file.close()
     sensor.reset()
-    sensor.set_pixformat(sensor.GRAYSCALE) # grayscale is faster
-    sensor.set_framesize(sensor.QQVGA)
+    fmt = sensor.GRAYSCALE
+    res = sensor.QQVGA
+    sensor.set_pixformat(fmt) # grayscale is faster
+    sensor.set_framesize(res)
     sensor.skip_frames(time = 2000)
     clock = time.clock()
     min_degree = 0
     max_degree = 179
-    startOfPacket = { "cam": 0, "time": pyb.elapsed_millis(0)}
+    startOfPacket = { "cam": cam, "time": pyb.elapsed_millis(0), "fmt": fmt, "res": res}
     endOfPacket = { "end": 0}
 
     while(True):
