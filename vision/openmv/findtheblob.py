@@ -1,10 +1,5 @@
-# Automatic RGB565 Color Tracking Example
-#
-# This example shows off single color automatic RGB565 color tracking using the OpenMV Cam.
-
 import sensor, image, time
 import pyb
-#print("Letting auto algorithms run. Don't put anything in front of the camera!")
 
 fmt = sensor.RGB565
 res = sensor.QVGA
@@ -22,6 +17,7 @@ def run():
 	sensor.set_auto_gain(False) # must be turned off for color tracking
 	sensor.set_auto_whitebal(False) # must be turned off for color tracking
 	clock = time.clock()
+
 	startOfPacket = { "cam": cam, "time": pyb.elapsed_millis(0), "fmt": fmt, "height": sensor.height(), "width": sensor.width()}
 	endOfPacket = { "end": 0}
 	
@@ -56,18 +52,11 @@ def run():
 	#print("Thresholds learned...")
 	#print("Tracking colors...")
 	
-	while(True):
-	    clock.tick()
-	    img = sensor.snapshot()
-	    startOfPacket["time"] = pyb.elapsed_millis(0)
-	    print(startOfPacket)
-
-	    for blob in img.find_blobs([threshold], pixels_threshold=100, area_threshold=100, merge=True, margin=10):
-  	    	img.draw_rectangle(blob.rect())
-  	    	img.draw_cross(blob.cx(), blob.cy())
-  	    	print(blob)
-
-	    print(endOfPacket)
+        startOfPacket["time"] = pyb.elapsed_millis(0)
+        print(startOfPacket)
+        thresholds = {"threshold": threshold}
+        print(thresholds)
+        print(endOfPacket)
 
 
 
