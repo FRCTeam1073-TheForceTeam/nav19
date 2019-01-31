@@ -176,7 +176,7 @@ class CameraManager:
         return self.__serial.read(64).split('\0', 1)[0]
 
     def parseBuffer(self, buffer):
-        print(buffer)
+        #print(buffer)
         if self.firstPacket:
             self.firstPacket = False
             return True
@@ -185,7 +185,7 @@ class CameraManager:
         except:
             return False
         
-        print(packet)
+        #print(packet)
         if self.waitingForCycle:
             if 'cam' in packet:
                 self.cam = packet['cam']

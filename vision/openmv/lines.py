@@ -16,6 +16,9 @@ import pyb
 
 fmt = sensor.GRAYSCALE
 res = sensor.QQVGA
+led1 = pyb.LED(1)
+led2 = pyb.LED(2)
+
 
 file = open("camId.txt")
 cam = int(file.readline())
@@ -23,7 +26,9 @@ file.close()
 sensor.reset()
 sensor.set_pixformat(fmt) # grayscale is faster
 sensor.set_framesize(res)
-sensor.skip_frames(time = 2000)
+led1.on()
+sensor.skip_frames(time = 1500)
+led1.off()
 clock = time.clock()
 min_degree = 0
 max_degree = 179

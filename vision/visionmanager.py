@@ -2,15 +2,27 @@ from cameramanager import CameraManager			#see cameramanager.py
 from networktables import NetworkTables
 import time
 
+def give_script(mode):
+        if mode == "lines":
+                return "./openmv/lines.py"
+        elif mode == "blobs":
+                return "./openmv/blobs.py"
+        elif mode == "video":
+                return "./openmv/video.py"
+                
+def set_mode(cam, mode):
+        script = ""
+        with open(give_script(mode), 'r') as fin:
+                script = fin.read()
+        print(script)
+        cam.stop_script()
+        cam.exec_script(script)
+
 
 #camera initialization
 cam0mode = "lines"
 cam0 = CameraManager("/dev/ttyACM0")
-if cam0.init(cam0mode):					#uses openMV example code
-        print("init okay")
-else:
-	print("init failed")   
- 
+
 #networkTables initialization
 NetworkTables.initialize()
 nt = NetworkTables.getTable("CameraFeedback")
@@ -18,6 +30,7 @@ nt = NetworkTables.getTable("CameraFeedback")
 #main loop
 cam0frame = 0
 
+set_mode(cam0, cam0mode)
 while True:
         cam0.processData()
         if len(cam0.data) > 0:
@@ -33,14 +46,19 @@ while True:
                         nt.putNumberArray("cam_0_lineseg", data)
                         nt.putNumberArray("cam_0_blobs",[])
                         
-                elif cam0mode == "autoColorTrack":
+                elif cam0mode == "blobs":
                         data = []
                         for blob in cam0.data:
                                 data.append(blob["cx"])
                                 data.append(blob["cy"])
-                                data.append(blob["width"])
-                                data.append(blob["height"])
+                                data.append(blob["w"])
+                                data.append(blob["h"])
                                 data.append(blob["pixels"])
+                        nt.putNumberArray("cam_0_blobs", data)
+                        nt.putNumberArray("cam_0_lineseg", [])
+
+                elif cam0mode == "video":
+                        data = []
                         nt.putNumberArray("cam_0_blobs", data)
                         nt.putNumberArray("cam_0_lineseg", [])
                         
@@ -51,4 +69,7 @@ while True:
         nt.putNumber("cam_0_height", cam0.height)
         if newmode != cam0mode:
                 cam0mode = newmode
-                cam0.init(cam0mode)
+                set_mode(cam0, cam0mode)
+
+
+                
