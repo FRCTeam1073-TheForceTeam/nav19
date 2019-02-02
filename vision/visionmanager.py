@@ -3,8 +3,11 @@ from networktables import NetworkTables
 import time
 import sys
 import io
+# Allows us to send images over HTTP
 import http.server
+# Allows us to run HTTP server in a separate thread so we can poll camera
 import threading
+# Allows us to convert camera image to JPEG for HTTP Client
 from PIL import Image
 
 
@@ -26,8 +29,9 @@ def set_mode(cam, mode):
         cam.enable_fb(True)
         cam.exec_script(script)
 
-#WARNING!!!! Global variable
+#WARNING!!!! Global variable needs lock
 imgData = io.BytesIO()
+imgDataLock = threading.Lock()
 
 class ImageHandler(http.server.BaseHTTPRequestHandler):
         
@@ -37,12 +41,15 @@ class ImageHandler(http.server.BaseHTTPRequestHandler):
                 self.send_response(200)
  
                 # Send headers
-                self.send_header('Content-type','image/jpeg')
+                self.send_header('Content-Type','image/jpeg')
+                self.send_header('Content-Length', imgData.tell())
                 self.end_headers()
 
                 #print("Sending Image.%d" % imgData.tell())
-                # Write content as utf-8 data
+                # Protect thread access to imgData
+                imgDataLock.acquire()
                 self.wfile.write(imgData.getvalue())
+                imgDataLock.release()
                 return
         
         # This stops it spewing output all the time.
@@ -115,9 +122,12 @@ while True:
         fb = cam0.fb_dump()
         if fb != None:
                 image = Image.fromarray(fb[2])
+                # Protect thread access to imgData
+                imgDataLock.acquire()
                 imgData.seek(0)
                 image.save(imgData, format = "JPEG")
                 imgData.truncate()
+                imgDataLock.release()
 
 
 
