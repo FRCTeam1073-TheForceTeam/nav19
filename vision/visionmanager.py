@@ -61,15 +61,18 @@ class ImageHandler(http.server.BaseHTTPRequestHandler):
 cam0mode = sys.argv[1]
 cam0 = CameraManager("/dev/ttyACM0")
 
+videoPort = sys.argv[2]
+
 #networkTables initialization
-NetworkTables.initialize()
+serverIP = sys.argv[3]
+NetworkTables.initialize(server=serverIP)
 nt = NetworkTables.getTable("CameraFeedback")
 nt.putString("cam_0_mode", cam0mode)
 
 
 # create image webserver
 
-server_address = ('127.0.0.1', 8081)
+server_address = ('', int(videoPort))
 httpd = http.server.HTTPServer(server_address, ImageHandler)
 httpdThread = threading.Thread(target = httpd.serve_forever)
 httpdThread.start()
