@@ -30,12 +30,12 @@ led1.off()
 # Read color thresholds from file if possible:
 
 #threshold = [50, 50, 0, 0, 0, 0]
-threshold = []
+thresh = []
 
 datafile = open("color.dat","r")
 for l in datafile.readlines():
         try:
-                threshold.append(int(l))
+                thresh.append(int(l))
         except:
                 pass
         
@@ -47,7 +47,7 @@ while(True):
 	startOfPacket["time"] = pyb.elapsed_millis(0)
 	print(startOfPacket)
 
-	for blob in img.find_blobs([threshold], pixels_threshold=100, area_threshold=100, merge=True, margin=10):
+	for blob in img.find_blobs([thresh], pixels_threshold=100, area_threshold=100, merge=True, margin=10):
                 img.draw_rectangle(blob.rect())
                 img.draw_cross(blob.cx(), blob.cy())
                 print(blob)
