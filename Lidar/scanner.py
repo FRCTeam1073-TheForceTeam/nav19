@@ -43,7 +43,6 @@ class scan:
             #return XYarray
 
 
-
 # Simple test
 lidar = RPLidar('COM3')
 time.sleep(5)
