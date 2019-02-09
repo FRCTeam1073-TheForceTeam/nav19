@@ -19,8 +19,6 @@ def give_script(mode):
                 return "./openmv/blobs.py"
         elif mode == "video":
                 return "./openmv/video.py"
-        elif mode == "learncolor":
-                return "./openmv/learncolor.py"
                 
 def set_mode(cam, mode):
         script = ""
@@ -63,18 +61,15 @@ class ImageHandler(http.server.BaseHTTPRequestHandler):
 cam0mode = sys.argv[1]
 cam0 = CameraManager("/dev/ttyACM0")
 
-videoPort = sys.argv[2]
-
 #networkTables initialization
-serverIP = sys.argv[3]
-NetworkTables.initialize(server=serverIP)
+NetworkTables.initialize()
 nt = NetworkTables.getTable("CameraFeedback")
 nt.putString("cam_0_mode", cam0mode)
 
 
 # create image webserver
 
-server_address = ('', int(videoPort))
+server_address = ('127.0.0.1', 8081)
 httpd = http.server.HTTPServer(server_address, ImageHandler)
 httpdThread = threading.Thread(target = httpd.serve_forever)
 httpdThread.start()
@@ -108,13 +103,8 @@ while True:
                                 data.append(blob["pixels"])
                         nt.putNumberArray("cam_0_blobs", data)
                         nt.putNumberArray("cam_0_lineseg", [])
-                        
-                elif cam0mode == "video":
-                        data = []
-                        nt.putNumberArray("cam_0_blobs", [])
-                        nt.putNumberArray("cam_0_lineseg", [])
 
-                elif cam0mode == "learncolor":
+                elif cam0mode == "video":
                         data = []
                         nt.putNumberArray("cam_0_blobs", [])
                         nt.putNumberArray("cam_0_lineseg", [])
