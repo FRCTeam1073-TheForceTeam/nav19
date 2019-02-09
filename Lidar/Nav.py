@@ -21,25 +21,16 @@ class :
    
     def __init__(self, lidarDevice):
             self.mLidar = lidarDevice
-            global lidar 
-            lidar = RPLidar('COM3')
-    def XY(self, distance, degrees):
-        radians = math.radians(degrees)
-        x = distance*math.cos(radians)
-        y = distance*math.sin(radians)
-        XYarray.append((x, y))
-        return XYarray
-    def FrameManager(self, degrees):
-        ceilDegrees = math.ceil(degrees)
-        if ceilDegrees == 0:
-            frames = frames + 1
-    def main(self, lidar):
-        for measurment in self.lidar.iter_measures():
-            self.XY(measurment[2], measurment[1])
-            self.FrameManager(measurment[1])
-            print(XYarray[-1])
-            return XYarray
+            #global lidar 
+            #lidar = RPLidar('COM3')
+    def graphCreation(self):
 
+    def pointFinding(self):
+
+    def positionFinder(self):
+
+    def trajectory(self):
+        
 
 
 # Simple test
