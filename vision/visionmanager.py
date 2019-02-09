@@ -19,6 +19,8 @@ def give_script(mode):
                 return "./openmv/blobs.py"
         elif mode == "video":
                 return "./openmv/video.py"
+        elif mode == "learncolor":
+                return "./openmv/learncolor.py"
                 
 def set_mode(cam, mode):
         script = ""
@@ -106,8 +108,13 @@ while True:
                                 data.append(blob["pixels"])
                         nt.putNumberArray("cam_0_blobs", data)
                         nt.putNumberArray("cam_0_lineseg", [])
-
+                        
                 elif cam0mode == "video":
+                        data = []
+                        nt.putNumberArray("cam_0_blobs", [])
+                        nt.putNumberArray("cam_0_lineseg", [])
+
+                elif cam0mode == "learncolor":
                         data = []
                         nt.putNumberArray("cam_0_blobs", [])
                         nt.putNumberArray("cam_0_lineseg", [])
