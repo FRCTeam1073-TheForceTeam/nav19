@@ -2,13 +2,16 @@
 import time
 import math
 import numpy
-from rplidar import RPLidar
+#from rplidar import RPLidar
+from networktables import NetworkTables
 
 
 global XYarray
 XYarray = []
 global frames
-class scan:
+global possiblePositions[]
+global visiblePoints[]
+class :
     """A frame manager for lidar. This class is responsible for reading lidar data 
     and maintainning a data frame the represents the latest 360 degree view of the field"""
 

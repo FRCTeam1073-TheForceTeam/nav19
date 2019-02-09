@@ -3,10 +3,10 @@ import time
 import math
 import numpy
 from rplidar import RPLidar
-#from networktables import NetworkTables
+from networktables import NetworkTables
 
-#NetworkTables.initialize('10.10.73.2')
-#table = NetworkTables.getTable('1073Table')
+NetworkTables.initialize('10.10.73.2')
+table = NetworkTables.getTable('1073Table')
 global XYarray
 XYarray = []
 global frames
@@ -33,13 +33,13 @@ class scan:
         if ceilDegrees == 0:
             frames = frames + 1
     def main(self):
-        #for measurment in self.lidar.iter_measures():
-            #elf.XY(measurment[2], measurment[1])
-            #self.FrameManager(measurment[1])
-            #print(frames)
-            #print(XYarray[-1])
-            #table.putData(frames)
-            #table.putData(XYarray)
+        for measurment in self.lidar.iter_measures():
+            self.XY(measurment[2], measurment[1])
+            self.FrameManager(measurment[1])
+            print(frames)
+            print(XYarray[-1])
+            table.putData(frames)
+            table.putData(XYarray)
             return XYarray
 
 
@@ -48,10 +48,10 @@ class scan:
 #lidar = RPLidar('COM3')
 time.sleep(5)
 
-#Scanner = main(lidar)
+Scanner = main(lidar)
 
-#position = coordinateFinder.getCurrentPosition(0)
-#print ("Position : " + str(position))
+position = coordinateFinder.getCurrentPosition(0)
+print ("Position : " + str(position))
 
 lidar.stop()
 lidar.stop_motor()
