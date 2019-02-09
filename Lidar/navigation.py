@@ -37,8 +37,6 @@ class scan:
             print(XYarray[-1])
             return XYarray
 
-
-
 # Simple test
 #lidar = RPLidar('COM3')
 time.sleep(5)

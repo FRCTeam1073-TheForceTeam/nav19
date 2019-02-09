@@ -45,10 +45,10 @@ class scan:
 
 
 # Simple test
-#lidar = RPLidar('COM3')
+lidar = RPLidar('COM3')
 time.sleep(5)
 
-#Scanner = main(lidar)
+Scanner = main(lidar)
 
 #position = coordinateFinder.getCurrentPosition(0)
 #print ("Position : " + str(position))
