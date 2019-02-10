@@ -5,34 +5,35 @@ Particle Filter localization sample
 author: Atsushi Sakai (@Atsushi_twi)
 
 """
-
+# All comments denoted Cam were written by Cam, and represent his observations. They are likely not perfect
 import numpy as np
 import math
 import matplotlib.pyplot as plt
 
 # Estimation parameter of PF
-Q = np.diag([0.1])**2  # range error
-R = np.diag([1.0, np.deg2rad(40.0)])**2  # input error
+Q = np.diag([0.1])**2  # range error #Cam - how tightly packed the particles are around the "robot"
+R = np.diag([1.0, np.deg2rad(40.0)])**2  # input error #Cam - deviation allowed 
 
 #  Simulation parameter
-Qsim = np.diag([0.2])**2
-Rsim = np.diag([1.0, np.deg2rad(30.0)])**2
+Qsim = np.diag([0.2])**2 #Cam - determines how closely the lines follow each other- Simulation Purposes Only
 
-DT = 0.1  # time tick [s]
-SIM_TIME = 50.0  # simulation time [s]
-MAX_RANGE = 20.0  # maximum observation range
+Rsim = np.diag([1.0, np.deg2rad(30.0)])**2 # Cam - Changes the correlation between dead reckoning and actual posiitoning
+
+DT = 0.1  # time tick [s] #Cam - how many times it updates over the course of the simulation, but also changes the simulation time by a predictable about (multiply DT by 9 = divide sim time by 9)
+SIM_TIME = 50.0  # simulation time [s] # Cam - how many "seconds", partially relative to DT (see comment above), in the simulation
+MAX_RANGE = 20.0  # maximum observation range # Cam - maximum domain and range of the simulation coordinate plane
 
 # Particle filter parameter
-NP = 100  # Number of Particle
-NTh = NP / 2.0  # Number of particle for re-sampling
+NP = 100  # Number of Particle # Cam - exactly what they said
+NTh = NP / 2.0  # Number of particle for re-sampling # Cam - how many points seem reasonable to the program
 
-show_animation = True
+show_animation = True #Cam - determines if the animation will be shown
 
 
 def calc_input():
-    v = 1.0  # [m/s]
-    yawrate = 0.1  # [rad/s]
-    u = np.array([[v, yawrate]]).T
+    v = 1.0  # [m/s] #Cam - velocity of the simulated robot
+    yawrate = 0.1  # [rad/s] #Cam- rotational rate of the robot
+    u = np.array([[v, yawrate]]).T #Cam - as best as I can tell, this calculates the position of the robot relative to the field based on velocity and rotational rate
     return u
 
 
