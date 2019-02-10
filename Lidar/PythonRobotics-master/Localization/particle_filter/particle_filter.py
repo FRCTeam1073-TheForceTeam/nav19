@@ -15,6 +15,12 @@ Q = np.diag([0.1])**2  # range error
 R = np.diag([1.0, np.deg2rad(40.0)])**2  # input error
 
 #  Simulation parameter
+#np.diag: creates a daigonal array like this
+#\
+# \
+#  \
+#   \
+#    \
 Qsim = np.diag([0.2])**2
 Rsim = np.diag([1.0, np.deg2rad(30.0)])**2
 
@@ -30,8 +36,9 @@ show_animation = True
 
 
 def calc_input():
-    v = 1.0  # [m/s]
-    yawrate = 0.1  # [rad/s]
+    v = 1.0  # [m/s] velocity
+    yawrate = 0.1 # [rad/s] 
+    # yawrate > 0.1 makes circle smaller. yawrate < 0.1 makes circle wider. 
     u = np.array([[v, yawrate]]).T
     return u
 
