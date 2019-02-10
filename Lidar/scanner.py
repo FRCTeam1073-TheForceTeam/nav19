@@ -3,13 +3,14 @@ import time
 import math
 import numpy
 from rplidar import RPLidar
-#from networktables import NetworkTables
+from networktables import NetworkTables
 
-#NetworkTables.initialize('10.10.73.2')
-#table = NetworkTables.getTable('1073Table')
+NetworkTables.initialize('10.10.73.2')
+table = NetworkTables.getTable('1073Table')
 global XYarray
 XYarray = []
 global frames
+
 class scan:
     """A frame manager for lidar. This class is responsible for reading lidar data 
     and maintainning a data frame the represents the latest 360 degree view of the field"""
@@ -20,8 +21,6 @@ class scan:
    
     def __init__(self, lidarDevice):
             self.mLidar = lidarDevice
-            global lidar 
-            lidar = RPLidar('COM3')
     def XY(self, distance, degrees):
         radians = math.radians(degrees)
         x = distance*math.cos(radians)
@@ -32,14 +31,17 @@ class scan:
         ceilDegrees = math.ceil(degrees)
         if ceilDegrees == 0:
             frames = frames + 1
+            return frames
+        else:
+            return frames   
     def main(self):
         #for measurment in self.lidar.iter_measures():
-            #elf.XY(measurment[2], measurment[1])
+            #self.XY(measurment[2], measurment[1])
             #self.FrameManager(measurment[1])
             #print(frames)
-            #print(XYarray[-1])
+            print(XYarray[-1])
             #table.putData(frames)
-            #table.putData(XYarray)
+            table.putData(XYarray)
             return XYarray
 
 
@@ -48,7 +50,7 @@ class scan:
 lidar = RPLidar('COM3')
 time.sleep(5)
 
-Scanner = main(lidar)
+#Scanner = main(lidar)
 
 #position = coordinateFinder.getCurrentPosition(0)
 #print ("Position : " + str(position))
