@@ -15,12 +15,6 @@ Q = np.diag([0.1])**2  # range error
 R = np.diag([1.0, np.deg2rad(40.0)])**2  # input error
 
 #  Simulation parameter
-#np.diag: creates a daigonal array like this
-#\
-# \
-#  \
-#   \
-#    \
 Qsim = np.diag([0.2])**2
 Rsim = np.diag([1.0, np.deg2rad(30.0)])**2
 
@@ -36,9 +30,8 @@ show_animation = True
 
 
 def calc_input():
-    v = 1.0  # [m/s] velocity
-    yawrate = 0.1 # [rad/s] 
-    # yawrate > 0.1 makes circle smaller. yawrate < 0.1 makes circle wider. 
+    v = 1.0  # [m/s]
+    yawrate = 0.1  # [rad/s]
     u = np.array([[v, yawrate]]).T
     return u
 
@@ -205,10 +198,10 @@ def main():
     time = 0.0
 
     # RFID positions [x, y]
-    RFID = np.array([[0.0, 10.67],
-                     [8.23, 10.67],
-                     [0.0, 5.79],
-                     [8.23, 5.79]])
+    RFID = np.array([[10.0, 0.0],
+                     [10.0, 10.0],
+                     [0.0, 15.0],
+                     [-5.0, 20.0]])
 
     # State Vector [x y yaw v]'
     xEst = np.zeros((4, 1))
