@@ -33,8 +33,9 @@ show_animation = True #Cam - determines if the animation will be shown
 def calc_input():
     v = 1.0  # [m/s] #Cam - velocity of the simulated robot
     yawrate = 0.1  # [rad/s] #Cam- rotational rate of the robot
-    u = np.array([[v, yawrate]]).T #Cam - as best as I can tell, this calculates the position of the robot relative to the field based on velocity and rotational rate
-    return u
+    u = np.array([[v, yawrate]]).T #Cam - an array storing the velocity and rotational rate
+    return u #Cam - an array
+    
 
 
 def observation(xTrue, xd, u, RFID):
@@ -43,6 +44,7 @@ def observation(xTrue, xd, u, RFID):
 
     # add noise to gps x-y
     z = np.zeros((0, 3))
+    print(z)
 
     for i in range(len(RFID[:, 0])):
 
