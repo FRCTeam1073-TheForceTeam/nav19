@@ -20,6 +20,8 @@ class fieldScanner:
 
         place = self.extractFeatures(fieldScan, 0, 8229.6/2, 7925)
 
+        
+
         return self.calculatePosition(place, gyro)
 
     def getMostRecentFrame(self):

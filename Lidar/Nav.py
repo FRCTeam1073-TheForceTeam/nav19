@@ -2,7 +2,7 @@
 import time
 import math
 import numpy
-#from rplidar import RPLidar
+from rplidar import RPLidar
 from networktables import NetworkTables
 
 

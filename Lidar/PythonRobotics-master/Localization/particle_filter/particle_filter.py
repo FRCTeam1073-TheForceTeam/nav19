@@ -198,10 +198,10 @@ def main():
     time = 0.0
 
     # RFID positions [x, y]
-    RFID = np.array([[10.0, 0.0],
-                     [10.0, 10.0],
-                     [0.0, 15.0],
-                     [-5.0, 20.0]])
+    RFID = np.array([[0.0, 10.67],
+                     [8.23, 10.67],
+                     [0.0, 5.79],
+                     [8.23, 5.79]])
 
     # State Vector [x y yaw v]'
     xEst = np.zeros((4, 1))
