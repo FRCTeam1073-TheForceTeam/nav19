@@ -15,7 +15,8 @@ class scan:
     """A frame manager for lidar. This class is responsible for reading lidar data 
     and maintainning a data frame the represents the latest 360 degree view of the field"""
 
-    mLidar = RPLidar('COM3')
+    #mLidar = RPLidar('COM3')
+    mLidar = none
     min_frame_len = 120 # based on onbservation, a scan returns between 125 and 135 points
     max_loop = 5 # arbitrary value
    
