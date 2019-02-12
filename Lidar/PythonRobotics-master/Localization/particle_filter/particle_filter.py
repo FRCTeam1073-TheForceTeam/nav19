@@ -6,14 +6,15 @@ author: Atsushi Sakai (@Atsushi_twi)
 
 """
 # All comments denoted Cam were written by Cam, and represent his observations. They are likely not perfect
+LIDAR_DEVICE = 'COM5' #Cam - where is LiDAR, change to COM5 on most Windows Machines, "/dev/ttyUSB0" on Raspberry Pi, Mac, and Ubuntu
 import numpy as np
 import math
 import matplotlib.pyplot as plt
-
+from rplidar import RPLidar as Lidar #Cam - import RPLidar
 # Estimation parameter of PF
 Q = np.diag([0.1])**2  # range error #Cam - how tightly packed the particles are around the "robot"
 R = np.diag([1.0, np.deg2rad(40.0)])**2  # input error #Cam - deviation allowed 
-
+lidar = Lidar(LIDAR_DEVICE)
 #  Simulation parameter
 #np.diag: creates a daigonal array like this
 #\
@@ -25,7 +26,6 @@ Qsim = np.diag([0.2])**2 #Cam - determines how closely the lines follow each oth
 
 Rsim = np.diag([1.0, np.deg2rad(30.0)])**2 # Cam - Changes the correlation between dead reckoning and actual posiitoning
 
-
 DT = 0.1  # time tick [s] #Cam - how many times it updates over the course of the simulation, but also changes the simulation time by a predictable about (multiply DT by 9 = divide sim time by 9)
 SIM_TIME = 50.0  # simulation time [s] # Cam - how many "seconds", partially relative to DT (see comment above), in the simulation
 MAX_RANGE = 20.0  # maximum observation range # Cam - maximum domain and range of the simulation coordinate plane
@@ -35,7 +35,7 @@ NP = 100  # Number of Particle # Cam - exactly what they said
 NTh = NP / 2.0  # Number of particle for re-sampling # Cam - how many points seem reasonable to the program
 
 show_animation = True #Cam - determines if the animation will be shown
-
+lidar.start_motor()
 
 def calc_input():
 
@@ -263,4 +263,9 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except:
+        lidar.stop()
+        lidar.stop_motor()
+        lidar.disconnect()
