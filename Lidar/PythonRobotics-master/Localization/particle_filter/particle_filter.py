@@ -53,16 +53,16 @@ def observation(xTrue, xd, u, RFID):
     xTrue = motion_model(xTrue, u)
 
     # add noise to gps x-y
-    z = np.zeros((0, 3))
-    print(z)
+    z = np.zeros((0, 3)) #Cam - creates an empty array 
 
     for i in range(len(RFID[:, 0])):
 
-        dx = xTrue[0, 0] - RFID[i, 0]
-        dy = xTrue[1, 0] - RFID[i, 1]
-        d = math.sqrt(dx**2 + dy**2)
+        dx = xTrue[0, 0] - RFID[i, 0] #Cam - This outputs three values. All three are the x distance from one of the rockets on the field.
+        dy = xTrue[1, 0] - RFID[i, 1] #Cam - This outputs three values. All three are the y distance from one of the rockets on the field.
+        d = math.sqrt(dx**2 + dy**2) #Cam - This outputs the total distance from the rockets on the field. Not sure how they are serialized, but they do work.
+
         if d <= MAX_RANGE:
-            dn = d + np.random.randn() * Qsim[0, 0]  # add noise
+            dn = d + np.random.randn() * Qsim[0, 0]  # add noise #Cam- Places additonal possible points on the field within a reasonable range as difined earlier
             zi = np.array([[dn, RFID[i, 0], RFID[i, 1]]])
             z = np.vstack((z, zi))
 
