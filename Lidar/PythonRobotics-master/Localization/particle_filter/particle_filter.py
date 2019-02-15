@@ -7,6 +7,8 @@ author: Atsushi Sakai (@Atsushi_twi)
 """
 # All comments denoted Cam were written by Cam, and represent his observations. They are likely not perfect
 LIDAR_DEVICE = 'COM5' #Cam - where is LiDAR, change to COM5 on most Windows Machines, "/dev/ttyUSB0" on Raspberry Pi, Mac, and Ubuntu
+import sys
+from multiprocessing import Process
 import numpy as np
 import math
 import matplotlib.pyplot as plt
@@ -36,9 +38,17 @@ NTh = NP / 2.0  # Number of particle for re-sampling # Cam - how many points see
 
 show_animation = True #Cam - determines if the animation will be shown
 lidar.start_motor()
+#lidar.connect()
 
+def scan(path):
+
+    '''Main function'''
+    for measurment in lidar.iter_measurments():
+        print(measurment[2])
+            
 def calc_input():
-
+    print("running calc")
+    #print(lidar.measurment[0])
     v = 1.0  # [m/s] #Cam - velocity of the simulated robot
     yawrate = 0.1  # [rad/s] #Cam- rotational rate of the robot
     u = np.array([[v, yawrate]]).T #Cam - an array storing the velocity and rotational rate
@@ -49,7 +59,7 @@ def calc_input():
 
 
 def observation(xTrue, xd, u, RFID):
-
+    print("running observation")
     xTrue = motion_model(xTrue, u)
 
     # add noise to gps x-y
@@ -264,7 +274,12 @@ def main():
 
 if __name__ == '__main__':
     try:
-        main()
+        p = Process(target=main)
+        p.start()
+        p2 = Process(target=scan, args=sys.argv[1])
+        p2.start()
+        p.join()
+        p2.join()
     except:
         lidar.stop()
         lidar.stop_motor()
