@@ -6,24 +6,20 @@ author: Atsushi Sakai (@Atsushi_twi)
 
 """
 # All comments denoted Cam were written by Cam, and represent his observations. They are likely not perfect
-LIDAR_DEVICE = 'COM5' #Cam - where is LiDAR, change to COM5 on most Windows Machines, "/dev/ttyUSB0" on Raspberry Pi, Mac, and Ubuntu
+LIDAR_DEVICE = '/dev/cu.SLAB_USBtoUART' #Cam - where is LiDAR, change to COM5 on most Windows Machines, "/dev/ttyUSB0" on Raspberry Pi, Mac, and Ubuntu
 import sys
 from multiprocessing import Process
 import numpy as np
 import math
 import matplotlib.pyplot as plt
 from rplidar import RPLidar as Lidar #Cam - import RPLidar
+import fieldScanner #Katherine - import the scanner methods
 # Estimation parameter of PF
 Q = np.diag([0.1])**2  # range error #Cam - how tightly packed the particles are around the "robot"
 R = np.diag([1.0, np.deg2rad(40.0)])**2  # input error #Cam - deviation allowed 
 lidar = Lidar(LIDAR_DEVICE)
 #  Simulation parameter
 #np.diag: creates a daigonal array like this
-#\
-# \
-#  \
-#   \
-#    \
 Qsim = np.diag([0.2])**2 #Cam - determines how closely the lines follow each other- Simulation Purposes Only
 
 Rsim = np.diag([1.0, np.deg2rad(30.0)])**2 # Cam - Changes the correlation between dead reckoning and actual posiitoning
@@ -214,7 +210,6 @@ def plot_covariance_ellipse(xEst, PEst):  # pragma: no cover
     py = np.array(fx[1, :] + xEst[1, 0]).flatten()
     plt.plot(px, py, "--r")
 
-
 def main():
     print(__file__ + " start!!")
 
@@ -284,3 +279,4 @@ if __name__ == '__main__':
         lidar.stop()
         lidar.stop_motor()
         lidar.disconnect()
+        
