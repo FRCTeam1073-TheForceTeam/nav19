@@ -133,7 +133,3 @@ print ("Position : " + str(position))
 lidar.stop()
 lidar.stop_motor()
 lidar.disconnect()
-
-
-
-
