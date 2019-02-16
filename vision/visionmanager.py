@@ -52,6 +52,7 @@ class ImageHandler(http.server.BaseHTTPRequestHandler):
         
                         self.send_header('Content-Type','image/jpeg')
                         self.send_header('Content-Length', imgData.tell())
+                        self.send_header('Cache Control', 'no-cache')
                         self.end_headers()
                         self.wfile.write(imgData.getvalue())
                         return
