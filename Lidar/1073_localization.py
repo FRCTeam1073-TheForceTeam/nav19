@@ -71,11 +71,12 @@ def scan(path):
     for measurement in lidar.iter_measurments():
         try:
             if len(lidarArray) >= 2:
+                Odometry(odometryArray)
+                LidarArray(lidarArray)        
                 fieldScanner.fieldScanner.getMostRecentFrame(fieldScanner)
                 fieldScanner.fieldScanner.getCurrentPosition(fieldScanner, gyro)
                 fieldScanner.fieldScanner.pointOnField(fieldScanner, lidarArray, gyro, lidarArray[-1[1]], lidarArray[-1[2]])
-                Odometry(odometryArray)
-                LidarArray(lidarArray)
+
             else:
                 continue
         except KeyboardInterrupt:
@@ -84,7 +85,7 @@ def scan(path):
             lidar.stop()
             lidar.disconnect()
 
-scan(sys.argv[1])
+scan(sys.argv[0])
 
 def calc_input():
     print("running calc")
