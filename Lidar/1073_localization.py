@@ -8,19 +8,29 @@ author: Atsushi Sakai (@Atsushi_twi)
 # All comments denoted Cam were written by Cam, and represent his observations. They are likely not perfect
 LIDAR_DEVICE = '/dev/cu.SLAB_USBtoUART' #Cam - where is LiDAR, change to COM5 on most Windows Machines, "/dev/ttyUSB0" on Raspberry Pi, Mac, and Ubuntu
 import sys
+import time
+import networktables
+from networktables import NetworkTables
 from multiprocessing import Process
 import numpy as np
 import math
 import matplotlib.pyplot as plt
 from rplidar import RPLidar as Lidar #Cam - import RPLidar
 import fieldScanner #Katherine - import the scanner methods
+Table = networktables.NetworkTablesInstance()
+LidarTable = Table.getTable("1073Table")
+
 # Estimation parameter of PF
+odometryArray = []
+lidarArray = []
 Q = np.diag([0.1])**2  # range error #Cam - how tightly packed the particles are around the "robot"
 R = np.diag([1.0, np.deg2rad(40.0)])**2  # input error #Cam - deviation allowed 
 lidar = Lidar(LIDAR_DEVICE)
+gyro = 0
 #  Simulation parameter
 #np.diag: creates a daigonal array like this
 Qsim = np.diag([0.2])**2 #Cam - determines how closely the lines follow each other- Simulation Purposes Only
+
 
 Rsim = np.diag([1.0, np.deg2rad(30.0)])**2 # Cam - Changes the correlation between dead reckoning and actual posiitoning
 
@@ -36,12 +46,33 @@ show_animation = True #Cam - determines if the animation will be shown
 lidar.start_motor()
 #lidar.connect()
 
+def Odometry(array):
+    accelx= LidarTable.getNumber("accelx", 0)
+    array.append(accelx)
+    accely = LidarTable.getNumber("accely", 0)
+    array.append(accely)
+    accelz = LidarTable.getNumber("accelz")
+    array.append(accelz)
+    gyro = LidarTable.getNumber("gyroRawValue", 0)
+    return array
+
+def LidarArray(array):
+    for measurement in lidar.iter_measurments():
+        degrees = measurement[2]
+        distance = measurement[3]
+        array.append[(degrees, distance)]
+        return array
+
 def scan(path):
 
     '''Main function'''
-    for measurment in lidar.iter_measurments():
-        print(measurment[2])
-            
+    for measurement in lidar.iter_measurments():
+        if len(lidarArray) >= 2:
+            fieldScanner.fieldScanner.getMostRecentFrame(fieldScanner)
+            fieldScanner.fieldScanner.getCurrentPosition(fieldScanner, gyro)
+            fieldScanner.fieldScanner.pointOnField(fieldScanner, lidarArray, gyro, lidarArray[-1[1]], lidarArray[-1[2]])
+            LidarArray(lidarArray)
+
 def calc_input():
     print("running calc")
     #print(lidar.measurment[0])
@@ -279,4 +310,3 @@ if __name__ == '__main__':
         lidar.stop()
         lidar.stop_motor()
         lidar.disconnect()
-        

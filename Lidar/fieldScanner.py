@@ -2,8 +2,6 @@ from rplidar import RPLidar
 import time
 import math
 
-
-
 class fieldScanner:
     """A frame manager for lidar. This class is responsible for reading lidar data 
     and maintainning a data frame the represents the latest 360 degree view of the field"""
@@ -18,9 +16,9 @@ class fieldScanner:
        
         fieldScan = self.getMostRecentFrame()
 
-        place = self.extractFeatures(fieldScan, 0, 8229.6/2, 7925)
+       #place = self.extractFeatures(fieldScan, 0, 8229.6/2, 7925)
 
-        return self.calculatePosition(place, gyro)
+        #return self.calculatePosition(place, gyro)
 
     def getMostRecentFrame(self):
         """The purpose of this method is to return the latest lidar field scan"""
@@ -51,7 +49,6 @@ class fieldScanner:
 
 
         return #TO DO what does your data type look like for returning tower positions?
-    #
     def pointOnField(self, point, gyro, lastX, lastY):
         #maxX and maxY are the width and length of the field
         maxX = 8229.6 
