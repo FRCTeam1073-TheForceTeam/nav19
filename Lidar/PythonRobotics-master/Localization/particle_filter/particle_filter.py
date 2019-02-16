@@ -6,15 +6,24 @@ author: Atsushi Sakai (@Atsushi_twi)
 
 """
 # All comments denoted Cam were written by Cam, and represent his observations. They are likely not perfect
+LIDAR_DEVICE = 'COM5' #Cam - where is LiDAR, change to COM5 on most Windows Machines, "/dev/ttyUSB0" on Raspberry Pi, Mac, and Ubuntu
+import sys
+from multiprocessing import Process
 import numpy as np
 import math
 import matplotlib.pyplot as plt
-
+from rplidar import RPLidar as Lidar #Cam - import RPLidar
 # Estimation parameter of PF
 Q = np.diag([0.1])**2  # range error #Cam - how tightly packed the particles are around the "robot"
 R = np.diag([1.0, np.deg2rad(40.0)])**2  # input error #Cam - deviation allowed 
-
+lidar = Lidar(LIDAR_DEVICE)
 #  Simulation parameter
+#np.diag: creates a daigonal array like this
+#\
+# \
+#  \
+#   \
+#    \
 Qsim = np.diag([0.2])**2 #Cam - determines how closely the lines follow each other- Simulation Purposes Only
 
 Rsim = np.diag([1.0, np.deg2rad(30.0)])**2 # Cam - Changes the correlation between dead reckoning and actual posiitoning
@@ -28,31 +37,42 @@ NP = 100  # Number of Particle # Cam - exactly what they said
 NTh = NP / 2.0  # Number of particle for re-sampling # Cam - how many points seem reasonable to the program
 
 show_animation = True #Cam - determines if the animation will be shown
+lidar.start_motor()
+#lidar.connect()
 
+def scan(path):
 
+    '''Main function'''
+    for measurment in lidar.iter_measurments():
+        print(measurment[2])
+            
 def calc_input():
+    print("running calc")
+    #print(lidar.measurment[0])
     v = 1.0  # [m/s] #Cam - velocity of the simulated robot
     yawrate = 0.1  # [rad/s] #Cam- rotational rate of the robot
     u = np.array([[v, yawrate]]).T #Cam - an array storing the velocity and rotational rate
+    # Katherine - yawrate > 0.1 makes circle smaller. yawrate < 0.1 makes circle wider.
     return u #Cam - an array
     
 
 
-def observation(xTrue, xd, u, RFID):
 
+def observation(xTrue, xd, u, RFID):
+    print("running observation")
     xTrue = motion_model(xTrue, u)
 
     # add noise to gps x-y
-    z = np.zeros((0, 3))
-    print(z)
+    z = np.zeros((0, 3)) #Cam - creates an empty array 
 
     for i in range(len(RFID[:, 0])):
 
-        dx = xTrue[0, 0] - RFID[i, 0]
-        dy = xTrue[1, 0] - RFID[i, 1]
-        d = math.sqrt(dx**2 + dy**2)
+        dx = xTrue[0, 0] - RFID[i, 0] #Cam - This outputs three values. All three are the x distance from one of the rockets on the field.
+        dy = xTrue[1, 0] - RFID[i, 1] #Cam - This outputs three values. All three are the y distance from one of the rockets on the field.
+        d = math.sqrt(dx**2 + dy**2) #Cam - This outputs the total distance from the rockets on the field. Not sure how they are serialized, but they do work.
+
         if d <= MAX_RANGE:
-            dn = d + np.random.randn() * Qsim[0, 0]  # add noise
+            dn = d + np.random.randn() * Qsim[0, 0]  # add noise #Cam- Places additonal possible points on the field within a reasonable range as difined earlier
             zi = np.array([[dn, RFID[i, 0], RFID[i, 1]]])
             z = np.vstack((z, zi))
 
@@ -253,4 +273,14 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        p = Process(target=main)
+        p.start()
+        p2 = Process(target=scan, args=sys.argv[1])
+        p2.start()
+        p.join()
+        p2.join()
+    except:
+        lidar.stop()
+        lidar.stop_motor()
+        lidar.disconnect()

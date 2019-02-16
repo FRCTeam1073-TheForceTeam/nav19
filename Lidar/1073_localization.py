@@ -5,51 +5,70 @@ Particle Filter localization sample
 author: Atsushi Sakai (@Atsushi_twi)
 
 """
-#test
+# All comments denoted Cam were written by Cam, and represent his observations. They are likely not perfect
+LIDAR_DEVICE = '/dev/cu.SLAB_USBtoUART' #Cam - where is LiDAR, change to COM5 on most Windows Machines, "/dev/ttyUSB0" on Raspberry Pi, Mac, and Ubuntu
+import sys
+from multiprocessing import Process
 import numpy as np
 import math
 import matplotlib.pyplot as plt
-
+from rplidar import RPLidar as Lidar #Cam - import RPLidar
+import fieldScanner #Katherine - import the scanner methods
 # Estimation parameter of PF
-Q = np.diag([0.1])**2  # range error
-R = np.diag([1.0, np.deg2rad(40.0)])**2  # input error
-
+Q = np.diag([0.1])**2  # range error #Cam - how tightly packed the particles are around the "robot"
+R = np.diag([1.0, np.deg2rad(40.0)])**2  # input error #Cam - deviation allowed 
+lidar = Lidar(LIDAR_DEVICE)
 #  Simulation parameter
-Qsim = np.diag([0.2])**2
-Rsim = np.diag([1.0, np.deg2rad(30.0)])**2
+#np.diag: creates a daigonal array like this
+Qsim = np.diag([0.2])**2 #Cam - determines how closely the lines follow each other- Simulation Purposes Only
 
-DT = 0.1  # time tick [s]
-SIM_TIME = 50.0  # simulation time [s]
-MAX_RANGE = 700.0  # maximum observation range
+Rsim = np.diag([1.0, np.deg2rad(30.0)])**2 # Cam - Changes the correlation between dead reckoning and actual posiitoning
+
+DT = 0.1  # time tick [s] #Cam - how many times it updates over the course of the simulation, but also changes the simulation time by a predictable about (multiply DT by 9 = divide sim time by 9)
+SIM_TIME = 50.0  # simulation time [s] # Cam - how many "seconds", partially relative to DT (see comment above), in the simulation
+MAX_RANGE = 20.0  # maximum observation range # Cam - maximum domain and range of the simulation coordinate plane
 
 # Particle filter parameter
-NP = 100  # Number of Particle
-NTh = NP / 2.0  # Number of particle for re-sampling
+NP = 100  # Number of Particle # Cam - exactly what they said
+NTh = NP / 2.0  # Number of particle for re-sampling # Cam - how many points seem reasonable to the program
 
-show_animation = True
+show_animation = True #Cam - determines if the animation will be shown
+lidar.start_motor()
+#lidar.connect()
 
+def scan(path):
 
+    '''Main function'''
+    for measurment in lidar.iter_measurments():
+        print(measurment[2])
+            
 def calc_input():
-    v = 1.0  # [m/s]
-    yawrate = 0.1  # [rad/s]
-    u = np.array([[v, yawrate]]).T
-    return u
+    print("running calc")
+    #print(lidar.measurment[0])
+    v = 1.0  # [m/s] #Cam - velocity of the simulated robot
+    yawrate = 0.1  # [rad/s] #Cam- rotational rate of the robot
+    u = np.array([[v, yawrate]]).T #Cam - an array storing the velocity and rotational rate
+    # Katherine - yawrate > 0.1 makes circle smaller. yawrate < 0.1 makes circle wider.
+    return u #Cam - an array
+    
+
 
 
 def observation(xTrue, xd, u, RFID):
-
+    print("running observation")
     xTrue = motion_model(xTrue, u)
 
     # add noise to gps x-y
-    z = np.zeros((0, 3))
+    z = np.zeros((0, 3)) #Cam - creates an empty array 
 
     for i in range(len(RFID[:, 0])):
 
-        dx = xTrue[0, 0] - RFID[i, 0]
-        dy = xTrue[1, 0] - RFID[i, 1]
-        d = math.sqrt(dx**2 + dy**2)
+        dx = xTrue[0, 0] - RFID[i, 0] #Cam - This outputs three values. All three are the x distance from one of the rockets on the field.
+        dy = xTrue[1, 0] - RFID[i, 1] #Cam - This outputs three values. All three are the y distance from one of the rockets on the field.
+        d = math.sqrt(dx**2 + dy**2) #Cam - This outputs the total distance from the rockets on the field. Not sure how they are serialized, but they do work.
+
         if d <= MAX_RANGE:
-            dn = d + np.random.randn() * Qsim[0, 0]  # add noise
+            dn = d + np.random.randn() * Qsim[0, 0]  # add noise #Cam- Places additonal possible points on the field within a reasonable range as difined earlier
             zi = np.array([[dn, RFID[i, 0], RFID[i, 1]]])
             z = np.vstack((z, zi))
 
@@ -191,17 +210,16 @@ def plot_covariance_ellipse(xEst, PEst):  # pragma: no cover
     py = np.array(fx[1, :] + xEst[1, 0]).flatten()
     plt.plot(px, py, "--r")
 
-
 def main():
     print(__file__ + " start!!")
 
     time = 0.0
 
     # RFID positions [x, y]
-    RFID = np.array([[math.cos(math.radians(38.92))*530, math.sin(math.radians(38.92))*530],
-                     [math.cos(math.radians(132.43))*536, math.sin(math.radians(132.43))*536],
-                     [math.cos(math.radians(226.98))*486, math.sin(math.radians(226.98))*486],
-                     [math.cos(math.radians(317.14))*566, math.sin(math.radians(317.14))*566]])
+    RFID = np.array([[0.0, 10.67],
+                     [8.23, 10.67],
+                     [0.0, 5.79],
+                     [8.23, 5.79]])
 
     # State Vector [x y yaw v]'
     xEst = np.zeros((4, 1))
@@ -250,4 +268,15 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        p = Process(target=main)
+        p.start()
+        p2 = Process(target=scan, args=sys.argv[1])
+        p2.start()
+        p.join()
+        p2.join()
+    except:
+        lidar.stop()
+        lidar.stop_motor()
+        lidar.disconnect()
+        
