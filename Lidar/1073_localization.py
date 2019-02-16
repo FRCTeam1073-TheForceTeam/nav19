@@ -54,6 +54,7 @@ def Odometry(array):
     accelz = LidarTable.getNumber("accelz")
     array.append(accelz)
     gyro = LidarTable.getNumber("gyroRawValue", 0)
+    print("Odometry complete!")
     return array
 
 def LidarArray(array):
@@ -61,17 +62,29 @@ def LidarArray(array):
         degrees = measurement[2]
         distance = measurement[3]
         array.append[(degrees, distance)]
+        print("LidarArray complete")
         return array
 
 def scan(path):
 
     '''Main function'''
     for measurement in lidar.iter_measurments():
-        if len(lidarArray) >= 2:
-            fieldScanner.fieldScanner.getMostRecentFrame(fieldScanner)
-            fieldScanner.fieldScanner.getCurrentPosition(fieldScanner, gyro)
-            fieldScanner.fieldScanner.pointOnField(fieldScanner, lidarArray, gyro, lidarArray[-1[1]], lidarArray[-1[2]])
-            LidarArray(lidarArray)
+        try:
+            if len(lidarArray) >= 2:
+                fieldScanner.fieldScanner.getMostRecentFrame(fieldScanner)
+                fieldScanner.fieldScanner.getCurrentPosition(fieldScanner, gyro)
+                fieldScanner.fieldScanner.pointOnField(fieldScanner, lidarArray, gyro, lidarArray[-1[1]], lidarArray[-1[2]])
+                Odometry(odometryArray)
+                LidarArray(lidarArray)
+            else:
+                continue
+        except KeyboardInterrupt:
+            print('Stopping.')
+            lidar.stop_motor()
+            lidar.stop()
+            lidar.disconnect()
+
+scan(sys.argv[1])
 
 def calc_input():
     print("running calc")
@@ -298,15 +311,15 @@ def main():
             plt.pause(0.001)
 
 
-if __name__ == '__main__':
-    try:
-        p = Process(target=main)
-        p.start()
-        p2 = Process(target=scan, args=sys.argv[1])
-        p2.start()
-        p.join()
-        p2.join()
-    except:
-        lidar.stop()
-        lidar.stop_motor()
-        lidar.disconnect()
+#if __name__ == '__main__':
+    #try:
+        #p = Process(target=main)
+        #p.start()
+        #p2 = Process(target=scan, args=sys.argv[1])
+        #p2.start()
+        #p.join()
+        #p2.join()
+    #except:
+        #lidar.stop()
+        #lidar.stop_motor()
+        #lidar.disconnect()
