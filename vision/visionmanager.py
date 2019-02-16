@@ -42,18 +42,10 @@ class ImageHandler(http.server.BaseHTTPRequestHandler):
                 global cam
                 print(self.path)
                 try:
-                        ci = -1         #need to fix mapping using camId, that's for later
-                        if self.path == "/0":
-                                ci = 0
-                        elif self.path == "/1":
-                                ci = 1
-                        elif self.path == "/2":
-                                ci = 2
-                                
-                        if ci < 0 or ci >= len(cam):
-                                self.send_response(404)
-                                return
-
+                        ci = -1
+                        camnum = self.path.partition("?")[0]
+                        ci = int(camnum[1])
+                        
                         imgData = io.BytesIO()
                         cam[ci].get_image(imgData)
                         self.send_response(200)
