@@ -11,6 +11,7 @@ import serial
 import platform
 import numpy as np
 from PIL import Image
+import threading
 
 
 
@@ -57,7 +58,9 @@ class CameraManager:
         self.height = 0
         self.packetBuffer = bytearray(1000)
         self.readIndex = 0
-        
+        self.lock = threading.Lock()
+        self.cam = 0
+        self.image = None
 
     def disconnect(self):
         try:
@@ -75,6 +78,19 @@ class CameraManager:
         self.__serial.write(struct.pack("<BBI", CameraManager.__USBDBG_CMD, CameraManager.__USBDBG_FRAME_SIZE, CameraManager.__FB_HDR_SIZE))
         return struct.unpack("III", self.__serial.read(12))
 
+    def fb_update(self):
+        self.lock.acquire()
+        fb = self.fb_dump()
+        if fb != None:
+            self.image = Image.fromarray(fb[2])
+    
+        self.lock.release()
+
+    def get_image(self, buffer):
+        self.lock.acquire()
+        self.image.save(buffer, format = "JPEG")
+        self.lock.release()
+        
     def fb_dump(self):
         size = self.fb_size()
 
@@ -108,6 +124,7 @@ class CameraManager:
                 return None
 
         if (buff.size != (size[0]*size[1]*3)):
+            print("FB Size error.")
             return None
 
         return (size[0], size[1], buff.reshape((size[1], size[0], 3)))
@@ -206,17 +223,23 @@ class CameraManager:
 
     def processData(self):
         endOfPacket = bytes(b'\r\n')
+        self.lock.acquire()
         view = memoryview(self.packetBuffer);
         bytesRead = self.tx_buf_len()
+
         if bytesRead:
             view[self.readIndex:self.readIndex+bytesRead] = self.tx_buf(bytesRead)
             self.readIndex += bytesRead
             parts = self.packetBuffer[0:self.readIndex].partition(endOfPacket)
+            self.lock.release()
+
             while len(parts[1]) > 0:
                 self.parseBuffer(parts[0])
                 view[0:len(parts[2])] = parts[2]
                 self.readIndex = len(parts[2])
                 parts = self.packetBuffer[0:self.readIndex].partition(endOfPacket)
+        else:
+            self.lock.release()
 
 if __name__ == '__main__':
     if len(sys.argv)!= 3:
@@ -226,7 +249,7 @@ if __name__ == '__main__':
     with open(sys.argv[2], 'r') as fin:
         buf = fin.read()
 
-    cam = CameraManager(sys.argv[1])
+##    cam = CameraManager(sys.argv[1])
     cam.stop_script()
     cam.exec_script(buf)
     tx_len = cam.tx_buf_len()
