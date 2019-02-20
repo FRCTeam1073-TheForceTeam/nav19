@@ -3,6 +3,7 @@ from networktables import NetworkTables
 import time
 import sys
 import io
+import os
 # Allows us to send images over HTTP
 import http.server
 # Allows us to run HTTP server in a separate thread so we can poll camera
@@ -37,47 +38,73 @@ cam = []
 
 class ImageHandler(http.server.BaseHTTPRequestHandler):
         
-        
         def do_GET(self):
                 global cam
-                print(self.path)
                 try:
+                        basepath = self.path.partition('?')
+                        if basepath[0] == "/test.html":
+                                self.send_response(200)
+                                self.send_header("Content-Type", 'text/html')
+                                self.send_header('Cache Control', 'no-cache')
+                                fdata = open('./test.html', 'r')
+                                testpage = fdata.read()
+                                self.send_header('Content-Length',
+                                                 len(testpage))
+                                self.end_headers()
+                                fdata.close()
+                                self.wfile.write(bytes(testpage, 'utf-8'))
+                                return
+                                
+                                
                         ci = -1
-                        camnum = self.path.partition("?")[0]
+                        camnum = basepath[0]
                         ci = int(camnum[1])
-                        
-                        imgData = io.BytesIO()
-                        cam[ci].get_image(imgData)
-                        self.send_response(200)
+
+                        if ci >= 0 and ci < len(cam):
+                                imgData = io.BytesIO()
+                                cam[ci].get_image(imgData)
+                                self.send_response(200)
         
-                        self.send_header('Content-Type','image/jpeg')
-                        self.send_header('Content-Length', imgData.tell())
-                        self.send_header('Cache Control', 'no-cache')
-                        self.end_headers()
-                        self.wfile.write(imgData.getvalue())
+                                self.send_header('Content-Type','image/jpeg')
+                                self.send_header('Content-Length', imgData.tell())
+                                self.send_header('Cache Control', 'no-cache')
+                                self.end_headers()
+                                self.wfile.write(imgData.getvalue())
+                                
                         return
                 except:
+#                        print("Handler exception.")
                         return
                 
         # This stops it spewing output all the time.
         def log_message(self, format, *args):
                 return
+        
 
-# Process arguments and set up multiple cameras in the global cam list:
+        
+#  MAIN PROGRAM ENTRY:
+
+# Check for available camera ports:
+cam_names = []
 cam_mode = []
-cam_mode.append(sys.argv[1])
-cam_mode.append(sys.argv[1])
-cam_mode.append(sys.argv[1])
 
-# Create all our camera managers
-cam.append(CameraManager("/dev/ttyACM0"))
-cam.append(CameraManager("/dev/ttyACM1"))
-cam.append(CameraManager("/dev/ttyACM2"))
+for ii in range(0, 8):
+        name = "/dev/ttyACM%d" % ii
+        if os.path.exists(name):
+                cam_names.append(name)
+                
+print("STARTING CAMERA DEVICES:")
+print(cam_names)
 
+# Create all our camera managers and set default modes
+for name in cam_names:
+        cam.append(CameraManager(name))
+        cam_mode.append(sys.argv[1])
 
+# Parse our video port argument
 videoPort = sys.argv[2]
 
-#networkTables initialization
+# networkTables initialization for our CameraFeedback table
 serverIP = sys.argv[3]
 NetworkTables.initialize(server=serverIP)
 nt = NetworkTables.getTable("CameraFeedback")
@@ -99,8 +126,12 @@ for ci in range(0,len(cam)):
         
 while True:
         for ci in range(0,len(cam)):
-                cam[ci].processData()
-                cam_frame[ci] = cam_frame[ci] + 1
+                try:
+                        cam[ci].processData()
+                        cam_frame[ci] = cam_frame[ci] + 1
+                except:
+                        pass
+                
                 if len(cam[ci].data) > 0:
                         if cam_mode[ci] == "lines":
                                 data = []

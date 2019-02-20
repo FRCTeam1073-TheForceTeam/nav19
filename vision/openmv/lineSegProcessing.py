@@ -1,3 +1,4 @@
+
 # Find Line Segments Example
 #
 # This example shows off how to find line segments in the image. For each line object
@@ -13,22 +14,55 @@ import sensor, image, time
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565) # grayscale is faster
 sensor.set_framesize(sensor.QQVGA)
-sensor.set_brightness(-2)
+sensor.set_brightness(0)
 sensor.set_saturation(1)
 sensor.skip_frames(time = 3000)
+sensor.set_auto_whitebal(False)
 clock = time.clock()
 
 # All lines also have `x1()`, `y1()`, `x2()`, and `y2()` methods to get their end-points
 # and a `line()` method to get all the above as one 4 value tuple for `draw_line()`.
 
-img = sensor.snapshot()
-roi = (10,10,5,5)
-#hist = img.get_histogram()
-#lo = hist.get_percentile(0.05)
-#hi = hist.get_percentile(0.95)
-#thresh  = hist.get_threshold()
+def computeThreshold(img):
+    hist = img.get_histogram()
+    return [(hist.get_percentile(0.97).l_value(),100),(-1,1),(-1,1)]
 
-thresh = [(80,100),(-1,1),(-1,1)]
+def adjustBrightness(img):
+    print("adjust")
+    stats = img.get_statistics()
+    exposure = sensor.get_exposure_us()
+    gain = sensor.get_gain_db()
+
+    if stats.l_mean() < 45:
+        exposure = exposure + 200
+    elif stats.l_mean() > 75:
+        exposure = exposure - 200
+
+    if exposure > 33000:
+        gain = gain + 1
+        exposure = 20000
+    elif exposure < 8000:
+        gain = gain - 1
+        exposure = 30000
+
+    if gain < 1:
+        gain = 1
+    elif gain > 16:
+        gain = 16
+
+    sensor.set_auto_exposure(False, exposure)
+    sensor.set_auto_gain(False, gain)
+    print("lmean = %f" % stats.l_mean())
+    print("gain = %f" % gain)
+    print("exposure = %d" % exposure)
+
+
+# Initial threshold value
+img = sensor.snapshot()
+
+# Adjust auto threshold to exposure settings
+thresh = computeThreshold(img)
+counter = 0
 
 while(True):
     clock.tick()
@@ -36,7 +70,7 @@ while(True):
     if enable_lens_corr: img.lens_corr(1.8) # for 2.8mm lens...
 
     # Locate blobs to create a set of ROIs to use for line searching:
-    blobs = img.find_blobs(thresh, pixels_threshold=60, area_threshold=50,
+    blobs = img.find_blobs(thresh, pixels_threshold=50, area_threshold=85,
                            merge=False, margin=10)
 
 
@@ -49,13 +83,25 @@ while(True):
     # any two lines about to be merged. The default setting allows for 15 degrees.
     linesegs = []
     for b in blobs:
-        img.draw_rectangle(b.rect())
-        roi = (b.x(), b.y(), b.w()+4, b.h()+4)
-        if b.area() < 1500:
-            linesegs += img.find_line_segments(roi=roi, merge_distance = 0, max_theta_diff = 5)
+#        img.draw_rectangle(b.rect(), color=(0,80,0))
+        if b.area() < 1700:
+           #img.draw_rectangle(b.rect(), color=(90,0,0))
+           roi = (b.x()-4, b.y()-4, b.w()+8, b.h()+8)
+           segs = img.find_line_segments(roi=roi, merge_distance = 1, max_theta_diff = 5)
+           for seg in segs:
+               linesegs.append(seg)
 
     for l in linesegs:
         img.draw_line(l.line(), color = (255, 0, 0))
         # print(l)
 
-    print("FPS %f" % clock.fps())
+
+    if counter < 10:
+        counter = counter + 1
+    else:
+        thresh = computeThreshold(img)
+        print(thresh)
+        #adjustBrightness(img)
+        counter = 0
+
+
