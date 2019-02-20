@@ -9,6 +9,7 @@ author: Atsushi Sakai (@Atsushi_twi)
 LIDAR_DEVICE = '/dev/cu.SLAB_USBtoUART' #Cam - where is LiDAR, change to COM5 on most Windows Machines, "/dev/ttyUSB0" on Raspberry Pi, Mac, and Ubuntu
 import sys
 import time
+import threading
 import networktables
 from networktables import NetworkTables
 from multiprocessing import Process
@@ -17,12 +18,11 @@ import math
 import matplotlib.pyplot as plt
 from rplidar import RPLidar as Lidar #Cam - import RPLidar
 import fieldScanner #Katherine - import the scanner methods
-Table = networktables.NetworkTablesInstance()
-LidarTable = Table.getTable("1073Table")
 
 # Estimation parameter of PF
 odometryArray = []
 lidarArray = []
+data = []
 Q = np.diag([0.1])**2  # range error #Cam - how tightly packed the particles are around the "robot"
 R = np.diag([1.0, np.deg2rad(40.0)])**2  # input error #Cam - deviation allowed 
 lidar = Lidar(LIDAR_DEVICE)
@@ -43,22 +43,18 @@ NP = 100  # Number of Particle # Cam - exactly what they said
 NTh = NP / 2.0  # Number of particle for re-sampling # Cam - how many points seem reasonable to the program
 
 show_animation = True #Cam - determines if the animation will be shown
-lidar.start_motor()
-#lidar.connect()
 
-def Odometry(array):
-    accelx= LidarTable.getNumber("accelx", 0)
-    array.append(accelx)
-    accely = LidarTable.getNumber("accely", 0)
-    array.append(accely)
-    accelz = LidarTable.getNumber("accelz")
-    array.append(accelz)
-    gyro = LidarTable.getNumber("gyroRawValue", 0)
+
+def Odometry(table):
+    accelx= table.getNumber("accelx", 0)
+    accely = table.getNumber("accely", 0)
+    accelz = table.getNumber("accelz")
+    gyro = table.getNumber("gyroRawValue", 0)
     print("Odometry complete!")
-    return array
+    return accelx, accely, accelz, gyro
 
 def LidarArray(array):
-    for measurement in lidar.iter_measurments():
+    for measurement in Lidar(LIDAR_DEVICE).iter_measurments():
         degrees = measurement[2]
         distance = measurement[3]
         array.append[(degrees, distance)]
@@ -66,26 +62,31 @@ def LidarArray(array):
         return array
 
 def scan(path):
-
+    print("entered loop")
     '''Main function'''
-    for measurement in lidar.iter_measurments():
-        try:
-            if len(lidarArray) >= 2:
-                Odometry(odometryArray)
-                LidarArray(lidarArray)        
-                fieldScanner.fieldScanner.getMostRecentFrame(fieldScanner)
-                fieldScanner.fieldScanner.getCurrentPosition(fieldScanner, gyro)
-                fieldScanner.fieldScanner.pointOnField(fieldScanner, lidarArray, gyro, lidarArray[-1[1]], lidarArray[-1[2]])
 
-            else:
-                continue
-        except KeyboardInterrupt:
-            print('Stopping.')
-            lidar.stop_motor()
-            lidar.stop()
-            lidar.disconnect()
+    Table = networktables.NetworkTablesInstance()
+    LidarTable = Table.getTable("1073Table")
+    scanner = fieldScanner.fieldScanner(lidar)
+    time.sleep(2)
 
-scan(sys.argv[0])
+    try: 
+        for measurement in lidar.iter_scans():
+            print("loop")
+            scanner.getMostRecentFrame()
+            Odometry(LidarTable)
+            LidarArray(lidarArray)  
+
+            fieldScanner.fieldScanner.getCurrentPosition(fieldScanner, gyro)
+            fieldScanner.fieldScanner.pointOnField(fieldScanner, lidarArray, gyro, lidarArray[-1], lidarArray[-1])
+
+
+    except KeyboardInterrupt:
+        print('Stopping.')
+        lidar.stop_motor()
+        lidar.stop()
+        lidar.disconnect()
+
 
 def calc_input():
     print("running calc")
@@ -134,7 +135,7 @@ def motion_model(x, u):
                   [0, 0, 1.0, 0],
                   [0, 0, 0, 0]])
 
-    B = np.array([[DT * math.cos(x[2, 0]), 0],
+    B = np.array([, 0], #[DT * math.cos(x[2, 0])
                   [DT * math.sin(x[2, 0]), 0],
                   [0.0, DT],
                   [1.0, 0.0]])
@@ -258,6 +259,9 @@ def plot_covariance_ellipse(xEst, PEst):  # pragma: no cover
 def main():
     print(__file__ + " start!!")
 
+    
+
+
     time = 0.0
 
     # RFID positions [x, y]
@@ -311,16 +315,15 @@ def main():
             plt.grid(True)
             plt.pause(0.001)
 
-
-#if __name__ == '__main__':
-    #try:
-        #p = Process(target=main)
-        #p.start()
-        #p2 = Process(target=scan, args=sys.argv[1])
-        #p2.start()
-        #p.join()
-        #p2.join()
-    #except:
-        #lidar.stop()
-        #lidar.stop_motor()
-        #lidar.disconnect()
+if __name__ == '__main__':
+    try:
+        p = threading.Thread(target = main, name = 'mainThread', args = )
+        p.start()
+        p2 = threading.Thread(target=scan, name = 'scanThread', args=sys.argv[1])
+        p2.start()
+        p.join()
+        p2.join()
+    except:
+        lidar.stop()
+        lidar.stop_motor()
+        lidar.disconnect()

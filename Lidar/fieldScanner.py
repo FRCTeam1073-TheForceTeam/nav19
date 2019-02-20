@@ -1,6 +1,7 @@
 from rplidar import RPLidar
 import time
 import math
+import numpy as np
 
 class fieldScanner:
     """A frame manager for lidar. This class is responsible for reading lidar data 
@@ -24,16 +25,16 @@ class fieldScanner:
         """The purpose of this method is to return the latest lidar field scan"""
         
         #  flush any stale data to ensure that we are getting the latest scan
-        self.mLidar.clear_input() 
+       # self.mLidar.clear_input() 
 
         # return the first scan from RPLidar that meets minimum length. 
         # RPLidar.iter_scan provides basic frame manageemnt for us
-        for i,recentFrame in enumerate(self.mLidar.iter_scans()):
-            if i >= 2:
-                print(recentFrame)
-                return recentFrame
+        #for i,recentFrame in enumerate(self.mLidar.iter_scans()):
+            #if i >= 2:
+                #print(recentFrame)
+                #return recentFrame
         
-        return     
+        return 0   
     def extractFeatures(self, latestFieldScan, gyro, lastX, lastY):
         """The purpose of this method is to return the latest lidar field scan"""
 
@@ -112,4 +113,9 @@ class fieldScanner:
         #        gyro data and produce a field coordinate location
 
         return {'x': 0,'y':0}
+    #def readLidar(self, lidar, ):
+         #for scan in lidar.iter_scans():
+            #print(len(scan))
+            #data.append(np.array(scan))
+
 
