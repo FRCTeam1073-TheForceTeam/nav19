@@ -1,7 +1,7 @@
 import time
 import math
 import numpy
-from RPLidar import rplidar
+from rplidar import RPLidar
 from networktables import NetworkTables
 
 NetworkTables.initialize('10.10.73.2')
