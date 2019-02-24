@@ -1,4 +1,3 @@
-from rplidar import RPLidar
 import time
 import math
 
@@ -11,44 +10,16 @@ class fieldScanner:
     def __init__(self, lidarDevice):
             self.mLidar = lidarDevice
 
-    def getCurrentPosition(self,gyro):
-        """Returns current position of the robot based on evaluation of a lidar field scan"""
-       
-        fieldScan = self.getMostRecentFrame()
-
-       #place = self.extractFeatures(fieldScan, 0, 8229.6/2, 7925)
-
-        #return self.calculatePosition(place, gyro)
-
-    def getMostRecentFrame(self):
-        """The purpose of this method is to return the latest lidar field scan"""
-        
-        #  flush any stale data to ensure that we are getting the latest scan
-        self.mLidar.clear_input() 
-
-        # return the first scan from RPLidar that meets minimum length. 
-        # RPLidar.iter_scan provides basic frame manageemnt for us
-        for i,recentFrame in enumerate(self.mLidar.iter_scans()):
-            if i >= 2:
-                print(recentFrame)
-                return recentFrame
-        
-        return     
-    def extractFeatures(self, latestFieldScan, gyro, lastX, lastY):
+    def extractFeatures(self, lidarScan, odometry, lastPostiong):
         """The purpose of this method is to return the latest lidar field scan"""
 
         print ("extractFeatures: empty implementation. Scan len : " + str(len(latestFieldScan)))
-        for point in latestFieldScan:
-        
-            fieldPoints = self.pointOnField(point, gyro, lastX, lastY)
-            if fieldPoints == True:
-                print(point)
 
         #TO DO : Write logic to analyze the field scan, identify the towers within
         #        the scan, and return tower locations to caller
 
 
-        return #TO DO what does your data type look like for returning tower positions?
+        return lidarScan #TO DO what does your data type look like for returning tower positions?]
     def pointOnField(self, point, gyro, lastX, lastY):
         #maxX and maxY are the width and length of the field
         maxX = 8229.6 
