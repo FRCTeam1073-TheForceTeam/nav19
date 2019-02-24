@@ -5,11 +5,11 @@ class fieldScanner:
     """A frame manager for lidar. This class is responsible for reading lidar data 
     and maintainning a data frame the represents the latest 360 degree view of the field"""
 
-    mLidar = None
+   # mLidar = None
    
-    def __init__(self, lidarDevice):
-            self.mLidar = lidarDevice
-
+    def __init__(self):
+           # self.mLidar = lidarDevice
+            return
     def extractFeatures(self, lidarScan, odometry, lastPostiong):
         """The purpose of this method is to return the latest lidar field scan"""
 

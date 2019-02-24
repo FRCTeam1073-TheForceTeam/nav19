@@ -17,6 +17,8 @@ from rplidar import RPLidar as Lidar #Cam - import RPLidar
 import fieldScanner #Katherine - import the scanner methods
 Table = networktables.NetworkTablesInstance()
 LidarTable = Table.getTable("1073Table")
+lidarArray = []
+
 
 def Odometry(array):
     accelx= LidarTable.getNumber("accelx", 0)
@@ -28,41 +30,42 @@ def Odometry(array):
     gyro = LidarTable.getNumber("gyroRawValue", 0)
     print("Odometry complete!")
     return array
-
-def LidarArray(array):
-    for measurement in lidar.iter_measurments():
-        degrees = measurement[2]
-        distance = measurement[3]
-        array.append[(degrees, distance)]
-        print("LidarArray complete")
-        return array
-
-#def scan(path):
-#
-#    '''Main function'''
-#    for measurement in lidar.iter_measurments():
-#        try:
-#            if len(lidarArray) >= 2:
-#                Odometry(odometryArray)
-#                LidarArray(lidarArray)        
-#                fieldScanner.fieldScanner.getMostRecentFrame(fieldScanner)
-#                fieldScanner.fieldScanner.getCurrentPosition(fieldScanner, gyro)
-#                fieldScanner.fieldScanner.pointOnField(fieldScanner, lidarArray, gyro, lidarArray[-1[1]], lidarArray[-1[2]])
-#
-#            else:
-#                continue
-#        except KeyboardInterrupt:
-#            print('Stopping.')
-#            lidar.stop_motor()
-#            lidar.stop()
-#            lidar.disconnect()
+#def LidarArray(array):
+    
     
 def main(path):
-    print(__file__ + " start!!")
+        print(__file__ + " start!!")
 
+        lidar = Lidar(LIDAR_DEVICE)
+        data = []
+        try:
+            print('Recording measurments... Press Crl+C to stop.')
+            for scan in lidar.iter_scans():
+                data.append(np.array(scan))
+
+        except KeyboardInterrupt:
+            print('Stoping.')
+
+        lidar.stop()
+        lidar.disconnect()
+        np.save(path, np.array(data))
+
+        #lidar.start_motor()
+        #for scans in lidar.iter_scans():
+
+            # array.append[(degrees, distance)]
+
+            #TO DO - call feature extract
+
+            #TO DO - call localizer
+
+            #TO DO - publish to network table
+
+            #print("scan number: " + len(scans))
     
-    return
+       # return
 
 if __name__ == '__main__':
     main(sys.argv[0])
+
    
