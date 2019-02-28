@@ -15,7 +15,7 @@ from PIL import Image
 
 def give_script(mode):
         if mode == "lines":
-                return "./openmv/lines.py"
+                return "./openmv/lineSegProcessing.py"
         elif mode == "blobs":
                 return "./openmv/blobs.py"
         elif mode == "video":
@@ -135,7 +135,8 @@ while True:
                 if len(cam[ci].data) > 0:
                         if cam_mode[ci] == "lines":
                                 data = []
-                                for line in cam.data:
+                                for line in cam[ci].data:
+                                        print(line)
                                         data.append(line["x1"])
                                         data.append(line["y1"])
                                         data.append(line["x2"])
