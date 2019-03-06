@@ -2,6 +2,7 @@ import time
 import math
 
 class fieldScanner:
+    possibleTower = []
     """A frame manager for lidar. This class is responsible for reading lidar data 
     and maintainning a data frame the represents the latest 360 degree view of the field"""
 
@@ -10,20 +11,11 @@ class fieldScanner:
     def __init__(self):
            # self.mLidar = lidarDevice
             return
-    def extractFeatures(self, lidarScan, odometry, lastPostiong):
-        """The purpose of this method is to return the latest lidar field scan"""
-
-        print ("extractFeatures: empty implementation. Scan len : " + str(len(latestFieldScan)))
-
-        #TO DO : Write logic to analyze the field scan, identify the towers within
-        #        the scan, and return tower locations to caller
-
-
-        return lidarScan #TO DO what does your data type look like for returning tower positions?]
-    def pointOnField(self, point, gyro, lastX, lastY):
+   
+    def pointOnField(self, point, gyro, lastX, lastY): 
         #maxX and maxY are the width and length of the field
-        maxX = 8229.6 
-        maxY = 16459.2
+        maxX = 324
+        maxY = 648
         # Xrange and Yrange are the acceptable distance from objects 
         # horizontally and vertically along the field to determin whether or not
         # they are inside the field
@@ -70,6 +62,49 @@ class fieldScanner:
         print("DEBUG:Ignoring object at" + str(inputDegrees) + " " + str(point[2]))      
         return False
 
+    def extractFeatures(self, lidarScan, odometry, X, Y):
+
+        """The purpose of this method is to return the latest lidar field scan"""
+        #print ("extractFeatures: empty implementation. Scan len : " + str(len(latestFieldScan)))
+
+        #TO DO : Write logic to analyze the field scan, identify the towers within
+        #        the scan, and return tower locations to caller
+        while len(possibleTower) < 4:
+            for scans in len(lidarScan):
+                currentReferancePoint = lidarScan[scans-1]
+                for i in len(lidarScan):
+                    if scans != 1:
+                        currentComparisonPoint = lidarScan[i-1]
+                    else:
+                        currentComparisonPoint = lidarScan[i]
+
+                    distance1 = currentReferancePoint[3]
+                    distance2 = currentComparisonPoint[3]
+                    degrees1 = currentReferancePoint[2]
+                    degrees2 = currentComparisonPoint[2]
+                    usefulDegrees = degrees2 - degrees1
+
+                    if distance1 <= distance2:
+                        altitude = math.sin(usefulDegrees)*distance1
+                        adjacent = math.cos(usefulDegrees)*distance1
+                        short = distance1 - adjacent
+
+                    else if distance1 > distance2:
+                        altitude = math.sin(usefulDegrees)*distance2
+                        adjacent = math.cos(usefulDegrees)*distance2
+                        short = distance2 - adjacent  
+                    else:
+                        print("error")
+
+                    smallDegrees = math.arctan(short/altitude)
+                    distanceBetween = altitude/math.cos(smallDegrees)
+
+                    if distaceBetween = 192 or distanceBetween = 324:
+                        possibleTower.append(currentReferancePoint, currentComparisonPoint)
+                
+            return possibleTower
+        #TO DO what does your data type look like for returning tower positions?]
+           
     def calcHypotenuse(self, theta, adjacent):
         range = adjacent / math.cos(math.radians(theta))
         return range

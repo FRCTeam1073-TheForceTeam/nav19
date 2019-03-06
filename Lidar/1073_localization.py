@@ -35,7 +35,7 @@ def main(path):
 
         lidar = Lidar(LIDAR_DEVICE)
         time.sleep(3)
-        data = []
+
         try:
           
             print('Recording measurments... Press Crl+C to stop.')
@@ -45,10 +45,10 @@ def main(path):
                 #TO DO - call localizer
 
                 #TO DO - publish to network table
-
-                data.append(np.array(scan))
-                print(scan)
-        except KeyboardInterrupt:
+                
+                print(scan[0][0])
+                #data from each scan is in tuples: 0 = quality 1 = degrees 2 = distance
+        except:
             print('Stoping.')
 
         lidar.stop()
