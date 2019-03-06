@@ -28,8 +28,12 @@ def Odometry(array):
     print("Odometry complete!")
     return array
 #def LidarArray(array):
-    
-    
+def positionFinder(lidarArray):
+    for point in lidarArray:
+        degrees = point[2]
+        distance = point[3]
+        floorDegrees = math.floor(degrees)
+        
 def main(path):
         print(__file__ + " start!!")
 
