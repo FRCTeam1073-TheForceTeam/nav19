@@ -1,11 +1,11 @@
 import fieldScanner #Katherine - import the scanner methods
-import lidartestdata
+import unittest
 
 ########## Test ###########
 
 # quality, scan, degrees, distance
 
-# Test case 1 : 4 towers in front (robot at 100:114)
+# Test case 1 : 4 towers in front (robot @ 100:114)
 tc1_data = [(False,15,310.31,17.00), # noise
             (False,15,318.31,171.41), # tower A
             (False,15,322.31,5.00), # noise
@@ -18,20 +18,18 @@ tc1_data = [(False,15,310.31,17.00), # noise
             (False,15,65.31,600.00)]
 
 
-# Test case 2 : 4 towers in back
+# Test case 2 : 4 towers in back (robot @ 110:752)
 
 # Test case 3 : 2 towers in front, 2 in back
 
 # Test case 4 : more than 4 candidates
 
-def main(path):
-        print(__file__ + " start!!")
+class TestExtractFeatures(unittest.TestCase):
 
+    def test_all_towers_in_front(self):
         scanner = fieldScanner()
-
         scanner.extractFeatures(tc1_data, 0, 0, 0)
-
         return
 
 if __name__ == '__main__':
-    main(sys.argv[0])
+    unittest.main()
