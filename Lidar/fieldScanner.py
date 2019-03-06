@@ -104,7 +104,9 @@ class fieldScanner:
                 
             return possibleTower
         #TO DO what does your data type look like for returning tower positions?]
-           
+    def towerIdentification(gyro, towerArray):
+        
+
     def calcHypotenuse(self, theta, adjacent):
         range = adjacent / math.cos(math.radians(theta))
         return range
