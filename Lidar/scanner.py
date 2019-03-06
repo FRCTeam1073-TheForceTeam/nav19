@@ -1,7 +1,7 @@
 import time
 import math
 import numpy
-from RPLidar import rplidar
+from rplidar import RPLidar
 from networktables import NetworkTables
 
 NetworkTables.initialize('10.10.73.2')
@@ -17,7 +17,7 @@ class scan:
 
     #mLidar = RPLidar('COM3')
     mLidar = none
-    min_frame_len = 120 # based on onbservation, a scan returns between 125 and 135 points
+    min_frame_len = 120 # based on on observation, a scan returns between 125 and 135 points
     max_loop = 5 # arbitrary value
    
     def __init__(self, lidarDevice):
