@@ -7,14 +7,14 @@ import unittest
 
 # Test case 1 : 4 towers in front (robot @ 100:114)
 tc1_data = [(False,15,310.31,17.00), # noise
-            (False,15,318.31,171.41), # tower A
+            (False,15,333.9,225.0), # tower A
             (False,15,322.31,5.00), # noise
-            (False,15,345.84,446.15), # tower B
+            (False,15,345.75,406.5), # tower B
             (False,15,350.31,700.00), # noise
             (False,15,15.31,600.00), # noise
-            (False,15,24.92,498.40), # tower C
+            (False,15,29.62,453.22), # tower C
             (False,15,35.31,600.00), # noise
-            (False,15,58.64,245.93), # tower D
+            (False,15,47.96,301.63), # tower D
             (False,15,65.31,600.00)]
 
 
