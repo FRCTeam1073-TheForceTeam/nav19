@@ -30,7 +30,20 @@ class TestExtractFeatures(unittest.TestCase):
     def test_all_towers_in_front(self):
         scanner = fieldScanner.fieldScanner()
         towerArray = scanner.extractFeatures(tc1_data, 0, 0, 0)
-        self.assertEquals(len(towerArray),4)
+        self.assertEqual(len(towerArray),4)
+
+        self.assertEqual(towerArray[0][2],333.9)
+        self.assertEqual(towerArray[0][3],225.0)
+
+        self.assertEqual(towerArray[1][2],345.75)
+        self.assertEqual(towerArray[1][3],406.5)
+
+        self.assertEqual(towerArray[2][2],29.62)
+        self.assertEqual(towerArray[2][3],453.22)
+
+        self.assertEqual(towerArray[3][2],47.96)
+        self.assertEqual(towerArray[3][3],301.63)
+
         return
 
 if __name__ == '__main__':
