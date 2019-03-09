@@ -7,6 +7,7 @@ author:
 LIDAR_DEVICE = 'COM3' #'/dev/cu.SLAB_USBtoUART' #Cam - where is LiDAR, change to COM5 on most Windows Machines, "/dev/ttyUSB0" on Raspberry Pi, Mac, and Ubuntu
 import sys
 import time
+import test
 #import networktables
 #from networktables import NetworkTables
 import numpy as np
@@ -33,7 +34,7 @@ def positionFinder(lidarArray):
         degrees = point[2]
         distance = point[3]
         floorDegrees = math.floor(degrees)
-        
+
 def main(path):
         print(__file__ + " start!!")
 
