@@ -1,5 +1,5 @@
 import fieldScanner #Katherine - import the scanner methods
-import lidartestdata
+import sys
 
 ########## Test ###########
 
@@ -27,7 +27,7 @@ tc1_data = [(False,15,310.31,17.00), # noise
 def main(path):
         print(__file__ + " start!!")
 
-        scanner = fieldScanner()
+        scanner = fieldScanner.fieldScanner()
 
         scanner.extractFeatures(tc1_data, 0, 0, 0)
 

@@ -88,8 +88,7 @@ class fieldScanner:
                         altitude = math.sin(usefulDegrees)*distance1
                         adjacent = math.cos(usefulDegrees)*distance1
                         short = distance1 - adjacent
-
-                    else if distance1 > distance2:
+                    elif distance1 > distance2:
                         altitude = math.sin(usefulDegrees)*distance2
                         adjacent = math.cos(usefulDegrees)*distance2
                         short = distance2 - adjacent  
@@ -99,12 +98,12 @@ class fieldScanner:
                     smallDegrees = math.arctan(short/altitude)
                     distanceBetween = altitude/math.cos(smallDegrees)
 
-                    if distaceBetween = 192 or distanceBetween = 324:
+                    if distaceBetween == 192 or distanceBetween == 324:
                         possibleTower.append(currentReferancePoint, currentComparisonPoint)
                 
             return possibleTower
         #TO DO what does your data type look like for returning tower positions?]
-    def towerIdentification(gyro, towerArray):
+    #def towerIdentification(gyro, towerArray):
         
 
     def calcHypotenuse(self, theta, adjacent):
