@@ -1,9 +1,6 @@
 import fieldScanner #Katherine - import the scanner methods
-<<<<<<< HEAD
 import sys
-=======
 import unittest
->>>>>>> ea292a1b6abd2d74af43e2905c668e22dbe722bf
 
 ########## Test ###########
 
@@ -30,14 +27,10 @@ tc1_data = [(False,15,310.31,17.00), # noise
 
 class TestExtractFeatures(unittest.TestCase):
 
-<<<<<<< HEAD
-        scanner = fieldScanner.fieldScanner()
-
-=======
     def test_all_towers_in_front(self):
-        scanner = fieldScanner()
->>>>>>> ea292a1b6abd2d74af43e2905c668e22dbe722bf
-        scanner.extractFeatures(tc1_data, 0, 0, 0)
+        scanner = fieldScanner.fieldScanner()
+        towerArray = scanner.extractFeatures(tc1_data, 0, 0, 0)
+        self.assertEquals(len(towerArray),4)
         return
 
 if __name__ == '__main__':

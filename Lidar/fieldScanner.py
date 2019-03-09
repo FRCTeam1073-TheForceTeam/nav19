@@ -1,6 +1,7 @@
 import time
 import math
 
+
 class fieldScanner:
     possibleTower = []
     """A frame manager for lidar. This class is responsible for reading lidar data 
@@ -69,43 +70,73 @@ class fieldScanner:
 
         #TO DO : Write logic to analyze the field scan, identify the towers within
         #        the scan, and return tower locations to caller
-        while len(possibleTower) < 4:
-            for scans in len(lidarScan):
-                currentReferancePoint = lidarScan[scans-1]
-                for i in len(lidarScan):
-                    if scans != 1:
-                        currentComparisonPoint = lidarScan[i-1]
-                    else:
-                        currentComparisonPoint = lidarScan[i]
-
-                    distance1 = currentReferancePoint[3]
-                    distance2 = currentComparisonPoint[3]
-                    degrees1 = currentReferancePoint[2]
-                    degrees2 = currentComparisonPoint[2]
-                    usefulDegrees = degrees2 - degrees1
-
-                    if distance1 <= distance2:
-                        altitude = math.sin(usefulDegrees)*distance1
-                        adjacent = math.cos(usefulDegrees)*distance1
-                        short = distance1 - adjacent
-                    elif distance1 > distance2:
-                        altitude = math.sin(usefulDegrees)*distance2
-                        adjacent = math.cos(usefulDegrees)*distance2
-                        short = distance2 - adjacent  
-                    else:
-                        print("error")
-
-                    smallDegrees = math.arctan(short/altitude)
-                    distanceBetween = altitude/math.cos(smallDegrees)
-
-                    if distaceBetween == 192 or distanceBetween == 324:
-                        possibleTower.append(currentReferancePoint, currentComparisonPoint)
-                
-            return possibleTower
-        #TO DO what does your data type look like for returning tower positions?]
-    #def towerIdentification(gyro, towerArray):
+        for j in range(len(lidarScan)):
+            currentReferancePoint = lidarScan[j]
+            for i in range(len(lidarScan)):
+                if i == j:
+                    continue
+                currentComparisonPoint = lidarScan[i]   
         
+                distance1 = currentReferancePoint[3]
+                distance2 = currentComparisonPoint[3]
+                print(distance1)
+                print(distance2)
+                degrees1 = currentReferancePoint[2]
+                degrees2 = currentComparisonPoint[2]
+                theta = math.radians(abs(degrees2 - degrees1))
 
+                if distance1 <= distance2:
+                    altitude = math.sin(theta)*distance1
+                    adjacent = math.cos(theta)*distance1
+                    segment = distance2 - adjacent
+                        
+                else:
+                    altitude = math.sin(theta)*distance2
+                    adjacent = math.cos(theta)*distance2
+                    segment = distance1 - adjacent  
+                print(altitude)
+                #smallRadians = math.atan(altitde/segment)
+                #distanceBetween = segment/math.cos(smallRadians)
+                distanceBetween = math.sqrt((segment*segment) + (altitude*altitude))
+                
+                if distanceBetween == 192 or distanceBetween == 324:
+                    self.possibleTower.append(currentReferancePoint, currentComparisonPoint)
+        return self.possibleTower
+        #TO DO what does your data type look like for returning tower positions?]
+    def towerIdentification(self, gyro, towerArray):
+
+        for point in towerArray:
+            if gyro < 180:
+                acurateGyro = gyro + 180
+            elif gyro >= 180:
+                accurateGyro = gyro - 180
+            else:
+                print("error")
+                accurateGyro = gyro
+            degrees = point[2]
+            distance = point[3]
+
+            if degrees >= 0 and degrees < 90:
+                realDegrees = 90 - degrees
+                x = math.cos(realDegrees)*distance
+                y = math.sin(realDegrees)*distance
+            elif degrees >= 90 and degrees < 180:
+                realDegrees = degrees - 90
+                x = math.cos(realDegrees)*distance
+                y = -1*(math.sin(realDegrees)*distance)
+            elif degrees >= 180 and degrees < 270:
+                realDegrees = 270 - degrees
+                x = -1*(math.cos(realDegrees)*distance)
+                y = -1*(math.sin(realDegrees)*distance)
+            elif degrees >= 270 and degrees <= 360:
+                realDegrees = degrees - 270
+                x = -1*(math.cos(realDegrees)*distance)
+                y = math.sin(realDegrees)*distance
+            else:
+                print("error")
+                realDegrees = degrees
+            point.append((x,y)) 
+            
     def calcHypotenuse(self, theta, adjacent):
         range = adjacent / math.cos(math.radians(theta))
         return range
