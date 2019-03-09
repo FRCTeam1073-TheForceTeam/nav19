@@ -4,6 +4,7 @@ import math
 
 class fieldScanner:
     possibleTower = []
+    IdentificationArray = []
     """A frame manager for lidar. This class is responsible for reading lidar data 
     and maintainning a data frame the represents the latest 360 degree view of the field"""
 
@@ -103,39 +104,86 @@ class fieldScanner:
                     self.possibleTower.append(currentReferancePoint, currentComparisonPoint)
         return self.possibleTower
         #TO DO what does your data type look like for returning tower positions?]
-    def towerIdentification(self, gyro, towerArray):
+    def towerIdentification(self, gyro, towerArray, possibleTower):
 
         for point in towerArray:
+            if gyro > 360:
+                Divisable = floor(gyro/360)
+                gyro = gyro - (360 * Divisable)
+
+                
             if gyro < 180:
                 acurateGyro = gyro + 180
-            elif gyro >= 180:
+            else
                 accurateGyro = gyro - 180
-            else:
-                print("error")
-                accurateGyro = gyro
             degrees = point[2]
             distance = point[3]
 
             if degrees >= 0 and degrees < 90:
                 realDegrees = 90 - degrees
+                possibleTower.append(realDegrees)
                 x = math.cos(realDegrees)*distance
                 y = math.sin(realDegrees)*distance
             elif degrees >= 90 and degrees < 180:
                 realDegrees = degrees - 90
+                possibleTower.append(realDegrees)
                 x = math.cos(realDegrees)*distance
                 y = -1*(math.sin(realDegrees)*distance)
             elif degrees >= 180 and degrees < 270:
                 realDegrees = 270 - degrees
+                possibleTower.append(realDegrees)
                 x = -1*(math.cos(realDegrees)*distance)
                 y = -1*(math.sin(realDegrees)*distance)
             elif degrees >= 270 and degrees <= 360:
                 realDegrees = degrees - 270
+                possibleTower.append(realDegrees)
                 x = -1*(math.cos(realDegrees)*distance)
                 y = math.sin(realDegrees)*distance
             else:
                 print("error")
-                realDegrees = degrees
-            point.append((x,y)) 
+                continue
+            
+            newX = x(degrees(math.cos(gyro)) - y(degree(math.sin(gyro)))
+            newY = y(degrees(math.sin(gyro)) + x(degrees(math.sin(gyro)))
+            IdentificationArray.append[(newX, newY)]
+        for i in range(len(IdentificationArray)):
+            point = IdentificationArray[i]
+            if point[0] == 0 and point[1] == 228:
+                possibleTower.append[1]
+            if point[0] == 0 and point[1] == 552:
+                possibleTower.append[2]
+            if point[0] == 324 and point[1] == 552:
+                possibleTower.append[3]
+            if point[0] == 324 and point[1] == 228:
+                possibleTower.append[4]
+
+    def robotPosition(self, array):
+        for i in array:
+            realDegrees = i[-2]
+            distance = i[3]
+            degrees = i[2]
+            if i[-1] == 1:
+                towerPosition = (0, 228)
+            elif i[-1] == 2:
+                towerPosition = (0, 552)
+            elif i[-1] == 3:
+                towerPosition = (324, 228)
+            elif i[-1] == 4:
+                towerPosition = (324, 552)
+            else:
+                print("Bad Data")
+                continue
+
+            if degrees >= 0 and degrees < 90:
+                quadrant = 1
+            elif degrees >= 90 and degrees < 180:
+                quadrant = 2
+            elif degrees >= 180 and degrees < 270:
+                quadrant = 3
+            else:
+                quadrant = 4
+
+            #there are 16 possible combinations for the tower's position
             
     def calcHypotenuse(self, theta, adjacent):
         range = adjacent / math.cos(math.radians(theta))
