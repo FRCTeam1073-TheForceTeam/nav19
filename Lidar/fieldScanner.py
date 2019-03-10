@@ -185,19 +185,15 @@ class fieldScanner:
                 adjacent = degrees(math.cos(realRadians)*distance)
                 opposite = degrees(math.sin(realRadians)*distance)
 
-<<<<<<< HEAD
                 finalX = adjacent
                 finalY = 228 + opposite
             
             finalArray.append[finalX, finalY]
             
 
+            #831fb426526aebd93b1ce482ea1901d963d69ba2
+
             #there are 16 possible combinations for the tower's position
-        for j in array:
-            if j[-2] = ()
-=======
-            #there are 16 possible combinations for the tower's position
->>>>>>> 831fb426526aebd93b1ce482ea1901d963d69ba2
 
     def calcHypotenuse(self, theta, adjacent):
         range = adjacent / math.cos(math.radians(theta))
