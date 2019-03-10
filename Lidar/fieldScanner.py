@@ -103,7 +103,7 @@ class fieldScanner:
 
         return self.possibleTower
         #TO DO what does your data type look like for returning tower positions?]
-    def towerIdentification(self, gyro, towerArray, possibleTower):
+    def towerIdentification(self, gyro, towerArray, possibleTower, finalArray):
 
         for point in towerArray:
             if gyro > 360:
@@ -121,24 +121,28 @@ class fieldScanner:
 
             if degrees >= 0 and degrees < 90:
                 realDegrees = 90 - degrees
-                possibleTower.append(realDegrees)
-                x = math.cos(realDegrees)*distance
-                y = math.sin(realDegrees)*distance
+                towerArray.append(realDegrees)
+                realRadians = radians(realDegrees)
+                x = degrees(math.cos(realRadians))*distance
+                y = degrees(math.sin(realRadians))*distance
             elif degrees >= 90 and degrees < 180:
                 realDegrees = degrees - 90
-                possibleTower.append(realDegrees)
-                x = math.cos(realDegrees)*distance
-                y = -1*(math.sin(realDegrees)*distance)
+                towerArray.append(realDegrees)
+                realRadians = radians(realDegrees)
+                x = degrees(math.cos(realRadians)*distance)
+                y = degrees(-1*(math.sin(realDegrees)*distance))
             elif degrees >= 180 and degrees < 270:
                 realDegrees = 270 - degrees
-                possibleTower.append(realDegrees)
-                x = -1*(math.cos(realDegrees)*distance)
-                y = -1*(math.sin(realDegrees)*distance)
+                towerArray.append(realDegrees)
+                realRadians = radians(realDegrees)
+                x = degrees(-1*(math.cos(realRadians)*distance))
+                y = degrees(-1*(math.sin(realRadians)*distance))
             elif degrees >= 270 and degrees <= 360:
                 realDegrees = degrees - 270
-                possibleTower.append(realDegrees)
-                x = -1*(math.cos(realDegrees)*distance)
-                y = math.sin(realDegrees)*distance
+                towerArray.append(realDegrees)
+                realRadians = radians(realDegrees)
+                x = degrees(-1*(math.cos(realRadians)*distance))
+                y = degrees(math.sin(realRadians)*distance)
             else:
                 print("error")
                 continue
@@ -149,41 +153,51 @@ class fieldScanner:
         for i in range(len(IdentificationArray)):
             point = IdentificationArray[i]
             if point[0] == 0 and point[1] == 228:
-                possibleTower.append[1]
+                towerArray.append[(0, 228)]
             if point[0] == 0 and point[1] == 552:
-                possibleTower.append[2]
+                towerArray.append[(0, 552)]
             if point[0] == 324 and point[1] == 552:
-                possibleTower.append[3]
+                towerArray.append[(324, 552)]
             if point[0] == 324 and point[1] == 228:
-                possibleTower.append[4]
+                towerArray.append[(324, 552)]
 
     def robotPosition(self, array):
-        for i in array:
-            realDegrees = i[-2]
-            distance = i[3]
-            degrees = i[2]
-            if i[-1] == 1:
-                towerPosition = (0, 228)
-            elif i[-1] == 2:
-                towerPosition = (0, 552)
-            elif i[-1] == 3:
-                towerPosition = (324, 228)
-            elif i[-1] == 4:
-                towerPosition = (324, 552)
-            else:
-                print("Bad Data")
-                continue
-
+        
+            realDegrees = array[1[-3]]
+            realRadians = radians(realDegrees) 
+            distance = array[1[3]]
+            degrees = array[1[2]]
+            towerPosition = [1[-1]]
+            
             if degrees >= 0 and degrees < 90:
-                quadrant = 1
+                print("error")
+
             elif degrees >= 90 and degrees < 180:
-                quadrant = 2
+                adjacent = degrees(math.cos(realRadians)*distance)
+                opposite = degrees(math.sin(realRadians)*distance)
+
+                finalX = opposite
+                finalY = 228 - adjacent
             elif degrees >= 180 and degrees < 270:
-                quadrant = 3
+                print("error")
+
             else:
-                quadrant = 4
+                adjacent = degrees(math.cos(realRadians)*distance)
+                opposite = degrees(math.sin(realRadians)*distance)
+
+<<<<<<< HEAD
+                finalX = adjacent
+                finalY = 228 + opposite
+            
+            finalArray.append[finalX, finalY]
+            
 
             #there are 16 possible combinations for the tower's position
+        for j in array:
+            if j[-2] = ()
+=======
+            #there are 16 possible combinations for the tower's position
+>>>>>>> 831fb426526aebd93b1ce482ea1901d963d69ba2
 
     def calcHypotenuse(self, theta, adjacent):
         range = adjacent / math.cos(math.radians(theta))
