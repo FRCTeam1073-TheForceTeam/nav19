@@ -15,8 +15,8 @@ tc1_data = [(False,15,310.31,17.00), # noise
             (False,15,15.31,600.00), # noise
             (False,15,29.62,453.22), # tower C
             (False,15,35.31,600.00), # noise
-            (False,15,47.96,301.63), # tower D
-            (False,15,65.31,600.00)]
+            (False,15,47.96,301.63),# tower D
+            (False,15,87.5,34.89)] # noise
 
 
 # Test case 2 : 4 towers in back (robot @ 110:752)
