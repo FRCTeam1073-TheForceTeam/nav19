@@ -46,5 +46,8 @@ class TestExtractFeatures(unittest.TestCase):
 
         return
 
+    def setup(self):
+            f = open('./testdata/test_192_144_0', 'r')
+
 if __name__ == '__main__':
     unittest.main()
