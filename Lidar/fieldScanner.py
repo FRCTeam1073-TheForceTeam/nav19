@@ -73,36 +73,37 @@ class fieldScanner:
         #TO DO : Write logic to analyze the field scan, identify the towers within
         #        the scan, and return tower locations to caller
         for j in range(len(lidarScan)):
-            currentReferancePoint = lidarScan[j]
-            for i in range(len(lidarScan)):
-                if i == j:
-                    continue
-                currentComparisonPoint = lidarScan[i]
+            if j[3] != 0:
+                currentReferancePoint = lidarScan[j]
+                for i in range(len(lidarScan)):
+                    if i == j:
+                        continue
+                    currentComparisonPoint = lidarScan[i]
 
-                distance1 = currentReferancePoint[3]
-                distance2 = currentComparisonPoint[3]
-                degrees1 = currentReferancePoint[2]
-                degrees2 = currentComparisonPoint[2]
-                theta = math.radians(abs(degrees2 - degrees1))
+                    distance1 = currentReferancePoint[3]
+                    distance2 = currentComparisonPoint[3]
+                    degrees1 = currentReferancePoint[2]
+                    degrees2 = currentComparisonPoint[2]
+                    theta = math.radians(abs(degrees2 - degrees1))
 
-                if distance1 <= distance2:
-                    altitude = math.sin(theta)*distance1
-                    adjacent = math.cos(theta)*distance1
-                    segment = distance2 - adjacent
+                    if distance1 <= distance2:
+                        altitude = math.sin(theta)*distance1
+                        adjacent = math.cos(theta)*distance1
+                        segment = distance2 - adjacent
 
-                else:
-                    altitude = math.sin(theta)*distance2
-                    adjacent = math.cos(theta)*distance2
-                    segment = distance1 - adjacent
+                    else:
+                        altitude = math.sin(theta)*distance2
+                        adjacent = math.cos(theta)*distance2
+                        segment = distance1 - adjacent
 
-                distanceBetween = math.sqrt((segment*segment) + (altitude*altitude))
-                print(distanceBetween)
+                    distanceBetween = math.sqrt((segment*segment) + (altitude*altitude))
+                    print(distanceBetween)
                 
-                if ((distanceBetween >= 191 and distanceBetween <= 193) or (distanceBetween >= 323 and distanceBetween <= 325)):
-                    print("Tower candidate found @: distance :" + str(distance1) + ", degrees :" + str(degrees1))
-                    self.possibleTower.append((0,0,currentReferancePoint[2],currentReferancePoint[3]))
-                    break
-        return self.possibleTower
+                    if ((distanceBetween >= 191 and distanceBetween <= 193) or (distanceBetween >= 323 and distanceBetween <= 325)):
+                        print("Tower candidate found @: distance :" + str(distance1) + ", degrees :" + str(degrees1))
+                        self.possibleTower.append((0,0,currentReferancePoint[2],currentReferancePoint[3]))
+                        break
+            return self.possibleTower
         #TO DO what does your data type look like for returning tower positions?]
     #def towerIdentification(self, gyro, towerArray, possibleTower, finalArray):
 

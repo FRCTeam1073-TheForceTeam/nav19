@@ -3,7 +3,7 @@ import math
 import numpy
 
 
-class fieldScanner:
+class TowerIdentification:
     possibleTower = []
     IdentificationArray = []
     """A frame manager for lidar. This class is responsible for reading lidar data
@@ -74,132 +74,36 @@ class fieldScanner:
         #        the scan, and return tower locations to caller
         for j in range(len(lidarScan)):
             currentReferancePoint = lidarScan[j]
-            for i in range(len(lidarScan)):
-                if i == j:
-                    continue
-                currentComparisonPoint = lidarScan[i]
+            if currentReferancePoint[3] != 0:
+                for i in range(len(lidarScan)):
+                    if i == j:
+                        continue
+                    currentComparisonPoint = lidarScan[i]
 
-                distance1 = currentReferancePoint[3]
-                distance2 = currentComparisonPoint[3]
-                degrees1 = currentReferancePoint[2]
-                degrees2 = currentComparisonPoint[2]
-                theta = math.radians(abs(degrees2 - degrees1))
+                    distance1 = currentReferancePoint[3]
+                    distance2 = currentComparisonPoint[3]
+                    degrees1 = currentReferancePoint[2]
+                    degrees2 = currentComparisonPoint[2]
+                    theta = math.radians(abs(degrees2 - degrees1))
 
-                if distance1 <= distance2:
-                    altitude = math.sin(theta)*distance1
-                    adjacent = math.cos(theta)*distance1
-                    segment = distance2 - adjacent
+                    if distance1 <= distance2:
+                        altitude = math.sin(theta)*distance1
+                        adjacent = math.cos(theta)*distance1
+                        segment = distance2 - adjacent
 
-                else:
-                    altitude = math.sin(theta)*distance2
-                    adjacent = math.cos(theta)*distance2
-                    segment = distance1 - adjacent
+                    else:
+                        altitude = math.sin(theta)*distance2
+                        adjacent = math.cos(theta)*distance2
+                        segment = distance1 - adjacent
 
-                distanceBetween = math.sqrt((segment*segment) + (altitude*altitude))
-                print(distanceBetween)
+                    distanceBetween = math.sqrt((segment*segment) + (altitude*altitude))
+                    print(distanceBetween)
                 
-                if ((distanceBetween >= 191 and distanceBetween <= 193) or (distanceBetween >= 323 and distanceBetween <= 325)):
-                    print("Tower candidate found @: distance :" + str(distance1) + ", degrees :" + str(degrees1))
-                    self.possibleTower.append((0,0,currentReferancePoint[2],currentReferancePoint[3]))
-                    break
+                    if ((distanceBetween >= 191 and distanceBetween <= 193) or (distanceBetween >= 323 and distanceBetween <= 325)):
+                        print("Tower candidate found @: distance :" + str(distance1) + ", degrees :" + str(degrees1))
+                        self.possibleTower.append((0,0,currentReferancePoint[2],currentReferancePoint[3]))
+                        break
         return self.possibleTower
-        #TO DO what does your data type look like for returning tower positions?]
-    #def towerIdentification(self, gyro, towerArray, possibleTower, finalArray):
-
-        #for point in towerArray:
-            #if gyro > 360:
-                #Divisable = floor(gyro/360)
-                #gyro = gyro - (360 * Divisable)
-
-
-            #if gyro < 180:
-                #acurateGyro = gyro + 180
-            #else:
-                #accurateGyro = gyro - 180
-
-            #degrees = point[2]
-            #distance = point[3]
-
-            #if degrees >= 0 and degrees < 90:
-                #realDegrees = 90 - degrees
-                #towerArray.append(realDegrees)
-                #realRadians = radians(realDegrees)
-                #x = degrees(math.cos(realRadians))*distance
-                #y = degrees(math.sin(realRadians))*distance
-            #elif degrees >= 90 and degrees < 180:
-                #realDegrees = degrees - 90
-                #towerArray.append(realDegrees)
-                #realRadians = radians(realDegrees)
-                #x = degrees(math.cos(realRadians)*distance)
-                #y = degrees(-1*(math.sin(realDegrees)*distance))
-            #elif degrees >= 180 and degrees < 270:
-                #realDegrees = 270 - degrees
-                #towerArray.append(realDegrees)
-                #realRadians = radians(realDegrees)
-                #x = degrees(-1*(math.cos(realRadians)*distance))
-                #y = degrees(-1*(math.sin(realRadians)*distance))
-            #elif degrees >= 270 and degrees <= 360:
-                #realDegrees = degrees - 270
-                #towerArray.append(realDegrees)
-                #realRadians = radians(realDegrees)
-                #x = degrees(-1*(math.cos(realRadians)*distance))
-                #y = degrees(math.sin(realRadians)*distance)
-            #else:
-                #print("error")
-                #continue
-
-            # newX = x(math.degrees(math.cos(gyro)) - y(math.degree(math.sin(gyro)))
-            # newY = y(math.degrees(math.sin(gyro)) + x(math.degrees(math.sin(gyro)))
-            #IdentificationArray.append[(newX, newY)]
-        #for i in range(len(IdentificationArray)):
-            #point = IdentificationArray[i]
-            #if point[0] == 0 and point[1] == 228:
-                #towerArray.append[(0, 228)]
-            #if point[0] == 0 and point[1] == 552:
-                #towerArray.append[(0, 552)]
-            #if point[0] == 324 and point[1] == 552:
-                #towerArray.append[(324, 552)]
-            #if point[0] == 324 and point[1] == 228:
-                #towerArray.append[(324, 552)]
-
-    #def robotPosition(self, array):
-        
-            #realDegrees = array[1[-3]]
-            #realRadians = radians(realDegrees) 
-            #distance = array[1[3]]
-            #degrees = array[1[2]]
-            #newArray=[array[1[-1]], array[2[-1]], array[3[-1]], array[4[-1]]]
-            #towerPosition = min(newArray)
-            #if towerPosition == (0, 228):            
-                #if degrees >= 0 and degrees < 90:
-                    #print("error")
-
-                #elif degrees >= 90 and degrees < 180:
-                    #print("error")
-                #elif degrees >= 180 and degrees < 270:
-                    #adjacent = degrees(math.cos(realRadians)*distance)
-                    #opposite = degrees(math.sin(realRadians)*distance)
-
-                    #finalX = adjacent
-                    #finalY = 228 + opposite
-
-                #else:
-                    #adjacent = degrees(math.cos(realRadians)*distance)
-                    #opposite = degrees(math.sin(realRadians)*distance)
-
-                    #finalX = opposite
-                    #finalY = 228 - adjacent
-            #if towerPosition == (0, 552):
-                #if degrees >= 0 and degrees < 90:
-                    #print("error")
-                #elif degrees >= 90 and degrees < 180:
-                    #adjacent = 
-            #finalArray.append[finalX, finalY]
-            
-
-            #831fb426526aebd93b1ce482ea1901d963d69ba2
-
-            #there are 16 possible combinations for the tower's position
 
     def calcHypotenuse(self, theta, adjacent):
         range = adjacent / math.cos(math.radians(theta))
