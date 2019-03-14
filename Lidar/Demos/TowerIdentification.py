@@ -74,7 +74,9 @@ class TowerIdentification:
         #        the scan, and return tower locations to caller
         for j in range(len(lidarScan)):
             currentReferancePoint = lidarScan[j]
-            if currentReferancePoint[3] != 0:
+            if currentReferanceProgram[3] == 0.0:
+                continue
+            else:
                 for i in range(len(lidarScan)):
                     if i == j:
                         continue
