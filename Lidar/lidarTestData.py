@@ -1,4 +1,4 @@
-import fieldScanner #Katherine - import the scanner methods
+import towerIdentification #imports tower identification functions in towerIdentification.py
 import sys
 import unittest
 
@@ -16,7 +16,7 @@ tc1_data = [(False,15,310.31,17.00), # noise
             (False,15,29.62,453.22), # tower C
             (False,15,35.31,600.00), # noise
             (False,15,47.96,301.63), # tower D
-            (False,15,65.31,600.00)]
+            (False,15,87.5,34.89)] # noise
 
 
 # Test case 2 : 4 towers in back (robot @ 110:752)
@@ -28,7 +28,7 @@ tc1_data = [(False,15,310.31,17.00), # noise
 class TestExtractFeatures(unittest.TestCase):
 
     def test_all_towers_in_front(self):
-        scanner = fieldScanner.fieldScanner()
+        scanner = TowerIdentificationEverywhere.TowerIdentification()
         towerArray = scanner.extractFeatures(tc1_data, 0, 0, 0)
         self.assertEqual(len(towerArray),4)
 
@@ -45,6 +45,9 @@ class TestExtractFeatures(unittest.TestCase):
         self.assertEqual(towerArray[3][3],301.63)
 
         return
+
+    def setup(self):
+            f = open('./testdata/test_192_144_0', 'r')
 
 if __name__ == '__main__':
     unittest.main()
