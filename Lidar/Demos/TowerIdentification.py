@@ -74,37 +74,55 @@ class TowerIdentification:
         #        the scan, and return tower locations to caller
         for j in range(len(lidarScan)):
             currentReferancePoint = lidarScan[j]
-            if currentReferanceProgram[3] == 0.0:
+            if currentReferancePoint[3] == 0.0:
                 continue
             else:
+                count = 0
+
+                if  ((currentReferancePoint[2] == 26.0625) or
+                    (currentReferancePoint[2] == 49.984375) or
+                    (currentReferancePoint[2] == 297.71875) or
+                    (currentReferancePoint[2] == 328.28125)):
+                    print ("TOWER TEST DATA: " + str(currentReferancePoint[2]) + ":" + str(currentReferancePoint[3]) )
+                else:
+                    print ("CHECK")
+
+
                 for i in range(len(lidarScan)):
                     if i == j:
                         continue
                     currentComparisonPoint = lidarScan[i]
-
-                    distance1 = currentReferancePoint[3]
-                    distance2 = currentComparisonPoint[3]
-                    degrees1 = currentReferancePoint[2]
-                    degrees2 = currentComparisonPoint[2]
-                    theta = math.radians(abs(degrees2 - degrees1))
-
-                    if distance1 <= distance2:
-                        altitude = math.sin(theta)*distance1
-                        adjacent = math.cos(theta)*distance1
-                        segment = distance2 - adjacent
-
+                    if currentComparisonPoint[3] == 0.0: 
+                        continue
                     else:
-                        altitude = math.sin(theta)*distance2
-                        adjacent = math.cos(theta)*distance2
-                        segment = distance1 - adjacent
+                        distance1 = currentReferancePoint[3]/25.1 
+                        distance2 = currentComparisonPoint[3]/25.1
+                        degrees1 = currentReferancePoint[2]
+                        degrees2 = currentComparisonPoint[2]
+                        theta = math.radians(abs(degrees2 - degrees1))
 
-                    distanceBetween = math.sqrt((segment*segment) + (altitude*altitude))
-                    print(distanceBetween)
+                        if distance1 <= distance2:
+                            altitude = math.sin(theta)*distance1
+                            adjacent = math.cos(theta)*distance1
+                            segment = distance2 - adjacent
+
+                        else:
+                            altitude = math.sin(theta)*distance2
+                            adjacent = math.cos(theta)*distance2
+                            segment = distance1 - adjacent
+
+                        distanceBetween = math.sqrt((segment*segment) + (altitude*altitude))
+                        #print(distanceBetween)
                 
-                    if ((distanceBetween >= 191 and distanceBetween <= 193) or (distanceBetween >= 323 and distanceBetween <= 325)):
-                        print("Tower candidate found @: distance :" + str(distance1) + ", degrees :" + str(degrees1))
-                        self.possibleTower.append((0,0,currentReferancePoint[2],currentReferancePoint[3]))
-                        break
+                        if ((distanceBetween >= 186 and distanceBetween <= 198) or (distanceBetween >= 318 and distanceBetween <= 330)):
+                            count = count + 1
+                            print("     Tower candidate found @: distance :" + str(distance1) + ", degrees :" + str(degrees1) + ", count :" + str(count) )
+                            print("         Reference @: distance :" + str(distance2) + ", degrees :" + str(degrees2) + ", distance between: " + str(distanceBetween))
+                            
+                
+                if(count > 2):
+                    self.possibleTower.append((0,0,currentReferancePoint[2],currentReferancePoint[3]))
+                
         return self.possibleTower
 
     def calcHypotenuse(self, theta, adjacent):
