@@ -65,7 +65,7 @@ class fieldScanner:
         print("DEBUG:Ignoring object at" + str(inputDegrees) + " " + str(point[2]))
         return False
 
-    def extractFeatures(self, lidarScan, odometry, X, Y):
+    def findTowers(self, lidarScan, odometry, X, Y):
 
         """The purpose of this method is to return the latest lidar field scan"""
         #print ("extractFeatures: empty implementation. Scan len : " + str(len(latestFieldScan)))
@@ -73,37 +73,52 @@ class fieldScanner:
         #TO DO : Write logic to analyze the field scan, identify the towers within
         #        the scan, and return tower locations to caller
         for j in range(len(lidarScan)):
-            if j[3] != 0:
-                currentReferancePoint = lidarScan[j]
-                for i in range(len(lidarScan)):
-                    if i == j:
-                        continue
-                    currentComparisonPoint = lidarScan[i]
 
-                    distance1 = currentReferancePoint[3]
-                    distance2 = currentComparisonPoint[3]
-                    degrees1 = currentReferancePoint[2]
-                    degrees2 = currentComparisonPoint[2]
-                    theta = math.radians(abs(degrees2 - degrees1))
+            currentReferancePoint = lidarScan[j]
 
-                    if distance1 <= distance2:
-                        altitude = math.sin(theta)*distance1
-                        adjacent = math.cos(theta)*distance1
-                        segment = distance2 - adjacent
+            if currentReferancePoint[3] == 0.0:
+                continue
 
-                    else:
-                        altitude = math.sin(theta)*distance2
-                        adjacent = math.cos(theta)*distance2
-                        segment = distance1 - adjacent
+            print ("LOOP")
+            for i in range(len(lidarScan)):
+                if i == j:
+                    continue
 
-                    distanceBetween = math.sqrt((segment*segment) + (altitude*altitude))
-                    print(distanceBetween)
-                
-                    if ((distanceBetween >= 191 and distanceBetween <= 193) or (distanceBetween >= 323 and distanceBetween <= 325)):
-                        print("Tower candidate found @: distance :" + str(distance1) + ", degrees :" + str(degrees1))
-                        self.possibleTower.append((0,0,currentReferancePoint[2],currentReferancePoint[3]))
-                        break
-            return self.possibleTower
+                currentComparisonPoint = lidarScan[i]
+
+                if currentComparisonPoint[3] == 0.0:
+                    continue
+
+                distance1 = currentReferancePoint[3]
+                distance2 = currentComparisonPoint[3]
+                degrees1 = currentReferancePoint[2]
+                degrees2 = currentComparisonPoint[2]
+
+                degDelta = min([abs(degrees2 - degrees1),360-abs(degrees2 - degrees1)])
+                theta = math.radians(abs(degDelta))
+                print(theta)
+
+                # do trig to find distance between points...law of cosines
+                distanceBetween = math.sqrt((distance1**2 + distance2**2) - (2*distance1*distance2 * math.cos(theta)))
+                print(distanceBetween)
+
+                # a tower will be one of 3 distnaces from the other towers...
+                # 4876.8 mm between towers on the same side of the field,
+                # 8259.6mm between towers opositive (across the field) from each other,
+                # and 9616.1mm to the tower diagonal
+                #
+                # if the distance between the two input points is one of these values,
+                # we mark both as tower candidates
+                #
+                # we give a +/-500mm tolerance on the check
+                if ((distanceBetween >= 4376.8 and distanceBetween <= 5376.8) or
+                    (distanceBetween >= 7759.6 and distanceBetween <= 8759.6) or
+                    (distanceBetween >= 9116.1 and distanceBetween <= 10116.1)):
+                    print("Tower candidate found @: distance :" + str(distance1) + ", degrees :" + str(degrees1))
+                    self.possibleTower.append((0,0,currentReferancePoint[2],currentReferancePoint[3]))
+                    break;
+
+        return self.possibleTower
         #TO DO what does your data type look like for returning tower positions?]
     #def towerIdentification(self, gyro, towerArray, possibleTower, finalArray):
 
@@ -164,14 +179,14 @@ class fieldScanner:
                 #towerArray.append[(324, 552)]
 
     #def robotPosition(self, array):
-        
+
             #realDegrees = array[1[-3]]
-            #realRadians = radians(realDegrees) 
+            #realRadians = radians(realDegrees)
             #distance = array[1[3]]
             #degrees = array[1[2]]
             #newArray=[array[1[-1]], array[2[-1]], array[3[-1]], array[4[-1]]]
             #towerPosition = min(newArray)
-            #if towerPosition == (0, 228):            
+            #if towerPosition == (0, 228):
                 #if degrees >= 0 and degrees < 90:
                     #print("error")
 
@@ -194,9 +209,9 @@ class fieldScanner:
                 #if degrees >= 0 and degrees < 90:
                     #print("error")
                 #elif degrees >= 90 and degrees < 180:
-                    #adjacent = 
+                    #adjacent =
             #finalArray.append[finalX, finalY]
-            
+
 
             #831fb426526aebd93b1ce482ea1901d963d69ba2
 
