@@ -216,7 +216,22 @@ class fieldScanner:
             #831fb426526aebd93b1ce482ea1901d963d69ba2
 
             #there are 16 possible combinations for the tower's position
-
+    def localize(coordinates,gyroHeading):
+        """Uses (angle,distance) arrays and the gyro heading to find the robot's position on the field."""
+        newCoordinates=[]
+        for c in range(len(coordinates)):
+            newCoordinates.append([0,0,(coordinates[c][2]+gyroHeading)%360,coordinates[c][3]])
+        for c in range(len(newCoordinates)):
+            newCoordinates[c][0]=newCoordinates[c][2]*math.cos(math.radians(newCoordinates[c][3]))
+            newCoordinates[c][1]=newCoordinates[c][2]*math.sin(math.radians(newCoordinates[c][3]))
+        rocket1=[-311,411.5]
+        leastVal=10000
+        leastIdx=0
+        for c in range(len(newCoordinates)):
+            if newCoordinates[c][0]+newCoordinates[c][1]<leastVal:
+                leastVal=newCoordinates[c][0]+newCoordinates[c][1]
+                leastIdx=c
+        pos=[rocket1[0]+newCoordinates[leastIdx][0],rocket1[1]+newCoordinates[leastIdx][1]]
     def calcHypotenuse(self, theta, adjacent):
         range = adjacent / math.cos(math.radians(theta))
         return range
