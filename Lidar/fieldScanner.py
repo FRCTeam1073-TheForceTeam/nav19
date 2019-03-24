@@ -92,6 +92,10 @@ class fieldScanner:
             if currentReferancePoint[3] == 0.0:
                 continue
 
+            # THIS IF STATEMENT IS STRICTLY FOR DEBUGGING AND CAN BE REMOVED
+            if currentReferancePoint[2] == 26.0625:
+                print ("my test point")
+
             print ("LOOP")
             try:
                 tally = TowerTracker[str(currentReferancePoint[2]) + ", " + str(currentReferancePoint[3])]
