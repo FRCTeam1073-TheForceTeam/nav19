@@ -6,6 +6,8 @@ import numpy
 class TowerIdentification:
     possibleTower = []
     IdentificationArray = []
+    TowerTracker = {}
+    tally = 0
     """A frame manager for lidar. This class is responsible for reading lidar data
     and maintainning a data frame the represents the latest 360 degree view of the field"""
 
@@ -72,12 +74,8 @@ class TowerIdentification:
 
         #TO DO : Write logic to analyze the field scan, identify the towers within
         #        the scan, and return tower locations to caller
-        for j in range(len(lidarScan)):
-            currentReferancePoint = lidarScan[j]
-            if currentReferancePoint[3] == 0.0:
-                continue
-            else:
-                count = 0
+        for j in range(len(lidarScan)): 
+            
 
                 if  ((currentReferancePoint[2] == 26.0625) or
                     (currentReferancePoint[2] == 49.984375) or
@@ -87,7 +85,11 @@ class TowerIdentification:
                 else:
                     print ("CHECK")
 
-
+                try:
+                    tally = TowerTracker[str(j)]
+                except:
+                    TowerTracker[str(j)] = 0
+                    tally = 0
                 for i in range(len(lidarScan)):
                     if i == j:
                         continue
@@ -101,28 +103,19 @@ class TowerIdentification:
                         degrees2 = currentComparisonPoint[2]
                         theta = math.radians(abs(degrees2 - degrees1))
 
-                        if distance1 <= distance2:
-                            altitude = math.sin(theta)*distance1
-                            adjacent = math.cos(theta)*distance1
-                            segment = distance2 - adjacent
+                        distanceBetween = math.sqrt((distance1**2 + distance2**2) - (2*distance1*distance2 * math.cos(theta)))
+                        print(distanceBetween)
 
-                        else:
-                            altitude = math.sin(theta)*distance2
-                            adjacent = math.cos(theta)*distance2
-                            segment = distance1 - adjacent
-
-                        distanceBetween = math.sqrt((segment*segment) + (altitude*altitude))
-                        #print(distanceBetween)
                 
                         if ((distanceBetween >= 186 and distanceBetween <= 198) or (distanceBetween >= 318 and distanceBetween <= 330)):
-                            count = count + 1
-                            print("     Tower candidate found @: distance :" + str(distance1) + ", degrees :" + str(degrees1) + ", count :" + str(count) )
-                            print("         Reference @: distance :" + str(distance2) + ", degrees :" + str(degrees2) + ", distance between: " + str(distanceBetween))
+                            tally = tally + 1
+                            TowerTracker[str(j)] = tally
                             
                 
-                if(count > 2):
+                if(tally >= 2):
                     self.possibleTower.append((0,0,currentReferancePoint[2],currentReferancePoint[3]))
-                
+                    print("     Tower candidate found @: distance :" + str(distance1) + ", degrees :" + str(degrees1) + ", count :" + str(tally) )
+                    print("         Reference @: distance :" + str(distance2) + ", degrees :" + str(degrees2) + ", distance between: " + str(distanceBetween))
         return self.possibleTower
 
     def calcHypotenuse(self, theta, adjacent):
