@@ -6,6 +6,9 @@ import numpy
 class fieldScanner:
     possibleTower = []
     IdentificationArray = []
+    TowerTracker = {}
+    tally = []
+    verificationNumber = 0
     """A frame manager for lidar. This class is responsible for reading lidar data
     and maintainning a data frame the represents the latest 360 degree view of the field"""
 
@@ -64,7 +67,16 @@ class fieldScanner:
 
         print("DEBUG:Ignoring object at" + str(inputDegrees) + " " + str(point[2]))
         return False
-
+    #def averagePoints(self, lidarScan):
+        
+        #for i in lidarScan:
+    def isTower(self, array):
+        verificationNumber = 0
+        for i in range(len(array)):
+            currentPoint = array[i]
+            if currentPoint == True:
+                verificationNumber = verificationNumber + 1
+        return verificationNumber
     def findTowers(self, lidarScan, odometry, X, Y):
 
         """The purpose of this method is to return the latest lidar field scan"""
@@ -72,6 +84,7 @@ class fieldScanner:
 
         #TO DO : Write logic to analyze the field scan, identify the towers within
         #        the scan, and return tower locations to caller
+        TowerTracker = {}
         for j in range(len(lidarScan)):
 
             currentReferancePoint = lidarScan[j]
@@ -80,6 +93,11 @@ class fieldScanner:
                 continue
 
             print ("LOOP")
+            try:
+                tally = TowerTracker[str(currentReferancePoint[2]) + ", " + str(currentReferancePoint[3])]
+            except:
+                TowerTracker[str(currentReferancePoint[2]) + ", " + str(currentReferancePoint[3])] = [False, False, False]
+                tally = [False, False, False]
             for i in range(len(lidarScan)):
                 if i == j:
                     continue
@@ -96,29 +114,34 @@ class fieldScanner:
 
                 degDelta = min([abs(degrees2 - degrees1),360-abs(degrees2 - degrees1)])
                 theta = math.radians(abs(degDelta))
-                print(theta)
+                #print(theta)
 
                 # do trig to find distance between points...law of cosines
                 distanceBetween = math.sqrt((distance1**2 + distance2**2) - (2*distance1*distance2 * math.cos(theta)))
-                print(distanceBetween)
-
+                #print(distanceBetween)
                 # a tower will be one of 3 distnaces from the other towers...
                 # 4876.8 mm between towers on the same side of the field,
                 # 8259.6mm between towers opositive (across the field) from each other,
                 # and 9616.1mm to the tower diagonal
-                #
                 # if the distance between the two input points is one of these values,
                 # we mark both as tower candidates
-                #
                 # we give a +/-500mm tolerance on the check
-                if ((distanceBetween >= 4376.8 and distanceBetween <= 5376.8) or
-                    (distanceBetween >= 7759.6 and distanceBetween <= 8759.6) or
-                    (distanceBetween >= 9116.1 and distanceBetween <= 10116.1)):
-                    print("Tower candidate found @: distance :" + str(distance1) + ", degrees :" + str(degrees1))
-                    self.possibleTower.append((0,0,currentReferancePoint[2],currentReferancePoint[3]))
-                    break;
+                if (distanceBetween >= 4376.8 and distanceBetween <= 5376.8):
+                    tally[0] = True
+                if (distanceBetween >= 7759.6 and distanceBetween <= 8759.6):
+                    tally[1] = True
+                if (distanceBetween >= 9116.1 and distanceBetween <= 10116.1):
+                    tally[2] = True
+                TowerTracker[str(currentReferancePoint)] = tally
+                #print("tally: " + str(tally))
+            towerNumber = self.isTower(tally)
 
+            if towerNumber >= 2:
+                print("Tower candidate found @: distance :" + str(distance1) + ", degrees :" + str(degrees1))
+                self.possibleTower.append((0,0,currentReferancePoint[2],currentReferancePoint[3]))
         return self.possibleTower
+
+
         #TO DO what does your data type look like for returning tower positions?]
     #def towerIdentification(self, gyro, towerArray, possibleTower, finalArray):
 
