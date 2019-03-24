@@ -16,13 +16,21 @@ class auto_hatch:
 
     def find_distance(self, array):
         
-    def find_line(self, array):
+    def convert_coordinates(self, array):
         for i in array:
             if i[2] > 90 and i[2] < 270 and i[3] != 0:
                 continue
             else:
+                if i[2] > 270:
+                   i[2] = i[2] - 270
+                if i[2] < 90:
+                    i[2] = i[2] + 90
+
                degreesAndDistanceArray.append((i[2], i[3]))
-         
+        for j in range(degreesAndDistanceArray):
+            currentPoint = degreesAndDistanceArray[j]
+            referencePoint = degreesAndDistanceArray[j+1]
+            
 def run(path):
     '''Main function'''
     lidar = RPLidar(PORT_NAME)
