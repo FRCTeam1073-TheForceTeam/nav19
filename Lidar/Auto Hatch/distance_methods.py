@@ -25,8 +25,9 @@ class auto_hatch:
                    i[2] = i[2] - 270
                 if i[2] < 90:
                     i[2] = i[2] + 90
-
                degreesAndDistanceArray.append((i[2], i[3]))
+            
+            
         for j in range(degreesAndDistanceArray):
             currentPoint = degreesAndDistanceArray[j]
             referencePoint = degreesAndDistanceArray[j+1]
