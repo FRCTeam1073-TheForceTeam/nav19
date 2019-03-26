@@ -39,8 +39,8 @@ class auto_hatch:
             distanceBetween = (math.pow(point1[1],2) + math.pow(point2[1],2)) - ((2*point1[1]*point2[1])*(math.cos(degreesBetween)))
             
             if distanceBetween >= 152.6:
-                outputArray.append[point1]
-                outputArray.append[point2]
+                outputArray.append(point1)
+                outputArray.append(point2)
                 return outputArray
 def run(path):
     '''Main function'''
