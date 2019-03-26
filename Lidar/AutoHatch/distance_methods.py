@@ -30,7 +30,7 @@ class auto_hatch:
                degreesAndDistanceArray.append((i[2], i[3]))
         
 
-        for i in range(len(degreesAndDistanceArray)):
+        for i in range(len(degreesAndDistanceArray)-1):
             point1 = degreesAndDistanceArray[i]
             point2 = degreesAndDistanceArray[i+1]
             degreesBetween = point2[0] - point[0]
