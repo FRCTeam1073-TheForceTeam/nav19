@@ -31,6 +31,7 @@ class auto_hatch:
         
 
         for i in range(len(degreesAndDistanceArray)-1):
+            outputArray = []
             point1 = degreesAndDistanceArray[i]
             point2 = degreesAndDistanceArray[i+1]
             degreesBetween = point2[0] - point1[0]
