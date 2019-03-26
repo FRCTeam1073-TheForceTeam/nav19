@@ -36,8 +36,7 @@ class auto_hatch:
             degreesBetween = point2[0] - point[0]
             #can we have the lidar mounted so the first 180 degrees are facing outward?
 
-            #what is the math.function to square something in python
-            distanceBetween = (math.sqr(point1[1]) + math.sqr(point2[1])) - ((2*point1[1]*point2[1])*(math.cos(degreesBetween)))
+            distanceBetween = (math.pow(point1[1],2) + math.pow(point2[1],2)) - ((2*point1[1]*point2[1])*(math.cos(degreesBetween)))
             
             if distanceBetween >= 152.6:
                 outputArray.append[point1]
