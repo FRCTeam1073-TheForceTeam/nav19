@@ -33,7 +33,7 @@ class auto_hatch:
         for i in range(len(degreesAndDistanceArray)):
             point1 = degreesAndDistanceArray[i]
             point2 = degreesAndDistanceArray[i+1]
-            degreesBetween = point2[0] - point[0]
+            degreesBetween = point2[0] - point1[0]
             #can we have the lidar mounted so the first 180 degrees are facing outward?
 
             #what is the math.function to square something in python
