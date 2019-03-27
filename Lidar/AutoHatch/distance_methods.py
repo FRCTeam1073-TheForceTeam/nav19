@@ -18,12 +18,11 @@ PORT_NAME = 'COM3'
 class auto_hatch:
     def point_getter(array):
         for i in array:
-            if (i[2] < 225 and i[2] > 45) or i[3] == 0.0 or i[3] > 1500:
+            if (i[2] < 225 and i[2] > 45) or i[3] == 0.0 or i[3] > 1000:
                 continue
             else:
                 degreesAndDistanceArray.append((i[2], i[3]))
         
-
         for i in range(len(degreesAndDistanceArray)-1):
             outputArray = []
             point1 = degreesAndDistanceArray[i]
@@ -40,6 +39,8 @@ class auto_hatch:
                 outputArray.append(point1)
                 outputArray.append(point2)
                 return outputArray
+    
+
 def run(path):
     '''Main function'''
     lidar = RPLidar(PORT_NAME)
