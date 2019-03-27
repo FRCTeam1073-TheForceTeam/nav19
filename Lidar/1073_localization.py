@@ -8,6 +8,7 @@ LIDAR_DEVICE = 'COM3' #'/dev/cu.SLAB_USBtoUART' #Cam - where is LiDAR, change to
 import sys
 import time
 import test
+import math
 #import networktables
 #from networktables import NetworkTables
 import numpy as np
