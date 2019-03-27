@@ -7,6 +7,7 @@ import sys
 import numpy as np
 from rplidar import RPLidar
 import time
+import math
 
 degreesAndDistanceArray = []
 relaventPoints = []
@@ -15,31 +16,27 @@ relaventPoints = []
 #PORT_NAME = '/dev/ttyUSB0'
 PORT_NAME = 'COM3'
 class auto_hatch:
-
-    def find_distance(self, array, outputArray):
-        
-    def point_getter(self, array):
+    def point_getter(array):
         for i in array:
-            if i[2] > 90 and i[2] < 270 and i[3] == 0.0 and i[3] > 762:
+            if (i[2] < 225 and i[2] > 45) or i[3] == 0.0 or i[3] > 1500:
                 continue
             else:
-                if i[2] > 270:
-                   i[2] = i[2] - 270
-                if i[2] < 90:
-                    i[2] = i[2] + 90
-               degreesAndDistanceArray.append((i[2], i[3]))
+                degreesAndDistanceArray.append((i[2], i[3]))
         
 
         for i in range(len(degreesAndDistanceArray)-1):
             outputArray = []
             point1 = degreesAndDistanceArray[i]
             point2 = degreesAndDistanceArray[i+1]
-            degreesBetween = point2[0] - point1[0]
+            degreesBetween = min(abs(point2[0] - point1[0]), 360-abs(point2[0]-point1[0]))
             #can we have the lidar mounted so the first 180 degrees are facing outward?
 
-            distanceBetween = (math.pow(point1[1],2) + math.pow(point2[1],2)) - ((2*point1[1]*point2[1])*(math.cos(degreesBetween)))
+            distanceBetween = math.sqrt((point1[1]**2 + point2[1]**2) - 
+            (2*point1[1]*point2[1] * math.cos(math.radians(degreesBetween))))
             
             if distanceBetween >= 152.6:
+                print(point1)
+                print(point2)
                 outputArray.append(point1)
                 outputArray.append(point2)
                 return outputArray
