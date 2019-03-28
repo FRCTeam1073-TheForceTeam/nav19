@@ -22,7 +22,7 @@ class auto_hatch:
     dega = finalArray[1][0] - finalArray[0][0] #Katherine will give us this value - angle mesured from LiDAR between point 2 and 3.
     degb = [dist/(ahalf/math.degrees(math.sin(dega)))] #uses the law of signs to find angle b
     degc = 180-(dega+degb) #this finds the missing angle,or angle "c", by doing 180-(a+b) = c
-    cargdist =[math.exp(ahalf,2) + math.exp(dist, 2)]-[2(ahalf)(dist)(math.degrees(math.cos(degc))]
+    cargdist = [math.exp(ahalf,2) + math.exp(dist, 2)]-[2(ahalf)(dist)(math.degrees(math.cos(degc)))]
     #uses the law of cosign to find the squared distance from LiDAR to ahalf.
     fincargdist = math.sqrt(cargdist)
     #ROOTED it to isolate the actual, final, totally accurate distance between LiDAR and ahalf. You are so welcome.
@@ -52,7 +52,6 @@ class auto_hatch:
                 return outputArray
 
             if distanceFrom
-
 
 def run(path):
     '''Main function'''
