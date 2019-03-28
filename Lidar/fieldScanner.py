@@ -115,4 +115,3 @@ class fieldScanner:
         #        gyro data and produce a field coordinate location
 
         return {'x': 0,'y':0}
-
