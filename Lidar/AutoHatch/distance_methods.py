@@ -8,10 +8,19 @@ import numpy as np
 from rplidar import RPLidar
 import time
 import math
+import scipy
+import statistics
 
 degreesAndDistanceArray = []
 relaventPoints = []
-
+coordinateArray = []#contains list of xy points
+slopeArray = []
+lineSlopeArray = []
+ceilSlopeArray = []
+pointsOnLine = []
+finalArray = []
+helpfulAngle = 0
+ceilSlope = 0
 
 #PORT_NAME = '/dev/ttyUSB0'
 PORT_NAME = 'COM3'
@@ -33,7 +42,7 @@ class auto_hatch:
                 continue
             else:
                 degreesAndDistanceArray.append((i[2], i[3]))
-        
+
         for i in range(len(degreesAndDistanceArray)-1):
             outputArray = []
             point1 = degreesAndDistanceArray[i]
@@ -41,9 +50,9 @@ class auto_hatch:
             degreesBetween = min(abs(point2[0] - point1[0]), 360-abs(point2[0]-point1[0]))
             #can we have the lidar mounted so the first 180 degrees are facing outward?
 
-            distanceBetween = math.sqrt((point1[1]**2 + point2[1]**2) - 
+            distanceBetween = math.sqrt((point1[1]**2 + point2[1]**2) -
             (2*point1[1]*point2[1] * math.cos(math.radians(degreesBetween))))
-            
+
             if distanceBetween >= 152.6:
                 print(point1)
                 print(point2)
@@ -51,25 +60,74 @@ class auto_hatch:
                 outputArray.append(point2)
                 return outputArray
 
-            if distanceFrom
+    def array_setup(array):
+        for i in array:
+            if (i[2] <= 0 and i[2] >= 180) or i[3] == 0.0 or i[3] > 3000:
+                continue
+            else:
+                degreesAndDistanceArray.append((i[2], i[3]))
+            return degreesAndDistanceArray
 
-def run(path):
-    '''Main function'''
-    lidar = RPLidar(PORT_NAME)
-    time.sleep(3)
-    data = []
-    try:
-        print('Recording measurments... Press Crl+C to stop.')
-        for scan in lidar.iter_scans():
-            print (len(scan))
-            data.append(np.array(scan))
-    except KeyboardInterrupt:
-        print('Stoping.')
+    def run(path):
+        '''Main function'''
+        lidar = RPLidar(PORT_NAME)
+        time.sleep(3)
+        data = []
+        try:
+            print('Recording measurments... Press Crl+C to stop.')
+            for scan in lidar.iter_scans():
+                print (len(scan))
+                data.append(np.array(scan))
+        except KeyboardInterrupt:
+            print('Stoping.')
 
-    lidar.stop()
-    lidar.stop_motor()
-    lidar.disconnect()
-    np.save(path, np.array(data))
+    def coordinate_setup(array):
+        for i in array:
+            if i[0] >= 0 or i[0] <= 90:
+                helpfulAngle = 90 - (i[0]-90)
+            elif i[0] > 90 or i[0] <= 180:
+                helpfulAngle = 180 - i[0]
+            else:
+                print("error")
+                continue
+            x = math.cos(math.radians(helpfulAngle)) * i[1]
+            y = math.sin(math.radians(helpfulAngle)) * i[1]
+            coordinateArray.append((x,y))
+            return coordinateArray
+    def better_point_getter(polarArray, pointArray):
+        for i in range(len(pointArray)):
+            referencePoint = pointArray[i]
+            for j in range(len(pointArray)):
+                if j == i:
+                    continue
+                comparisonPoint = pointArray[j]
+                slope =(comparisonPoint[1]-referencePoint[1])/(comparisonPoint[0]-referencePoint[0])
+                slopeArray.append((referencePoint, comparisonPoint, slope, x, y))
 
-if __name__ == '__main__':
-    run(sys.argv[1])
+        for i in slopeArray:
+            ceilSlope = math.ceil(i[2])
+            ceilSlopeArray.append(ceilSlope)
+
+        lineSlope = statistics.mode(ceilSlopeArray)
+
+        for i in slopeArray:
+            if i[2] == lineSlope:
+                pointsOnLine.append(i)
+        for i in range(len(pointsOnLine)):
+            referencePoint = pointsOnLine[i]
+            for j in range(len(pointsOnLine)):
+                if referencePoint == comparisonPoint:
+                    continue
+                else:
+                    distanceBetween = math.sqrt(((comparisonPoint[2]-referencePoint[2])**2) + ((comparisonPoint[3] - referencePoint[3])**2))
+                    if coordinateDistance >= 76.2:
+                        finalArray = []
+                        finalArray.append(comparisonPoint[0])
+                        print(finalArray[0])
+                        finalArray.append(referencePoint[0])
+                        print(finalArray[1])
+                        finalArray.append(distanceBetween)
+                        print(finalArray[2])
+                        finalArray.append(ceilSlope)
+                        print(finalArray[3])
+        return finalArray
