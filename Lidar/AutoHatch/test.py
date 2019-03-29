@@ -158,6 +158,7 @@ class TestExtractFeatures(unittest.TestCase):
 
     def test_point_getter(self):
         points = distance_methods.auto_hatch.point_getter(tc1_data)
+        find_dist = distance_methods.auto_hatch.produceTargetRangeSimple(points)
         self.assertEqual(2, len(points), 'too many points')
         self.assertEqual(298.875, points[0][0], 'nope')
         self.assertEqual(319.546875, points[1][0], 'nope')
