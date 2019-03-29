@@ -12,22 +12,23 @@ from networktables import NetworkTables
 
 degreesAndDistanceArray = []
 relaventPoints = []
-
+outputArray = []
+distance = 0
 
 #PORT_NAME = '/dev/ttyUSB0'
 PORT_NAME = 'COM3'
 class auto_hatch:
 
     def point_getter(array):
-        for i in array:
-            if (i[2] < 225 and i[2] > 45) or i[3] == 0.0 or i[3] > 1000:
+        #print(str(array))
+        for h in array:
+            if h[1] > 180 or h[2] == 0.0 or h[2] > 1000:
                 continue
             else:
-                degreesAndDistanceArray.append((i[2], i[3]))
+                degreesAndDistanceArray.append((h[1], h[2]))
 
 
         for i in range(len(degreesAndDistanceArray)-1):
-            outputArray = []
             point1 = degreesAndDistanceArray[i]
             point2 = degreesAndDistanceArray[i+1]
             degreesBetween = min(abs(point2[0] - point1[0]), 360-abs(point2[0]-point1[0]))
@@ -43,7 +44,8 @@ class auto_hatch:
                 outputArray.append(point1)
                 outputArray.append(point2)
                 outputArray.append(distanceBetween)
-                return outputArray
+                break
+        return outputArray
 
     def produceTargetRangeSimple(finalArray):
         point1Dist = finalArray[0][1]
@@ -76,20 +78,20 @@ def run(path):
     try:
         print('Recording measurments... Press Crl+C to stop.')
         for scan in lidar.iter_scans():
-            #
-            points = distance_methods.auto_hatch.point_getter(scan)
+            points = auto_hatch.point_getter(scan)
 
-            if(len(points) == 2 ):
-                distance = distance_methods.auto_hatch.produceTargetRangeSimple(points)
+            if(len(points) == 3 ):
+                distance = auto_hatch.produceTargetRangeSimple(points)
                 sd.putNumber("simple distance", distance) 
                 print("put distance to network table : " + str(distance))   
             else:
+                distance = -1
                 sd.putValue("simple distance from hatch:", -1)
                 print("put distance to network table : " + str(distance)) 
 
             data.append(np.array(scan))
 
-    except KeyboardInterrupt:
+    except:
         print('Stoping.')
 
     lidar.stop()
