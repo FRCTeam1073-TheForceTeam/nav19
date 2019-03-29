@@ -269,6 +269,6 @@ class fieldScanner:
         print ("calculatePostion: empty implementation")
 
         #TO DO : Take tower location data (returned from extractFeatures) and
-        #        gyro data and produce a field coordinate location
+        #gyro data and produce a field coordinate location
 
         return {'x': 0,'y':0}
