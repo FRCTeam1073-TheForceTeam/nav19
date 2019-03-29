@@ -1,0 +1,1297 @@
+CHECK
+     Tower candidate found @: distance :63.29681274900398, degrees :354.703125, count :1
+         Reference @: distance :278.8247011952191, degrees :130.03125, distance between: 326.881139619182
+     Tower candidate found @: distance :63.29681274900398, degrees :354.703125, count :2
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 318.07984368553156
+CHECK
+     Tower candidate found @: distance :60.169322709163346, degrees :358.625, count :1
+         Reference @: distance :278.8247011952191, degrees :130.03125, distance between: 321.8004965701462
+     Tower candidate found @: distance :60.169322709163346, degrees :358.625, count :2
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 318.8115880640401
+     Tower candidate found @: distance :60.169322709163346, degrees :358.625, count :3
+         Reference @: distance :334.19322709163345, degrees :285.609375, distance between: 321.80401357355964
+     Tower candidate found @: distance :60.169322709163346, degrees :358.625, count :4
+         Reference @: distance :335.2191235059761, degrees :287.59375, distance between: 320.74858405119267
+CHECK
+     Tower candidate found @: distance :62.25099601593625, degrees :0.578125, count :1
+         Reference @: distance :278.8247011952191, degrees :130.03125, distance between: 321.98982076875575
+     Tower candidate found @: distance :62.25099601593625, degrees :0.578125, count :2
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 321.75458112682867
+     Tower candidate found @: distance :62.25099601593625, degrees :0.578125, count :3
+         Reference @: distance :334.19322709163345, degrees :285.609375, distance between: 323.6811855917172
+     Tower candidate found @: distance :62.25099601593625, degrees :0.578125, count :4
+         Reference @: distance :335.2191235059761, degrees :287.59375, distance between: 322.542864125761
+CHECK
+     Tower candidate found @: distance :39.91035856573705, degrees :2.546875, count :1
+         Reference @: distance :297.3406374501992, degrees :133.90625, distance between: 325.0956819308352
+     Tower candidate found @: distance :39.91035856573705, degrees :2.546875, count :2
+         Reference @: distance :286.9721115537848, degrees :171.203125, distance between: 326.19728483005963
+     Tower candidate found @: distance :39.91035856573705, degrees :2.546875, count :3
+         Reference @: distance :285.79681274900395, degrees :173.15625, distance between: 325.23752572252664
+     Tower candidate found @: distance :39.91035856573705, degrees :2.546875, count :4
+         Reference @: distance :283.62549800796813, degrees :175.109375, distance between: 323.2413635857249
+     Tower candidate found @: distance :39.91035856573705, degrees :2.546875, count :5
+         Reference @: distance :282.3406374501992, degrees :177.078125, distance between: 322.09179597120686
+     Tower candidate found @: distance :39.91035856573705, degrees :2.546875, count :6
+         Reference @: distance :282.76892430278883, degrees :179.078125, distance between: 322.61520214022477
+     Tower candidate found @: distance :39.91035856573705, degrees :2.546875, count :7
+         Reference @: distance :280.3585657370518, degrees :181.0625, distance between: 320.25720018107864
+     Tower candidate found @: distance :39.91035856573705, degrees :2.546875, count :8
+         Reference @: distance :280.49800796812747, degrees :183.03125, distance between: 320.4071180066826
+     Tower candidate found @: distance :39.91035856573705, degrees :2.546875, count :9
+         Reference @: distance :285.2191235059761, degrees :184.96875, distance between: 325.09820743096446
+     Tower candidate found @: distance :39.91035856573705, degrees :2.546875, count :10
+         Reference @: distance :283.62549800796813, degrees :186.953125, distance between: 323.43243125680607
+     Tower candidate found @: distance :39.91035856573705, degrees :2.546875, count :11
+         Reference @: distance :284.35258964143424, degrees :188.90625, distance between: 324.0475225167
+     Tower candidate found @: distance :39.91035856573705, degrees :2.546875, count :12
+         Reference @: distance :286.9721115537848, degrees :190.875, distance between: 326.51278345353467
+     Tower candidate found @: distance :39.91035856573705, degrees :2.546875, count :13
+         Reference @: distance :287.8585657370518, degrees :192.84375, distance between: 327.2039380175243
+     Tower candidate found @: distance :39.91035856573705, degrees :2.546875, count :14
+         Reference @: distance :289.203187250996, degrees :194.796875, distance between: 328.3140564489436
+     Tower candidate found @: distance :39.91035856573705, degrees :2.546875, count :15
+         Reference @: distance :334.19322709163345, degrees :285.609375, distance between: 327.4887923062342
+     Tower candidate found @: distance :39.91035856573705, degrees :2.546875, count :16
+         Reference @: distance :335.2191235059761, degrees :287.59375, distance between: 327.1363968568258
+CHECK
+     Tower candidate found @: distance :66.23505976095618, degrees :4.5, count :1
+         Reference @: distance :278.8247011952191, degrees :130.03125, distance between: 321.86255615089135
+     Tower candidate found @: distance :66.23505976095618, degrees :4.5, count :2
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 327.618935496443
+     Tower candidate found @: distance :66.23505976095618, degrees :4.5, count :3
+         Reference @: distance :274.99003984063745, degrees :232.09375, distance between: 323.37749166231544
+     Tower candidate found @: distance :66.23505976095618, degrees :4.5, count :4
+         Reference @: distance :334.19322709163345, degrees :285.609375, distance between: 327.9360026666576
+     Tower candidate found @: distance :66.23505976095618, degrees :4.5, count :5
+         Reference @: distance :335.2191235059761, degrees :287.59375, distance between: 326.6479246636598
+CHECK
+     Tower candidate found @: distance :61.20517928286852, degrees :6.453125, count :1
+         Reference @: distance :287.70916334661354, degrees :131.9375, distance between: 327.0571072242252
+     Tower candidate found @: distance :61.20517928286852, degrees :6.453125, count :2
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 324.8893678735511
+     Tower candidate found @: distance :61.20517928286852, degrees :6.453125, count :3
+         Reference @: distance :274.99003984063745, degrees :232.09375, distance between: 320.78083715673125
+     Tower candidate found @: distance :61.20517928286852, degrees :6.453125, count :4
+         Reference @: distance :335.2191235059761, degrees :287.59375, distance between: 328.9215457416636
+CHECK
+     Tower candidate found @: distance :30.149402390438244, degrees :8.40625, count :1
+         Reference @: distance :299.09362549800795, degrees :163.328125, distance between: 326.6509230012102
+     Tower candidate found @: distance :30.149402390438244, degrees :8.40625, count :2
+         Reference @: distance :296.39442231075697, degrees :165.296875, distance between: 324.3404897805034
+     Tower candidate found @: distance :30.149402390438244, degrees :8.40625, count :3
+         Reference @: distance :295.14940239043824, degrees :167.25, distance between: 323.44980754311774
+     Tower candidate found @: distance :30.149402390438244, degrees :8.40625, count :4
+         Reference @: distance :292.22111553784856, degrees :169.21875, distance between: 320.84870862590634
+     Tower candidate found @: distance :30.149402390438244, degrees :8.40625, count :5
+         Reference @: distance :289.203187250996, degrees :194.796875, distance between: 319.18288728704533
+     Tower candidate found @: distance :30.149402390438244, degrees :8.40625, count :6
+         Reference @: distance :293.2868525896414, degrees :196.765625, distance between: 323.1456657060792
+     Tower candidate found @: distance :30.149402390438244, degrees :8.40625, count :7
+         Reference @: distance :296.87250996015933, degrees :198.734375, distance between: 326.5781422703801
+     Tower candidate found @: distance :30.149402390438244, degrees :8.40625, count :8
+         Reference @: distance :300.53784860557766, degrees :222.3125, distance between: 325.9945176466312
+CHECK
+     Tower candidate found @: distance :65.3187250996016, degrees :16.1875, count :1
+         Reference @: distance :287.70916334661354, degrees :131.9375, distance between: 321.5151326073618
+     Tower candidate found @: distance :65.3187250996016, degrees :16.1875, count :2
+         Reference @: distance :264.83067729083666, degrees :228.1875, distance between: 322.0893938037676
+     Tower candidate found @: distance :65.3187250996016, degrees :16.1875, count :3
+         Reference @: distance :267.3605577689243, degrees :234.0625, distance between: 321.43139315652286
+     Tower candidate found @: distance :65.3187250996016, degrees :16.1875, count :4
+         Reference @: distance :190.5776892430279, degrees :297.71875, distance between: 188.704810333556
+TOWER TEST DATA: 26.0625:7580.0
+(False,10,26.0625,7580.0),#Possible Tower C
+(False,15,49.984375,3716.75),# Possible Tower D
+(False,14,297.71875,4783.5),#Possible Tower A
+(False,15,328.28125,8272.5),#Possible Tower B
+     Tower candidate found @: distance :301.9920318725099, degrees :26.0625, count :1
+         Reference @: distance :492.24103585657366, degrees :29.90625, distance between: 191.9985713768561
+CHECK
+CHECK
+     Tower candidate found @: distance :492.24103585657366, degrees :29.90625, count :1
+         Reference @: distance :301.9920318725099, degrees :26.0625, distance between: 191.9985713768561
+CHECK
+     Tower candidate found @: distance :431.0258964143426, degrees :31.859375, count :1
+         Reference @: distance :225.5478087649402, degrees :78.9375, distance between: 322.87080948990643
+     Tower candidate found @: distance :431.0258964143426, degrees :31.859375, count :2
+         Reference @: distance :237.91832669322707, degrees :80.890625, distance between: 328.5065536289553
+CHECK
+CHECK
+     Tower candidate found @: distance :401.05577689243023, degrees :35.96875, count :1
+         Reference @: distance :238.01792828685257, degrees :90.796875, distance between: 327.9087906047646
+CHECK
+     Tower candidate found @: distance :316.51394422310756, degrees :45.84375, count :1
+         Reference @: distance :238.83466135458167, degrees :114.359375, distance between: 319.14022221720774
+     Tower candidate found @: distance :316.51394422310756, degrees :45.84375, count :2
+         Reference @: distance :241.93227091633466, degrees :116.328125, distance between: 327.94885928018715
+CHECK
+     Tower candidate found @: distance :305.12948207171314, degrees :47.8125, count :1
+         Reference @: distance :245.97609561752986, degrees :118.28125, distance between: 321.59542772031966
+TOWER TEST DATA: 49.984375:3716.75
+(False,10,26.0625,7580.0),#Possible Tower C
+(False,15,49.984375,3716.75),# Possible Tower D
+(False,14,297.71875,4783.5),#Possible Tower A
+(False,15,328.28125,8272.5),#Possible Tower B
+     Tower candidate found @: distance :148.0776892430279, degrees :49.984375, count :1
+         Reference @: distance :240.88645418326692, degrees :102.5625, distance between: 191.31536572431185
+     Tower candidate found @: distance :148.0776892430279, degrees :49.984375, count :2
+         Reference @: distance :228.21713147410358, degrees :106.53125, distance between: 191.7081504550208
+CHECK
+     Tower candidate found @: distance :145.65737051792829, degrees :61.546875, count :1
+         Reference @: distance :238.83466135458167, degrees :114.359375, distance between: 190.27489034964418
+     Tower candidate found @: distance :145.65737051792829, degrees :61.546875, count :2
+         Reference @: distance :241.93227091633466, degrees :116.328125, distance between: 197.74326850043423
+CHECK
+     Tower candidate found @: distance :239.2430278884462, degrees :69.1875, count :1
+         Reference @: distance :241.93227091633466, degrees :116.328125, distance between: 192.42536106431174
+CHECK
+     Tower candidate found @: distance :235.51792828685257, degrees :71.140625, count :1
+         Reference @: distance :245.97609561752986, degrees :118.28125, distance between: 192.77549096761132
+CHECK
+     Tower candidate found @: distance :231.71314741035854, degrees :73.09375, count :1
+         Reference @: distance :250.93625498007967, degrees :120.25, distance between: 193.86158860927966
+CHECK
+     Tower candidate found @: distance :229.5219123505976, degrees :75.0625, count :1
+         Reference @: distance :254.94023904382468, degrees :122.203125, distance between: 195.11978762134842
+CHECK
+     Tower candidate found @: distance :226.55378486055776, degrees :77.0, count :1
+         Reference @: distance :254.94023904382468, degrees :122.203125, distance between: 186.89447481511144
+     Tower candidate found @: distance :226.55378486055776, degrees :77.0, count :2
+         Reference @: distance :258.95418326693226, degrees :124.15625, distance between: 196.46001483138502
+CHECK
+     Tower candidate found @: distance :225.5478087649402, degrees :78.9375, count :1
+         Reference @: distance :431.0258964143426, degrees :31.859375, distance between: 322.87080948990643
+     Tower candidate found @: distance :225.5478087649402, degrees :78.9375, count :2
+         Reference @: distance :258.95418326693226, degrees :124.15625, distance between: 188.80070912819397
+CHECK
+     Tower candidate found @: distance :237.91832669322707, degrees :80.890625, count :1
+         Reference @: distance :431.0258964143426, degrees :31.859375, distance between: 328.5065536289553
+     Tower candidate found @: distance :237.91832669322707, degrees :80.890625, count :2
+         Reference @: distance :264.4621513944223, degrees :126.109375, distance between: 194.68657715199623
+CHECK
+     Tower candidate found @: distance :238.01792828685257, degrees :90.796875, count :1
+         Reference @: distance :401.05577689243023, degrees :35.96875, distance between: 327.9087906047646
+     Tower candidate found @: distance :238.01792828685257, degrees :90.796875, count :2
+         Reference @: distance :287.70916334661354, degrees :131.9375, distance between: 190.48624685536322
+     Tower candidate found @: distance :238.01792828685257, degrees :90.796875, count :3
+         Reference @: distance :299.09362549800795, degrees :163.328125, distance between: 321.51099635174194
+     Tower candidate found @: distance :238.01792828685257, degrees :90.796875, count :4
+         Reference @: distance :296.39442231075697, degrees :165.296875, distance between: 326.79711860193567
+CHECK
+     Tower candidate found @: distance :234.82071713147408, degrees :92.765625, count :1
+         Reference @: distance :297.3406374501992, degrees :133.90625, distance between: 195.9263172798911
+     Tower candidate found @: distance :234.82071713147408, degrees :92.765625, count :2
+         Reference @: distance :296.39442231075697, degrees :165.296875, distance between: 318.12711188722545
+     Tower candidate found @: distance :234.82071713147408, degrees :92.765625, count :3
+         Reference @: distance :295.14940239043824, degrees :167.25, distance between: 324.30607422484786
+     Tower candidate found @: distance :234.82071713147408, degrees :92.765625, count :4
+         Reference @: distance :292.22111553784856, degrees :169.21875, distance between: 329.22172191632956
+CHECK
+     Tower candidate found @: distance :240.88645418326692, degrees :102.5625, count :1
+         Reference @: distance :148.0776892430279, degrees :49.984375, distance between: 191.31536572431185
+     Tower candidate found @: distance :240.88645418326692, degrees :102.5625, count :2
+         Reference @: distance :282.3406374501992, degrees :177.078125, distance between: 318.47671000618266
+     Tower candidate found @: distance :240.88645418326692, degrees :102.5625, count :3
+         Reference @: distance :282.76892430278883, degrees :179.078125, distance between: 325.9115174274541
+CHECK
+     Tower candidate found @: distance :226.36454183266932, degrees :104.53125, count :1
+         Reference @: distance :280.49800796812747, degrees :183.03125, distance between: 323.42291633267087
+CHECK
+     Tower candidate found @: distance :228.21713147410358, degrees :106.53125, count :1
+         Reference @: distance :148.0776892430279, degrees :49.984375, distance between: 191.7081504550208
+     Tower candidate found @: distance :228.21713147410358, degrees :106.53125, count :2
+         Reference @: distance :285.2191235059761, degrees :184.96875, distance between: 327.62691277117983
+CHECK
+     Tower candidate found @: distance :230.37848605577688, degrees :108.484375, count :1
+         Reference @: distance :285.2191235059761, degrees :184.96875, distance between: 322.04150194765174
+     Tower candidate found @: distance :230.37848605577688, degrees :108.484375, count :2
+         Reference @: distance :283.62549800796813, degrees :186.953125, distance between: 327.7101512758909
+CHECK
+     Tower candidate found @: distance :232.4800796812749, degrees :110.453125, count :1
+         Reference @: distance :283.62549800796813, degrees :186.953125, distance between: 322.0324621592112
+     Tower candidate found @: distance :232.4800796812749, degrees :110.453125, count :2
+         Reference @: distance :284.35258964143424, degrees :188.90625, distance between: 329.29992219247526
+CHECK
+     Tower candidate found @: distance :235.31872509960158, degrees :112.40625, count :1
+         Reference @: distance :284.35258964143424, degrees :188.90625, distance between: 324.0216198103928
+CHECK
+     Tower candidate found @: distance :238.83466135458167, degrees :114.359375, count :1
+         Reference @: distance :316.51394422310756, degrees :45.84375, distance between: 319.14022221720774
+     Tower candidate found @: distance :238.83466135458167, degrees :114.359375, count :2
+         Reference @: distance :145.65737051792829, degrees :61.546875, distance between: 190.27489034964418
+     Tower candidate found @: distance :238.83466135458167, degrees :114.359375, count :3
+         Reference @: distance :384.5916334661354, degrees :139.734375, distance between: 197.40509642630394
+     Tower candidate found @: distance :238.83466135458167, degrees :114.359375, count :4
+         Reference @: distance :373.15737051792826, degrees :141.671875, distance between: 194.71503076515287
+     Tower candidate found @: distance :238.83466135458167, degrees :114.359375, count :5
+         Reference @: distance :362.8386454183267, degrees :143.65625, distance between: 193.76511040337175
+     Tower candidate found @: distance :238.83466135458167, degrees :114.359375, count :6
+         Reference @: distance :353.07768924302786, degrees :145.609375, distance between: 193.70394424852967
+     Tower candidate found @: distance :238.83466135458167, degrees :114.359375, count :7
+         Reference @: distance :345.53784860557766, degrees :147.578125, distance between: 195.85113061097786
+     Tower candidate found @: distance :238.83466135458167, degrees :114.359375, count :8
+         Reference @: distance :335.00996015936255, degrees :149.546875, distance between: 196.19064245110215
+     Tower candidate found @: distance :238.83466135458167, degrees :114.359375, count :9
+         Reference @: distance :284.35258964143424, degrees :188.90625, distance between: 318.9160210533912
+     Tower candidate found @: distance :238.83466135458167, degrees :114.359375, count :10
+         Reference @: distance :286.9721115537848, degrees :190.875, distance between: 327.7669414223046
+CHECK
+     Tower candidate found @: distance :241.93227091633466, degrees :116.328125, count :1
+         Reference @: distance :316.51394422310756, degrees :45.84375, distance between: 327.94885928018715
+     Tower candidate found @: distance :241.93227091633466, degrees :116.328125, count :2
+         Reference @: distance :145.65737051792829, degrees :61.546875, distance between: 197.74326850043423
+     Tower candidate found @: distance :241.93227091633466, degrees :116.328125, count :3
+         Reference @: distance :239.2430278884462, degrees :69.1875, distance between: 192.42536106431174
+     Tower candidate found @: distance :241.93227091633466, degrees :116.328125, count :4
+         Reference @: distance :397.0219123505976, degrees :137.765625, distance between: 193.24394548465347
+     Tower candidate found @: distance :241.93227091633466, degrees :116.328125, count :5
+         Reference @: distance :384.5916334661354, degrees :139.734375, distance between: 188.8513150656847
+     Tower candidate found @: distance :241.93227091633466, degrees :116.328125, count :6
+         Reference @: distance :373.15737051792826, degrees :141.671875, distance between: 186.00435730833786
+     Tower candidate found @: distance :241.93227091633466, degrees :116.328125, count :7
+         Reference @: distance :345.53784860557766, degrees :147.578125, distance between: 187.06124594980474
+     Tower candidate found @: distance :241.93227091633466, degrees :116.328125, count :8
+         Reference @: distance :335.00996015936255, degrees :149.546875, distance between: 187.49112928060106
+     Tower candidate found @: distance :241.93227091633466, degrees :116.328125, count :9
+         Reference @: distance :329.9800796812749, degrees :151.5, distance between: 192.10136534740877
+     Tower candidate found @: distance :241.93227091633466, degrees :116.328125, count :10
+         Reference @: distance :322.99800796812747, degrees :153.46875, distance between: 195.63636351911788
+     Tower candidate found @: distance :241.93227091633466, degrees :116.328125, count :11
+         Reference @: distance :286.9721115537848, degrees :190.875, distance between: 322.3137375741461
+CHECK
+     Tower candidate found @: distance :245.97609561752986, degrees :118.28125, count :1
+         Reference @: distance :305.12948207171314, degrees :47.8125, distance between: 321.59542772031966
+     Tower candidate found @: distance :245.97609561752986, degrees :118.28125, count :2
+         Reference @: distance :235.51792828685257, degrees :71.140625, distance between: 192.77549096761132
+     Tower candidate found @: distance :245.97609561752986, degrees :118.28125, count :3
+         Reference @: distance :322.99800796812747, degrees :153.46875, distance between: 186.99730914080965
+     Tower candidate found @: distance :245.97609561752986, degrees :118.28125, count :4
+         Reference @: distance :319.05378486055776, degrees :155.46875, distance between: 193.01852573604597
+     Tower candidate found @: distance :245.97609561752986, degrees :118.28125, count :5
+         Reference @: distance :287.8585657370518, degrees :192.84375, distance between: 325.07128142503046
+     Tower candidate found @: distance :245.97609561752986, degrees :118.28125, count :6
+         Reference @: distance :91.7629482071713, degrees :340.015625, distance between: 320.3312821434208
+CHECK
+     Tower candidate found @: distance :250.93625498007967, degrees :120.25, count :1
+         Reference @: distance :231.71314741035854, degrees :73.09375, distance between: 193.86158860927966
+     Tower candidate found @: distance :250.93625498007967, degrees :120.25, count :2
+         Reference @: distance :313.6752988047809, degrees :157.4375, distance between: 189.59616387440698
+     Tower candidate found @: distance :250.93625498007967, degrees :120.25, count :3
+         Reference @: distance :307.47011952191235, degrees :159.40625, distance between: 194.55111805528705
+     Tower candidate found @: distance :250.93625498007967, degrees :120.25, count :4
+         Reference @: distance :287.8585657370518, degrees :192.84375, distance between: 320.33514498646645
+     Tower candidate found @: distance :250.93625498007967, degrees :120.25, count :5
+         Reference @: distance :289.203187250996, degrees :194.796875, distance between: 328.53327468208266
+     Tower candidate found @: distance :250.93625498007967, degrees :120.25, count :6
+         Reference @: distance :91.7629482071713, degrees :340.015625, distance between: 326.78603865352693
+     Tower candidate found @: distance :250.93625498007967, degrees :120.25, count :7
+         Reference @: distance :90.78685258964143, degrees :341.984375, distance between: 324.36470060780044
+CHECK
+     Tower candidate found @: distance :254.94023904382468, degrees :122.203125, count :1
+         Reference @: distance :229.5219123505976, degrees :75.0625, distance between: 195.11978762134842
+     Tower candidate found @: distance :254.94023904382468, degrees :122.203125, count :2
+         Reference @: distance :226.55378486055776, degrees :77.0, distance between: 186.89447481511144
+     Tower candidate found @: distance :254.94023904382468, degrees :122.203125, count :3
+         Reference @: distance :307.47011952191235, degrees :159.40625, distance between: 186.18049239514673
+     Tower candidate found @: distance :254.94023904382468, degrees :122.203125, count :4
+         Reference @: distance :303.4661354581673, degrees :161.375, distance between: 192.69130649547745
+     Tower candidate found @: distance :254.94023904382468, degrees :122.203125, count :5
+         Reference @: distance :289.203187250996, degrees :194.796875, distance between: 323.29767411673765
+     Tower candidate found @: distance :254.94023904382468, degrees :122.203125, count :6
+         Reference @: distance :90.78685258964143, degrees :341.984375, distance between: 329.8646058086579
+CHECK
+     Tower candidate found @: distance :258.95418326693226, degrees :124.15625, count :1
+         Reference @: distance :226.55378486055776, degrees :77.0, distance between: 196.46001483138502
+     Tower candidate found @: distance :258.95418326693226, degrees :124.15625, count :2
+         Reference @: distance :225.5478087649402, degrees :78.9375, distance between: 188.80070912819397
+     Tower candidate found @: distance :258.95418326693226, degrees :124.15625, count :3
+         Reference @: distance :299.09362549800795, degrees :163.328125, distance between: 190.85315159022832
+     Tower candidate found @: distance :258.95418326693226, degrees :124.15625, count :4
+         Reference @: distance :293.2868525896414, degrees :196.765625, distance between: 328.13891758662953
+CHECK
+     Tower candidate found @: distance :264.4621513944223, degrees :126.109375, count :1
+         Reference @: distance :237.91832669322707, degrees :80.890625, distance between: 194.68657715199623
+     Tower candidate found @: distance :264.4621513944223, degrees :126.109375, count :2
+         Reference @: distance :296.39442231075697, degrees :165.296875, distance between: 190.47324394983593
+     Tower candidate found @: distance :264.4621513944223, degrees :126.109375, count :3
+         Reference @: distance :293.2868525896414, degrees :196.765625, distance between: 323.3791458931223
+CHECK
+     Tower candidate found @: distance :270.98605577689244, degrees :128.09375, count :1
+         Reference @: distance :295.14940239043824, degrees :167.25, distance between: 191.06857885769398
+     Tower candidate found @: distance :270.98605577689244, degrees :128.09375, count :2
+         Reference @: distance :293.2868525896414, degrees :196.765625, distance between: 318.80707522298405
+     Tower candidate found @: distance :270.98605577689244, degrees :128.09375, count :3
+         Reference @: distance :296.87250996015933, degrees :198.734375, distance between: 328.98441316488885
+CHECK
+     Tower candidate found @: distance :278.8247011952191, degrees :130.03125, count :1
+         Reference @: distance :63.29681274900398, degrees :354.703125, distance between: 326.881139619182
+     Tower candidate found @: distance :278.8247011952191, degrees :130.03125, count :2
+         Reference @: distance :60.169322709163346, degrees :358.625, distance between: 321.8004965701462
+     Tower candidate found @: distance :278.8247011952191, degrees :130.03125, count :3
+         Reference @: distance :62.25099601593625, degrees :0.578125, distance between: 321.98982076875575
+     Tower candidate found @: distance :278.8247011952191, degrees :130.03125, count :4
+         Reference @: distance :66.23505976095618, degrees :4.5, distance between: 321.86255615089135
+     Tower candidate found @: distance :278.8247011952191, degrees :130.03125, count :5
+         Reference @: distance :292.22111553784856, degrees :169.21875, distance between: 191.91496167646
+     Tower candidate found @: distance :278.8247011952191, degrees :130.03125, count :6
+         Reference @: distance :296.87250996015933, degrees :198.734375, distance between: 325.18977556870726
+CHECK
+     Tower candidate found @: distance :287.70916334661354, degrees :131.9375, count :1
+         Reference @: distance :61.20517928286852, degrees :6.453125, distance between: 327.0571072242252
+     Tower candidate found @: distance :287.70916334661354, degrees :131.9375, count :2
+         Reference @: distance :65.3187250996016, degrees :16.1875, distance between: 321.5151326073618
+     Tower candidate found @: distance :287.70916334661354, degrees :131.9375, count :3
+         Reference @: distance :238.01792828685257, degrees :90.796875, distance between: 190.48624685536322
+     Tower candidate found @: distance :287.70916334661354, degrees :131.9375, count :4
+         Reference @: distance :286.9721115537848, degrees :171.203125, distance between: 193.0889944883892
+     Tower candidate found @: distance :287.70916334661354, degrees :131.9375, count :5
+         Reference @: distance :296.87250996015933, degrees :198.734375, distance between: 321.8785667542814
+CHECK
+     Tower candidate found @: distance :297.3406374501992, degrees :133.90625, count :1
+         Reference @: distance :39.91035856573705, degrees :2.546875, distance between: 325.0956819308352
+     Tower candidate found @: distance :297.3406374501992, degrees :133.90625, count :2
+         Reference @: distance :234.82071713147408, degrees :92.765625, distance between: 195.9263172798911
+     Tower candidate found @: distance :297.3406374501992, degrees :133.90625, count :3
+         Reference @: distance :286.9721115537848, degrees :171.203125, distance between: 187.0981993494268
+     Tower candidate found @: distance :297.3406374501992, degrees :133.90625, count :4
+         Reference @: distance :285.79681274900395, degrees :173.15625, distance between: 196.1556469018898
+     Tower candidate found @: distance :297.3406374501992, degrees :133.90625, count :5
+         Reference @: distance :296.87250996015933, degrees :198.734375, distance between: 318.51870022583785
+     Tower candidate found @: distance :297.3406374501992, degrees :133.90625, count :6
+         Reference @: distance :301.83266932270914, degrees :200.703125, distance between: 329.8410442815708
+CHECK
+     Tower candidate found @: distance :397.0219123505976, degrees :137.765625, count :1
+         Reference @: distance :241.93227091633466, degrees :116.328125, distance between: 193.24394548465347
+     Tower candidate found @: distance :397.0219123505976, degrees :137.765625, count :2
+         Reference @: distance :296.39442231075697, degrees :165.296875, distance between: 191.7738592293647
+     Tower candidate found @: distance :397.0219123505976, degrees :137.765625, count :3
+         Reference @: distance :286.9721115537848, degrees :190.875, distance between: 321.23572928180283
+CHECK
+     Tower candidate found @: distance :384.5916334661354, degrees :139.734375, count :1
+         Reference @: distance :238.83466135458167, degrees :114.359375, distance between: 197.40509642630394
+     Tower candidate found @: distance :384.5916334661354, degrees :139.734375, count :2
+         Reference @: distance :241.93227091633466, degrees :116.328125, distance between: 188.8513150656847
+     Tower candidate found @: distance :384.5916334661354, degrees :139.734375, count :3
+         Reference @: distance :292.22111553784856, degrees :169.21875, distance between: 194.01673241401724
+     Tower candidate found @: distance :384.5916334661354, degrees :139.734375, count :4
+         Reference @: distance :289.203187250996, degrees :194.796875, distance between: 322.7318278596127
+CHECK
+     Tower candidate found @: distance :373.15737051792826, degrees :141.671875, count :1
+         Reference @: distance :238.83466135458167, degrees :114.359375, distance between: 194.71503076515287
+     Tower candidate found @: distance :373.15737051792826, degrees :141.671875, count :2
+         Reference @: distance :241.93227091633466, degrees :116.328125, distance between: 186.00435730833786
+     Tower candidate found @: distance :373.15737051792826, degrees :141.671875, count :3
+         Reference @: distance :286.9721115537848, degrees :171.203125, distance between: 187.75400147647653
+     Tower candidate found @: distance :373.15737051792826, degrees :141.671875, count :4
+         Reference @: distance :285.79681274900395, degrees :173.15625, distance between: 197.5664586258619
+     Tower candidate found @: distance :373.15737051792826, degrees :141.671875, count :5
+         Reference @: distance :296.87250996015933, degrees :198.734375, distance between: 326.97411442746267
+CHECK
+     Tower candidate found @: distance :362.8386454183267, degrees :143.65625, count :1
+         Reference @: distance :238.83466135458167, degrees :114.359375, distance between: 193.76511040337175
+     Tower candidate found @: distance :362.8386454183267, degrees :143.65625, count :2
+         Reference @: distance :283.62549800796813, degrees :175.109375, distance between: 191.09287533973782
+     Tower candidate found @: distance :362.8386454183267, degrees :143.65625, count :3
+         Reference @: distance :301.83266932270914, degrees :200.703125, distance between: 321.8869141825465
+CHECK
+     Tower candidate found @: distance :353.07768924302786, degrees :145.609375, count :1
+         Reference @: distance :238.83466135458167, degrees :114.359375, distance between: 193.70394424852967
+     Tower candidate found @: distance :353.07768924302786, degrees :145.609375, count :2
+         Reference @: distance :282.76892430278883, degrees :179.078125, distance between: 195.0710539268137
+     Tower candidate found @: distance :353.07768924302786, degrees :145.609375, count :3
+         Reference @: distance :305.6274900398406, degrees :204.625, distance between: 327.0576372240278
+CHECK
+     Tower candidate found @: distance :345.53784860557766, degrees :147.578125, count :1
+         Reference @: distance :238.83466135458167, degrees :114.359375, distance between: 195.85113061097786
+     Tower candidate found @: distance :345.53784860557766, degrees :147.578125, count :2
+         Reference @: distance :241.93227091633466, degrees :116.328125, distance between: 187.06124594980474
+     Tower candidate found @: distance :345.53784860557766, degrees :147.578125, count :3
+         Reference @: distance :280.3585657370518, degrees :181.0625, distance between: 190.79737086609418
+     Tower candidate found @: distance :345.53784860557766, degrees :147.578125, count :4
+         Reference @: distance :313.85458167330677, degrees :206.578125, distance between: 325.8692205132523
+CHECK
+     Tower candidate found @: distance :335.00996015936255, degrees :149.546875, count :1
+         Reference @: distance :238.83466135458167, degrees :114.359375, distance between: 196.19064245110215
+     Tower candidate found @: distance :335.00996015936255, degrees :149.546875, count :2
+         Reference @: distance :241.93227091633466, degrees :116.328125, distance between: 187.49112928060106
+     Tower candidate found @: distance :335.00996015936255, degrees :149.546875, count :3
+         Reference @: distance :285.2191235059761, degrees :184.96875, distance between: 194.55318856477084
+     Tower candidate found @: distance :335.00996015936255, degrees :149.546875, count :4
+         Reference @: distance :322.7988047808765, degrees :208.546875, distance between: 324.09484367904844
+CHECK
+     Tower candidate found @: distance :329.9800796812749, degrees :151.5, count :1
+         Reference @: distance :241.93227091633466, degrees :116.328125, distance between: 192.10136534740877
+     Tower candidate found @: distance :329.9800796812749, degrees :151.5, count :2
+         Reference @: distance :283.62549800796813, degrees :186.953125, distance between: 191.97398860328002
+     Tower candidate found @: distance :329.9800796812749, degrees :151.5, count :3
+         Reference @: distance :323.37649402390434, degrees :210.5, distance between: 321.77950337268413
+CHECK
+     Tower candidate found @: distance :322.99800796812747, degrees :153.46875, count :1
+         Reference @: distance :241.93227091633466, degrees :116.328125, distance between: 195.63636351911788
+     Tower candidate found @: distance :322.99800796812747, degrees :153.46875, count :2
+         Reference @: distance :245.97609561752986, degrees :118.28125, distance between: 186.99730914080965
+     Tower candidate found @: distance :322.99800796812747, degrees :153.46875, count :3
+         Reference @: distance :284.35258964143424, degrees :188.90625, distance between: 188.47397212509478
+     Tower candidate found @: distance :322.99800796812747, degrees :153.46875, count :4
+         Reference @: distance :326.06573705179284, degrees :212.484375, distance between: 319.7024534767907
+     Tower candidate found @: distance :322.99800796812747, degrees :153.46875, count :5
+         Reference @: distance :316.1553784860558, degrees :214.453125, distance between: 324.37336269969313
+CHECK
+     Tower candidate found @: distance :319.05378486055776, degrees :155.46875, count :1
+         Reference @: distance :245.97609561752986, degrees :118.28125, distance between: 193.01852573604597
+     Tower candidate found @: distance :319.05378486055776, degrees :155.46875, count :2
+         Reference @: distance :286.9721115537848, degrees :190.875, distance between: 186.8005172728417
+     Tower candidate found @: distance :319.05378486055776, degrees :155.46875, count :3
+         Reference @: distance :287.8585657370518, degrees :192.84375, distance between: 196.69105409725537
+     Tower candidate found @: distance :319.05378486055776, degrees :155.46875, count :4
+         Reference @: distance :242.35059760956173, degrees :224.328125, distance between: 323.6585681254774
+     Tower candidate found @: distance :319.05378486055776, degrees :155.46875, count :5
+         Reference @: distance :232.0019920318725, degrees :226.265625, distance between: 326.99612508797713
+CHECK
+     Tower candidate found @: distance :313.6752988047809, degrees :157.4375, count :1
+         Reference @: distance :250.93625498007967, degrees :120.25, distance between: 189.59616387440698
+     Tower candidate found @: distance :313.6752988047809, degrees :157.4375, count :2
+         Reference @: distance :289.203187250996, degrees :194.796875, distance between: 194.47496001542146
+     Tower candidate found @: distance :313.6752988047809, degrees :157.4375, count :3
+         Reference @: distance :336.8625498007968, degrees :216.40625, distance between: 320.8213143489961
+     Tower candidate found @: distance :313.6752988047809, degrees :157.4375, count :4
+         Reference @: distance :307.1314741035856, degrees :220.34375, distance between: 323.98558220247514
+     Tower candidate found @: distance :313.6752988047809, degrees :157.4375, count :5
+         Reference @: distance :300.53784860557766, degrees :222.3125, distance between: 329.63773885544737
+CHECK
+     Tower candidate found @: distance :307.47011952191235, degrees :159.40625, count :1
+         Reference @: distance :250.93625498007967, degrees :120.25, distance between: 194.55111805528705
+     Tower candidate found @: distance :307.47011952191235, degrees :159.40625, count :2
+         Reference @: distance :254.94023904382468, degrees :122.203125, distance between: 186.18049239514673
+     Tower candidate found @: distance :307.47011952191235, degrees :159.40625, count :3
+         Reference @: distance :293.2868525896414, degrees :196.765625, distance between: 192.87730127462095
+     Tower candidate found @: distance :307.47011952191235, degrees :159.40625, count :4
+         Reference @: distance :264.83067729083666, degrees :228.1875, distance between: 325.16318045375834
+CHECK
+     Tower candidate found @: distance :303.4661354581673, degrees :161.375, count :1
+         Reference @: distance :254.94023904382468, degrees :122.203125, distance between: 192.69130649547745
+     Tower candidate found @: distance :303.4661354581673, degrees :161.375, count :2
+         Reference @: distance :296.87250996015933, degrees :198.734375, distance between: 192.37619253631115
+     Tower candidate found @: distance :303.4661354581673, degrees :161.375, count :3
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 328.89974915953553
+CHECK
+     Tower candidate found @: distance :299.09362549800795, degrees :163.328125, count :1
+         Reference @: distance :30.149402390438244, degrees :8.40625, distance between: 326.6509230012102
+     Tower candidate found @: distance :299.09362549800795, degrees :163.328125, count :2
+         Reference @: distance :238.01792828685257, degrees :90.796875, distance between: 321.51099635174194
+     Tower candidate found @: distance :299.09362549800795, degrees :163.328125, count :3
+         Reference @: distance :258.95418326693226, degrees :124.15625, distance between: 190.85315159022832
+     Tower candidate found @: distance :299.09362549800795, degrees :163.328125, count :4
+         Reference @: distance :301.83266932270914, degrees :200.703125, distance between: 192.55807263457802
+     Tower candidate found @: distance :299.09362549800795, degrees :163.328125, count :5
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 318.08236428329155
+     Tower candidate found @: distance :299.09362549800795, degrees :163.328125, count :6
+         Reference @: distance :274.99003984063745, degrees :232.09375, distance between: 324.80592790045193
+     Tower candidate found @: distance :299.09362549800795, degrees :163.328125, count :7
+         Reference @: distance :267.3605577689243, degrees :234.0625, distance between: 328.89133881535923
+CHECK
+     Tower candidate found @: distance :296.39442231075697, degrees :165.296875, count :1
+         Reference @: distance :30.149402390438244, degrees :8.40625, distance between: 324.3404897805034
+     Tower candidate found @: distance :296.39442231075697, degrees :165.296875, count :2
+         Reference @: distance :238.01792828685257, degrees :90.796875, distance between: 326.79711860193567
+     Tower candidate found @: distance :296.39442231075697, degrees :165.296875, count :3
+         Reference @: distance :234.82071713147408, degrees :92.765625, distance between: 318.12711188722545
+     Tower candidate found @: distance :296.39442231075697, degrees :165.296875, count :4
+         Reference @: distance :264.4621513944223, degrees :126.109375, distance between: 190.47324394983593
+     Tower candidate found @: distance :296.39442231075697, degrees :165.296875, count :5
+         Reference @: distance :397.0219123505976, degrees :137.765625, distance between: 191.7738592293647
+     Tower candidate found @: distance :296.39442231075697, degrees :165.296875, count :6
+         Reference @: distance :307.1314741035856, degrees :202.6875, distance between: 193.7186410088454
+     Tower candidate found @: distance :296.39442231075697, degrees :165.296875, count :7
+         Reference @: distance :267.3605577689243, degrees :234.0625, distance between: 319.26383600498923
+CHECK
+     Tower candidate found @: distance :295.14940239043824, degrees :167.25, count :1
+         Reference @: distance :30.149402390438244, degrees :8.40625, distance between: 323.44980754311774
+     Tower candidate found @: distance :295.14940239043824, degrees :167.25, count :2
+         Reference @: distance :234.82071713147408, degrees :92.765625, distance between: 324.30607422484786
+     Tower candidate found @: distance :295.14940239043824, degrees :167.25, count :3
+         Reference @: distance :270.98605577689244, degrees :128.09375, distance between: 191.06857885769398
+     Tower candidate found @: distance :295.14940239043824, degrees :167.25, count :4
+         Reference @: distance :305.6274900398406, degrees :204.625, distance between: 192.74845537826852
+CHECK
+     Tower candidate found @: distance :292.22111553784856, degrees :169.21875, count :1
+         Reference @: distance :30.149402390438244, degrees :8.40625, distance between: 320.84870862590634
+     Tower candidate found @: distance :292.22111553784856, degrees :169.21875, count :2
+         Reference @: distance :234.82071713147408, degrees :92.765625, distance between: 329.22172191632956
+     Tower candidate found @: distance :292.22111553784856, degrees :169.21875, count :3
+         Reference @: distance :278.8247011952191, degrees :130.03125, distance between: 191.91496167646
+     Tower candidate found @: distance :292.22111553784856, degrees :169.21875, count :4
+         Reference @: distance :384.5916334661354, degrees :139.734375, distance between: 194.01673241401724
+     Tower candidate found @: distance :292.22111553784856, degrees :169.21875, count :5
+         Reference @: distance :313.85458167330677, degrees :206.578125, distance between: 195.19105654773284
+CHECK
+     Tower candidate found @: distance :286.9721115537848, degrees :171.203125, count :1
+         Reference @: distance :39.91035856573705, degrees :2.546875, distance between: 326.19728483005963
+     Tower candidate found @: distance :286.9721115537848, degrees :171.203125, count :2
+         Reference @: distance :287.70916334661354, degrees :131.9375, distance between: 193.0889944883892
+     Tower candidate found @: distance :286.9721115537848, degrees :171.203125, count :3
+         Reference @: distance :297.3406374501992, degrees :133.90625, distance between: 187.0981993494268
+     Tower candidate found @: distance :286.9721115537848, degrees :171.203125, count :4
+         Reference @: distance :373.15737051792826, degrees :141.671875, distance between: 187.75400147647653
+     Tower candidate found @: distance :286.9721115537848, degrees :171.203125, count :5
+         Reference @: distance :124.97011952191234, degrees :265.53125, distance between: 321.53311992685167
+     Tower candidate found @: distance :286.9721115537848, degrees :171.203125, count :6
+         Reference @: distance :125.88645418326692, degrees :267.4375, distance between: 325.64802066660684
+     Tower candidate found @: distance :286.9721115537848, degrees :171.203125, count :7
+         Reference @: distance :126.07569721115537, degrees :269.40625, distance between: 329.5036718990805
+CHECK
+     Tower candidate found @: distance :285.79681274900395, degrees :173.15625, count :1
+         Reference @: distance :39.91035856573705, degrees :2.546875, distance between: 325.23752572252664
+     Tower candidate found @: distance :285.79681274900395, degrees :173.15625, count :2
+         Reference @: distance :297.3406374501992, degrees :133.90625, distance between: 196.1556469018898
+     Tower candidate found @: distance :285.79681274900395, degrees :173.15625, count :3
+         Reference @: distance :373.15737051792826, degrees :141.671875, distance between: 197.5664586258619
+     Tower candidate found @: distance :285.79681274900395, degrees :173.15625, count :4
+         Reference @: distance :322.7988047808765, degrees :208.546875, distance between: 188.31458498353234
+     Tower candidate found @: distance :285.79681274900395, degrees :173.15625, count :5
+         Reference @: distance :125.88645418326692, degrees :267.4375, distance between: 320.7785799945118
+     Tower candidate found @: distance :285.79681274900395, degrees :173.15625, count :6
+         Reference @: distance :126.07569721115537, degrees :269.40625, distance between: 324.68490746380945
+CHECK
+     Tower candidate found @: distance :283.62549800796813, degrees :175.109375, count :1
+         Reference @: distance :39.91035856573705, degrees :2.546875, distance between: 323.2413635857249
+     Tower candidate found @: distance :283.62549800796813, degrees :175.109375, count :2
+         Reference @: distance :362.8386454183267, degrees :143.65625, distance between: 191.09287533973782
+     Tower candidate found @: distance :283.62549800796813, degrees :175.109375, count :3
+         Reference @: distance :323.37649402390434, degrees :210.5, distance between: 188.34783672779733
+     Tower candidate found @: distance :283.62549800796813, degrees :175.109375, count :4
+         Reference @: distance :126.07569721115537, degrees :269.40625, distance between: 318.8994134091783
+     Tower candidate found @: distance :283.62549800796813, degrees :175.109375, count :5
+         Reference @: distance :129.77091633466134, degrees :271.359375, distance between: 324.49637353266996
+CHECK
+     Tower candidate found @: distance :282.3406374501992, degrees :177.078125, count :1
+         Reference @: distance :39.91035856573705, degrees :2.546875, distance between: 322.09179597120686
+     Tower candidate found @: distance :282.3406374501992, degrees :177.078125, count :2
+         Reference @: distance :240.88645418326692, degrees :102.5625, distance between: 318.47671000618266
+     Tower candidate found @: distance :282.3406374501992, degrees :177.078125, count :3
+         Reference @: distance :326.06573705179284, degrees :212.484375, distance between: 189.63856345769835
+     Tower candidate found @: distance :282.3406374501992, degrees :177.078125, count :4
+         Reference @: distance :316.1553784860558, degrees :214.453125, distance between: 194.4188339473535
+     Tower candidate found @: distance :282.3406374501992, degrees :177.078125, count :5
+         Reference @: distance :129.77091633466134, degrees :271.359375, distance between: 319.41696030575326
+CHECK
+     Tower candidate found @: distance :282.76892430278883, degrees :179.078125, count :1
+         Reference @: distance :39.91035856573705, degrees :2.546875, distance between: 322.61520214022477
+     Tower candidate found @: distance :282.76892430278883, degrees :179.078125, count :2
+         Reference @: distance :240.88645418326692, degrees :102.5625, distance between: 325.9115174274541
+     Tower candidate found @: distance :282.76892430278883, degrees :179.078125, count :3
+         Reference @: distance :353.07768924302786, degrees :145.609375, distance between: 195.0710539268137
+CHECK
+     Tower candidate found @: distance :280.3585657370518, degrees :181.0625, count :1
+         Reference @: distance :39.91035856573705, degrees :2.546875, distance between: 320.25720018107864
+     Tower candidate found @: distance :280.3585657370518, degrees :181.0625, count :2
+         Reference @: distance :345.53784860557766, degrees :147.578125, distance between: 190.79737086609418
+     Tower candidate found @: distance :280.3585657370518, degrees :181.0625, count :3
+         Reference @: distance :336.8625498007968, degrees :216.40625, distance between: 194.94837032750857
+     Tower candidate found @: distance :280.3585657370518, degrees :181.0625, count :4
+         Reference @: distance :242.35059760956173, degrees :224.328125, distance between: 195.91249515785
+CHECK
+     Tower candidate found @: distance :280.49800796812747, degrees :183.03125, count :1
+         Reference @: distance :39.91035856573705, degrees :2.546875, distance between: 320.4071180066826
+     Tower candidate found @: distance :280.49800796812747, degrees :183.03125, count :2
+         Reference @: distance :226.36454183266932, degrees :104.53125, distance between: 323.42291633267087
+     Tower candidate found @: distance :280.49800796812747, degrees :183.03125, count :3
+         Reference @: distance :307.1314741035856, degrees :220.34375, distance between: 189.6627207550197
+     Tower candidate found @: distance :280.49800796812747, degrees :183.03125, count :4
+         Reference @: distance :300.53784860557766, degrees :222.3125, distance between: 196.20733316441783
+     Tower candidate found @: distance :280.49800796812747, degrees :183.03125, count :5
+         Reference @: distance :242.35059760956173, degrees :224.328125, distance between: 187.79747642387582
+     Tower candidate found @: distance :280.49800796812747, degrees :183.03125, count :6
+         Reference @: distance :232.0019920318725, degrees :226.265625, distance between: 194.1150729675186
+CHECK
+     Tower candidate found @: distance :285.2191235059761, degrees :184.96875, count :1
+         Reference @: distance :39.91035856573705, degrees :2.546875, distance between: 325.09820743096446
+     Tower candidate found @: distance :285.2191235059761, degrees :184.96875, count :2
+         Reference @: distance :228.21713147410358, degrees :106.53125, distance between: 327.62691277117983
+     Tower candidate found @: distance :285.2191235059761, degrees :184.96875, count :3
+         Reference @: distance :230.37848605577688, degrees :108.484375, distance between: 322.04150194765174
+     Tower candidate found @: distance :285.2191235059761, degrees :184.96875, count :4
+         Reference @: distance :335.00996015936255, degrees :149.546875, distance between: 194.55318856477084
+     Tower candidate found @: distance :285.2191235059761, degrees :184.96875, count :5
+         Reference @: distance :300.53784860557766, degrees :222.3125, distance between: 188.08962399491213
+     Tower candidate found @: distance :285.2191235059761, degrees :184.96875, count :6
+         Reference @: distance :232.0019920318725, degrees :226.265625, distance between: 189.0653396286622
+CHECK
+     Tower candidate found @: distance :283.62549800796813, degrees :186.953125, count :1
+         Reference @: distance :39.91035856573705, degrees :2.546875, distance between: 323.43243125680607
+     Tower candidate found @: distance :283.62549800796813, degrees :186.953125, count :2
+         Reference @: distance :230.37848605577688, degrees :108.484375, distance between: 327.7101512758909
+     Tower candidate found @: distance :283.62549800796813, degrees :186.953125, count :3
+         Reference @: distance :232.4800796812749, degrees :110.453125, distance between: 322.0324621592112
+     Tower candidate found @: distance :283.62549800796813, degrees :186.953125, count :4
+         Reference @: distance :329.9800796812749, degrees :151.5, distance between: 191.97398860328002
+     Tower candidate found @: distance :283.62549800796813, degrees :186.953125, count :5
+         Reference @: distance :264.83067729083666, degrees :228.1875, distance between: 193.92322727292063
+     Tower candidate found @: distance :283.62549800796813, degrees :186.953125, count :6
+         Reference @: distance :435.77689243027885, degrees :235.9375, distance between: 328.81548349860736
+CHECK
+     Tower candidate found @: distance :284.35258964143424, degrees :188.90625, count :1
+         Reference @: distance :39.91035856573705, degrees :2.546875, distance between: 324.0475225167
+     Tower candidate found @: distance :284.35258964143424, degrees :188.90625, count :2
+         Reference @: distance :232.4800796812749, degrees :110.453125, distance between: 329.29992219247526
+     Tower candidate found @: distance :284.35258964143424, degrees :188.90625, count :3
+         Reference @: distance :235.31872509960158, degrees :112.40625, distance between: 324.0216198103928
+     Tower candidate found @: distance :284.35258964143424, degrees :188.90625, count :4
+         Reference @: distance :238.83466135458167, degrees :114.359375, distance between: 318.9160210533912
+     Tower candidate found @: distance :284.35258964143424, degrees :188.90625, count :5
+         Reference @: distance :322.99800796812747, degrees :153.46875, distance between: 188.47397212509478
+     Tower candidate found @: distance :284.35258964143424, degrees :188.90625, count :6
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 197.9887348724662
+     Tower candidate found @: distance :284.35258964143424, degrees :188.90625, count :7
+         Reference @: distance :435.77689243027885, degrees :235.9375, distance between: 319.12081543838946
+CHECK
+     Tower candidate found @: distance :286.9721115537848, degrees :190.875, count :1
+         Reference @: distance :39.91035856573705, degrees :2.546875, distance between: 326.51278345353467
+     Tower candidate found @: distance :286.9721115537848, degrees :190.875, count :2
+         Reference @: distance :238.83466135458167, degrees :114.359375, distance between: 327.7669414223046
+     Tower candidate found @: distance :286.9721115537848, degrees :190.875, count :3
+         Reference @: distance :241.93227091633466, degrees :116.328125, distance between: 322.3137375741461
+     Tower candidate found @: distance :286.9721115537848, degrees :190.875, count :4
+         Reference @: distance :397.0219123505976, degrees :137.765625, distance between: 321.23572928180283
+     Tower candidate found @: distance :286.9721115537848, degrees :190.875, count :5
+         Reference @: distance :319.05378486055776, degrees :155.46875, distance between: 186.8005172728417
+     Tower candidate found @: distance :286.9721115537848, degrees :190.875, count :6
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 189.89960950767923
+CHECK
+     Tower candidate found @: distance :287.8585657370518, degrees :192.84375, count :1
+         Reference @: distance :39.91035856573705, degrees :2.546875, distance between: 327.2039380175243
+     Tower candidate found @: distance :287.8585657370518, degrees :192.84375, count :2
+         Reference @: distance :245.97609561752986, degrees :118.28125, distance between: 325.07128142503046
+     Tower candidate found @: distance :287.8585657370518, degrees :192.84375, count :3
+         Reference @: distance :250.93625498007967, degrees :120.25, distance between: 320.33514498646645
+     Tower candidate found @: distance :287.8585657370518, degrees :192.84375, count :4
+         Reference @: distance :319.05378486055776, degrees :155.46875, distance between: 196.69105409725537
+     Tower candidate found @: distance :287.8585657370518, degrees :192.84375, count :5
+         Reference @: distance :274.99003984063745, degrees :232.09375, distance between: 189.42798292522005
+     Tower candidate found @: distance :287.8585657370518, degrees :192.84375, count :6
+         Reference @: distance :267.3605577689243, degrees :234.0625, distance between: 196.37376226914614
+     Tower candidate found @: distance :287.8585657370518, degrees :192.84375, count :7
+         Reference @: distance :460.73705179282865, degrees :237.90625, distance between: 328.30297369120325
+     Tower candidate found @: distance :287.8585657370518, degrees :192.84375, count :8
+         Reference @: distance :360.22908366533864, degrees :251.546875, distance between: 323.8736093103122
+CHECK
+     Tower candidate found @: distance :289.203187250996, degrees :194.796875, count :1
+         Reference @: distance :39.91035856573705, degrees :2.546875, distance between: 328.3140564489436
+     Tower candidate found @: distance :289.203187250996, degrees :194.796875, count :2
+         Reference @: distance :30.149402390438244, degrees :8.40625, distance between: 319.18288728704533
+     Tower candidate found @: distance :289.203187250996, degrees :194.796875, count :3
+         Reference @: distance :250.93625498007967, degrees :120.25, distance between: 328.53327468208266
+     Tower candidate found @: distance :289.203187250996, degrees :194.796875, count :4
+         Reference @: distance :254.94023904382468, degrees :122.203125, distance between: 323.29767411673765
+     Tower candidate found @: distance :289.203187250996, degrees :194.796875, count :5
+         Reference @: distance :384.5916334661354, degrees :139.734375, distance between: 322.7318278596127
+     Tower candidate found @: distance :289.203187250996, degrees :194.796875, count :6
+         Reference @: distance :313.6752988047809, degrees :157.4375, distance between: 194.47496001542146
+     Tower candidate found @: distance :289.203187250996, degrees :194.796875, count :7
+         Reference @: distance :267.3605577689243, degrees :234.0625, distance between: 188.12867248641857
+     Tower candidate found @: distance :289.203187250996, degrees :194.796875, count :8
+         Reference @: distance :460.73705179282865, degrees :237.90625, distance between: 318.3764981998518
+     Tower candidate found @: distance :289.203187250996, degrees :194.796875, count :9
+         Reference @: distance :410.2788844621514, degrees :247.71875, distance between: 329.9901293951063
+CHECK
+     Tower candidate found @: distance :293.2868525896414, degrees :196.765625, count :1
+         Reference @: distance :30.149402390438244, degrees :8.40625, distance between: 323.1456657060792
+     Tower candidate found @: distance :293.2868525896414, degrees :196.765625, count :2
+         Reference @: distance :258.95418326693226, degrees :124.15625, distance between: 328.13891758662953
+     Tower candidate found @: distance :293.2868525896414, degrees :196.765625, count :3
+         Reference @: distance :264.4621513944223, degrees :126.109375, distance between: 323.3791458931223
+     Tower candidate found @: distance :293.2868525896414, degrees :196.765625, count :4
+         Reference @: distance :270.98605577689244, degrees :128.09375, distance between: 318.80707522298405
+     Tower candidate found @: distance :293.2868525896414, degrees :196.765625, count :5
+         Reference @: distance :307.47011952191235, degrees :159.40625, distance between: 192.87730127462095
+     Tower candidate found @: distance :293.2868525896414, degrees :196.765625, count :6
+         Reference @: distance :472.898406374502, degrees :239.84375, distance between: 327.1669102153093
+     Tower candidate found @: distance :293.2868525896414, degrees :196.765625, count :7
+         Reference @: distance :410.2788844621514, degrees :247.71875, distance between: 320.5331293079459
+CHECK
+     Tower candidate found @: distance :296.87250996015933, degrees :198.734375, count :1
+         Reference @: distance :30.149402390438244, degrees :8.40625, distance between: 326.5781422703801
+     Tower candidate found @: distance :296.87250996015933, degrees :198.734375, count :2
+         Reference @: distance :270.98605577689244, degrees :128.09375, distance between: 328.98441316488885
+     Tower candidate found @: distance :296.87250996015933, degrees :198.734375, count :3
+         Reference @: distance :278.8247011952191, degrees :130.03125, distance between: 325.18977556870726
+     Tower candidate found @: distance :296.87250996015933, degrees :198.734375, count :4
+         Reference @: distance :287.70916334661354, degrees :131.9375, distance between: 321.8785667542814
+     Tower candidate found @: distance :296.87250996015933, degrees :198.734375, count :5
+         Reference @: distance :297.3406374501992, degrees :133.90625, distance between: 318.51870022583785
+     Tower candidate found @: distance :296.87250996015933, degrees :198.734375, count :6
+         Reference @: distance :373.15737051792826, degrees :141.671875, distance between: 326.97411442746267
+     Tower candidate found @: distance :296.87250996015933, degrees :198.734375, count :7
+         Reference @: distance :303.4661354581673, degrees :161.375, distance between: 192.37619253631115
+     Tower candidate found @: distance :296.87250996015933, degrees :198.734375, count :8
+         Reference @: distance :409.97011952191235, degrees :249.671875, distance between: 320.6474557573451
+     Tower candidate found @: distance :296.87250996015933, degrees :198.734375, count :9
+         Reference @: distance :391.6832669322709, degrees :253.484375, distance between: 327.60981310841663
+CHECK
+     Tower candidate found @: distance :301.83266932270914, degrees :200.703125, count :1
+         Reference @: distance :297.3406374501992, degrees :133.90625, distance between: 329.8410442815708
+     Tower candidate found @: distance :301.83266932270914, degrees :200.703125, count :2
+         Reference @: distance :362.8386454183267, degrees :143.65625, distance between: 321.8869141825465
+     Tower candidate found @: distance :301.83266932270914, degrees :200.703125, count :3
+         Reference @: distance :299.09362549800795, degrees :163.328125, distance between: 192.55807263457802
+     Tower candidate found @: distance :301.83266932270914, degrees :200.703125, count :4
+         Reference @: distance :391.6832669322709, degrees :253.484375, distance between: 318.5942701854331
+CHECK
+     Tower candidate found @: distance :307.1314741035856, degrees :202.6875, count :1
+         Reference @: distance :296.39442231075697, degrees :165.296875, distance between: 193.7186410088454
+     Tower candidate found @: distance :307.1314741035856, degrees :202.6875, count :2
+         Reference @: distance :396.1752988047809, degrees :255.4375, distance between: 322.4636457106361
+     Tower candidate found @: distance :307.1314741035856, degrees :202.6875, count :3
+         Reference @: distance :391.12549800796813, degrees :257.390625, distance between: 329.3737140654781
+     Tower candidate found @: distance :307.1314741035856, degrees :202.6875, count :4
+         Reference @: distance :261.2450199203187, degrees :273.078125, distance between: 329.73171242746145
+CHECK
+     Tower candidate found @: distance :305.6274900398406, degrees :204.625, count :1
+         Reference @: distance :353.07768924302786, degrees :145.609375, distance between: 327.0576372240278
+     Tower candidate found @: distance :305.6274900398406, degrees :204.625, count :2
+         Reference @: distance :295.14940239043824, degrees :167.25, distance between: 192.74845537826852
+     Tower candidate found @: distance :305.6274900398406, degrees :204.625, count :3
+         Reference @: distance :391.12549800796813, degrees :257.390625, distance between: 318.9468656992184
+     Tower candidate found @: distance :305.6274900398406, degrees :204.625, count :4
+         Reference @: distance :388.6553784860558, degrees :259.328125, distance between: 327.401174806805
+     Tower candidate found @: distance :305.6274900398406, degrees :204.625, count :5
+         Reference @: distance :261.2450199203187, degrees :273.078125, distance between: 320.95169553645775
+CHECK
+     Tower candidate found @: distance :313.85458167330677, degrees :206.578125, count :1
+         Reference @: distance :345.53784860557766, degrees :147.578125, distance between: 325.8692205132523
+     Tower candidate found @: distance :313.85458167330677, degrees :206.578125, count :2
+         Reference @: distance :292.22111553784856, degrees :169.21875, distance between: 195.19105654773284
+     Tower candidate found @: distance :313.85458167330677, degrees :206.578125, count :3
+         Reference @: distance :388.6553784860558, degrees :259.328125, distance between: 319.2000022007896
+     Tower candidate found @: distance :313.85458167330677, degrees :206.578125, count :4
+         Reference @: distance :386.2051792828685, degrees :261.296875, distance between: 328.0808289180905
+     Tower candidate found @: distance :313.85458167330677, degrees :206.578125, count :5
+         Reference @: distance :261.2450199203187, degrees :273.078125, distance between: 318.3778207832028
+CHECK
+     Tower candidate found @: distance :322.7988047808765, degrees :208.546875, count :1
+         Reference @: distance :335.00996015936255, degrees :149.546875, distance between: 324.09484367904844
+     Tower candidate found @: distance :322.7988047808765, degrees :208.546875, count :2
+         Reference @: distance :285.79681274900395, degrees :173.15625, distance between: 188.31458498353234
+     Tower candidate found @: distance :322.7988047808765, degrees :208.546875, count :3
+         Reference @: distance :386.2051792828685, degrees :261.296875, distance between: 320.05258611812144
+CHECK
+     Tower candidate found @: distance :323.37649402390434, degrees :210.5, count :1
+         Reference @: distance :329.9800796812749, degrees :151.5, distance between: 321.77950337268413
+     Tower candidate found @: distance :323.37649402390434, degrees :210.5, count :2
+         Reference @: distance :283.62549800796813, degrees :175.109375, distance between: 188.34783672779733
+     Tower candidate found @: distance :323.37649402390434, degrees :210.5, count :3
+         Reference @: distance :387.82868525896413, degrees :263.25, distance between: 321.182100580953
+CHECK
+     Tower candidate found @: distance :326.06573705179284, degrees :212.484375, count :1
+         Reference @: distance :322.99800796812747, degrees :153.46875, distance between: 319.7024534767907
+     Tower candidate found @: distance :326.06573705179284, degrees :212.484375, count :2
+         Reference @: distance :282.3406374501992, degrees :177.078125, distance between: 189.63856345769835
+     Tower candidate found @: distance :326.06573705179284, degrees :212.484375, count :3
+         Reference @: distance :435.77689243027885, degrees :235.9375, distance between: 188.4518565388933
+CHECK
+     Tower candidate found @: distance :316.1553784860558, degrees :214.453125, count :1
+         Reference @: distance :322.99800796812747, degrees :153.46875, distance between: 324.37336269969313
+     Tower candidate found @: distance :316.1553784860558, degrees :214.453125, count :2
+         Reference @: distance :282.3406374501992, degrees :177.078125, distance between: 194.4188339473535
+CHECK
+     Tower candidate found @: distance :336.8625498007968, degrees :216.40625, count :1
+         Reference @: distance :313.6752988047809, degrees :157.4375, distance between: 320.8213143489961
+     Tower candidate found @: distance :336.8625498007968, degrees :216.40625, count :2
+         Reference @: distance :280.3585657370518, degrees :181.0625, distance between: 194.94837032750857
+     Tower candidate found @: distance :336.8625498007968, degrees :216.40625, count :3
+         Reference @: distance :460.73705179282865, degrees :237.90625, distance between: 192.2081763235865
+CHECK
+     Tower candidate found @: distance :307.1314741035856, degrees :220.34375, count :1
+         Reference @: distance :313.6752988047809, degrees :157.4375, distance between: 323.98558220247514
+     Tower candidate found @: distance :307.1314741035856, degrees :220.34375, count :2
+         Reference @: distance :280.49800796812747, degrees :183.03125, distance between: 189.6627207550197
+     Tower candidate found @: distance :307.1314741035856, degrees :220.34375, count :3
+         Reference @: distance :460.73705179282865, degrees :237.90625, distance between: 191.79782319781424
+     Tower candidate found @: distance :307.1314741035856, degrees :220.34375, count :4
+         Reference @: distance :584.1235059760955, degrees :241.78125, distance between: 318.6657990398248
+     Tower candidate found @: distance :307.1314741035856, degrees :220.34375, count :5
+         Reference @: distance :410.2788844621514, degrees :247.71875, distance between: 197.1331319513331
+     Tower candidate found @: distance :307.1314741035856, degrees :220.34375, count :6
+         Reference @: distance :360.22908366533864, degrees :251.546875, distance between: 186.6278020006386
+     Tower candidate found @: distance :307.1314741035856, degrees :220.34375, count :7
+         Reference @: distance :380.3486055776892, degrees :275.578125, distance between: 325.2257729740472
+     Tower candidate found @: distance :307.1314741035856, degrees :220.34375, count :8
+         Reference @: distance :190.5776892430279, degrees :297.71875, distance between: 324.1340056647382
+CHECK
+     Tower candidate found @: distance :300.53784860557766, degrees :222.3125, count :1
+         Reference @: distance :30.149402390438244, degrees :8.40625, distance between: 325.9945176466312
+     Tower candidate found @: distance :300.53784860557766, degrees :222.3125, count :2
+         Reference @: distance :313.6752988047809, degrees :157.4375, distance between: 329.63773885544737
+     Tower candidate found @: distance :300.53784860557766, degrees :222.3125, count :3
+         Reference @: distance :280.49800796812747, degrees :183.03125, distance between: 196.20733316441783
+     Tower candidate found @: distance :300.53784860557766, degrees :222.3125, count :4
+         Reference @: distance :285.2191235059761, degrees :184.96875, distance between: 188.08962399491213
+     Tower candidate found @: distance :300.53784860557766, degrees :222.3125, count :5
+         Reference @: distance :460.73705179282865, degrees :237.90625, distance between: 189.3603490185671
+     Tower candidate found @: distance :300.53784860557766, degrees :222.3125, count :6
+         Reference @: distance :410.2788844621514, degrees :247.71875, distance between: 189.45445235150052
+     Tower candidate found @: distance :300.53784860557766, degrees :222.3125, count :7
+         Reference @: distance :382.72908366533864, degrees :277.5625, distance between: 325.08041886537256
+CHECK
+     Tower candidate found @: distance :242.35059760956173, degrees :224.328125, count :1
+         Reference @: distance :319.05378486055776, degrees :155.46875, distance between: 323.6585681254774
+     Tower candidate found @: distance :242.35059760956173, degrees :224.328125, count :2
+         Reference @: distance :280.3585657370518, degrees :181.0625, distance between: 195.91249515785
+     Tower candidate found @: distance :242.35059760956173, degrees :224.328125, count :3
+         Reference @: distance :280.49800796812747, degrees :183.03125, distance between: 187.79747642387582
+     Tower candidate found @: distance :242.35059760956173, degrees :224.328125, count :4
+         Reference @: distance :382.72908366533864, degrees :281.5625, distance between: 323.75462006773205
+CHECK
+     Tower candidate found @: distance :232.0019920318725, degrees :226.265625, count :1
+         Reference @: distance :319.05378486055776, degrees :155.46875, distance between: 326.99612508797713
+     Tower candidate found @: distance :232.0019920318725, degrees :226.265625, count :2
+         Reference @: distance :280.49800796812747, degrees :183.03125, distance between: 194.1150729675186
+     Tower candidate found @: distance :232.0019920318725, degrees :226.265625, count :3
+         Reference @: distance :285.2191235059761, degrees :184.96875, distance between: 189.0653396286622
+     Tower candidate found @: distance :232.0019920318725, degrees :226.265625, count :4
+         Reference @: distance :261.2450199203187, degrees :273.078125, distance between: 197.77066022054694
+     Tower candidate found @: distance :232.0019920318725, degrees :226.265625, count :5
+         Reference @: distance :387.0219123505976, degrees :283.578125, distance between: 326.5389049841839
+CHECK
+     Tower candidate found @: distance :264.83067729083666, degrees :228.1875, count :1
+         Reference @: distance :65.3187250996016, degrees :16.1875, distance between: 322.0893938037676
+     Tower candidate found @: distance :264.83067729083666, degrees :228.1875, count :2
+         Reference @: distance :307.47011952191235, degrees :159.40625, distance between: 325.16318045375834
+     Tower candidate found @: distance :264.83067729083666, degrees :228.1875, count :3
+         Reference @: distance :283.62549800796813, degrees :186.953125, distance between: 193.92322727292063
+     Tower candidate found @: distance :264.83067729083666, degrees :228.1875, count :4
+         Reference @: distance :409.97011952191235, degrees :249.671875, distance between: 190.1401117836766
+     Tower candidate found @: distance :264.83067729083666, degrees :228.1875, count :5
+         Reference @: distance :391.6832669322709, degrees :253.484375, distance between: 189.69904970446217
+     Tower candidate found @: distance :264.83067729083666, degrees :228.1875, count :6
+         Reference @: distance :126.07569721115537, degrees :269.40625, distance between: 189.21003192449763
+     Tower candidate found @: distance :264.83067729083666, degrees :228.1875, count :7
+         Reference @: distance :129.77091633466134, degrees :271.359375, distance between: 191.9564848185489
+     Tower candidate found @: distance :264.83067729083666, degrees :228.1875, count :8
+         Reference @: distance :387.0219123505976, degrees :283.578125, distance between: 321.7002312604733
+CHECK
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :1
+         Reference @: distance :63.29681274900398, degrees :354.703125, distance between: 318.07984368553156
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :2
+         Reference @: distance :60.169322709163346, degrees :358.625, distance between: 318.8115880640401
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :3
+         Reference @: distance :62.25099601593625, degrees :0.578125, distance between: 321.75458112682867
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :4
+         Reference @: distance :66.23505976095618, degrees :4.5, distance between: 327.618935496443
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :5
+         Reference @: distance :61.20517928286852, degrees :6.453125, distance between: 324.8893678735511
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :6
+         Reference @: distance :303.4661354581673, degrees :161.375, distance between: 328.89974915953553
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :7
+         Reference @: distance :299.09362549800795, degrees :163.328125, distance between: 318.08236428329155
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :8
+         Reference @: distance :284.35258964143424, degrees :188.90625, distance between: 197.9887348724662
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :9
+         Reference @: distance :286.9721115537848, degrees :190.875, distance between: 189.89960950767923
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :10
+         Reference @: distance :460.73705179282865, degrees :237.90625, distance between: 189.21443089475343
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :11
+         Reference @: distance :396.1752988047809, degrees :255.4375, distance between: 187.44786214725755
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :12
+         Reference @: distance :391.12549800796813, degrees :257.390625, distance between: 192.2998701745853
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :13
+         Reference @: distance :124.97011952191234, degrees :265.53125, distance between: 190.3110014927671
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :14
+         Reference @: distance :125.88645418326692, degrees :267.4375, distance between: 193.42411305263457
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :15
+         Reference @: distance :126.07569721115537, degrees :269.40625, distance between: 197.15177732741142
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :16
+         Reference @: distance :261.2450199203187, degrees :273.078125, distance between: 197.98147321052411
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :17
+         Reference @: distance :91.7629482071713, degrees :340.015625, distance between: 320.89776031904177
+     Tower candidate found @: distance :277.8585657370518, degrees :230.125, count :18
+         Reference @: distance :90.78685258964143, degrees :341.984375, distance between: 322.8503492660539
+CHECK
+     Tower candidate found @: distance :274.99003984063745, degrees :232.09375, count :1
+         Reference @: distance :66.23505976095618, degrees :4.5, distance between: 323.37749166231544
+     Tower candidate found @: distance :274.99003984063745, degrees :232.09375, count :2
+         Reference @: distance :61.20517928286852, degrees :6.453125, distance between: 320.78083715673125
+     Tower candidate found @: distance :274.99003984063745, degrees :232.09375, count :3
+         Reference @: distance :299.09362549800795, degrees :163.328125, distance between: 324.80592790045193
+     Tower candidate found @: distance :274.99003984063745, degrees :232.09375, count :4
+         Reference @: distance :287.8585657370518, degrees :192.84375, distance between: 189.42798292522005
+     Tower candidate found @: distance :274.99003984063745, degrees :232.09375, count :5
+         Reference @: distance :460.73705179282865, degrees :237.90625, distance between: 189.22144176252465
+     Tower candidate found @: distance :274.99003984063745, degrees :232.09375, count :6
+         Reference @: distance :388.6553784860558, degrees :259.328125, distance between: 191.35311161516512
+     Tower candidate found @: distance :274.99003984063745, degrees :232.09375, count :7
+         Reference @: distance :125.88645418326692, degrees :267.4375, distance between: 187.0619330219936
+     Tower candidate found @: distance :274.99003984063745, degrees :232.09375, count :8
+         Reference @: distance :126.07569721115537, degrees :269.40625, distance between: 190.6996042871043
+     Tower candidate found @: distance :274.99003984063745, degrees :232.09375, count :9
+         Reference @: distance :129.77091633466134, degrees :271.359375, distance between: 192.88034549117006
+     Tower candidate found @: distance :274.99003984063745, degrees :232.09375, count :10
+         Reference @: distance :261.2450199203187, degrees :273.078125, distance between: 188.16599686734585
+CHECK
+     Tower candidate found @: distance :267.3605577689243, degrees :234.0625, count :1
+         Reference @: distance :65.3187250996016, degrees :16.1875, distance between: 321.43139315652286
+     Tower candidate found @: distance :267.3605577689243, degrees :234.0625, count :2
+         Reference @: distance :299.09362549800795, degrees :163.328125, distance between: 328.89133881535923
+     Tower candidate found @: distance :267.3605577689243, degrees :234.0625, count :3
+         Reference @: distance :296.39442231075697, degrees :165.296875, distance between: 319.26383600498923
+     Tower candidate found @: distance :267.3605577689243, degrees :234.0625, count :4
+         Reference @: distance :287.8585657370518, degrees :192.84375, distance between: 196.37376226914614
+     Tower candidate found @: distance :267.3605577689243, degrees :234.0625, count :5
+         Reference @: distance :289.203187250996, degrees :194.796875, distance between: 188.12867248641857
+     Tower candidate found @: distance :267.3605577689243, degrees :234.0625, count :6
+         Reference @: distance :460.73705179282865, degrees :237.90625, distance between: 194.80413411156707
+     Tower candidate found @: distance :267.3605577689243, degrees :234.0625, count :7
+         Reference @: distance :584.1235059760955, degrees :241.78125, distance between: 321.1990243012438
+     Tower candidate found @: distance :267.3605577689243, degrees :234.0625, count :8
+         Reference @: distance :386.2051792828685, degrees :261.296875, distance between: 192.39949017878246
+     Tower candidate found @: distance :267.3605577689243, degrees :234.0625, count :9
+         Reference @: distance :396.45418326693226, degrees :289.578125, distance between: 329.5927873211215
+CHECK
+     Tower candidate found @: distance :435.77689243027885, degrees :235.9375, count :1
+         Reference @: distance :283.62549800796813, degrees :186.953125, distance between: 328.81548349860736
+     Tower candidate found @: distance :435.77689243027885, degrees :235.9375, count :2
+         Reference @: distance :284.35258964143424, degrees :188.90625, distance between: 319.12081543838946
+     Tower candidate found @: distance :435.77689243027885, degrees :235.9375, count :3
+         Reference @: distance :326.06573705179284, degrees :212.484375, distance between: 188.4518565388933
+     Tower candidate found @: distance :435.77689243027885, degrees :235.9375, count :4
+         Reference @: distance :386.2051792828685, degrees :261.296875, distance between: 186.79471202056803
+     Tower candidate found @: distance :435.77689243027885, degrees :235.9375, count :5
+         Reference @: distance :382.72908366533864, degrees :281.5625, distance between: 321.09356132645513
+CHECK
+     Tower candidate found @: distance :460.73705179282865, degrees :237.90625, count :1
+         Reference @: distance :287.8585657370518, degrees :192.84375, distance between: 328.30297369120325
+     Tower candidate found @: distance :460.73705179282865, degrees :237.90625, count :2
+         Reference @: distance :289.203187250996, degrees :194.796875, distance between: 318.3764981998518
+     Tower candidate found @: distance :460.73705179282865, degrees :237.90625, count :3
+         Reference @: distance :336.8625498007968, degrees :216.40625, distance between: 192.2081763235865
+     Tower candidate found @: distance :460.73705179282865, degrees :237.90625, count :4
+         Reference @: distance :307.1314741035856, degrees :220.34375, distance between: 191.79782319781424
+     Tower candidate found @: distance :460.73705179282865, degrees :237.90625, count :5
+         Reference @: distance :300.53784860557766, degrees :222.3125, distance between: 189.3603490185671
+     Tower candidate found @: distance :460.73705179282865, degrees :237.90625, count :6
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 189.21443089475343
+     Tower candidate found @: distance :460.73705179282865, degrees :237.90625, count :7
+         Reference @: distance :274.99003984063745, degrees :232.09375, distance between: 189.22144176252465
+     Tower candidate found @: distance :460.73705179282865, degrees :237.90625, count :8
+         Reference @: distance :267.3605577689243, degrees :234.0625, distance between: 194.80413411156707
+     Tower candidate found @: distance :460.73705179282865, degrees :237.90625, count :9
+         Reference @: distance :386.2051792828685, degrees :261.296875, distance between: 186.55080674656213
+     Tower candidate found @: distance :460.73705179282865, degrees :237.90625, count :10
+         Reference @: distance :382.72908366533864, degrees :281.5625, distance between: 321.8723512755178
+CHECK
+     Tower candidate found @: distance :472.898406374502, degrees :239.84375, count :1
+         Reference @: distance :293.2868525896414, degrees :196.765625, distance between: 327.1669102153093
+     Tower candidate found @: distance :472.898406374502, degrees :239.84375, count :2
+         Reference @: distance :387.82868525896413, degrees :263.25, distance between: 193.4449285598649
+CHECK
+     Tower candidate found @: distance :584.1235059760955, degrees :241.78125, count :1
+         Reference @: distance :307.1314741035856, degrees :220.34375, distance between: 318.6657990398248
+     Tower candidate found @: distance :584.1235059760955, degrees :241.78125, count :2
+         Reference @: distance :267.3605577689243, degrees :234.0625, distance between: 321.1990243012438
+     Tower candidate found @: distance :584.1235059760955, degrees :241.78125, count :3
+         Reference @: distance :409.97011952191235, degrees :249.671875, distance between: 186.71929545228159
+CHECK
+     Tower candidate found @: distance :410.2788844621514, degrees :247.71875, count :1
+         Reference @: distance :289.203187250996, degrees :194.796875, distance between: 329.9901293951063
+     Tower candidate found @: distance :410.2788844621514, degrees :247.71875, count :2
+         Reference @: distance :293.2868525896414, degrees :196.765625, distance between: 320.5331293079459
+     Tower candidate found @: distance :410.2788844621514, degrees :247.71875, count :3
+         Reference @: distance :307.1314741035856, degrees :220.34375, distance between: 197.1331319513331
+     Tower candidate found @: distance :410.2788844621514, degrees :247.71875, count :4
+         Reference @: distance :300.53784860557766, degrees :222.3125, distance between: 189.45445235150052
+     Tower candidate found @: distance :410.2788844621514, degrees :247.71875, count :5
+         Reference @: distance :380.3486055776892, degrees :275.578125, distance between: 192.53274400474677
+     Tower candidate found @: distance :410.2788844621514, degrees :247.71875, count :6
+         Reference @: distance :387.2908366533864, degrees :295.578125, distance between: 324.18810074347454
+     Tower candidate found @: distance :410.2788844621514, degrees :247.71875, count :7
+         Reference @: distance :190.5776892430279, degrees :297.71875, distance between: 322.69101323916493
+CHECK
+     Tower candidate found @: distance :409.97011952191235, degrees :249.671875, count :1
+         Reference @: distance :296.87250996015933, degrees :198.734375, distance between: 320.6474557573451
+     Tower candidate found @: distance :409.97011952191235, degrees :249.671875, count :2
+         Reference @: distance :264.83067729083666, degrees :228.1875, distance between: 190.1401117836766
+     Tower candidate found @: distance :409.97011952191235, degrees :249.671875, count :3
+         Reference @: distance :584.1235059760955, degrees :241.78125, distance between: 186.71929545228159
+     Tower candidate found @: distance :409.97011952191235, degrees :249.671875, count :4
+         Reference @: distance :382.72908366533864, degrees :277.5625, distance between: 192.85781446318413
+CHECK
+     Tower candidate found @: distance :360.22908366533864, degrees :251.546875, count :1
+         Reference @: distance :287.8585657370518, degrees :192.84375, distance between: 323.8736093103122
+     Tower candidate found @: distance :360.22908366533864, degrees :251.546875, count :2
+         Reference @: distance :307.1314741035856, degrees :220.34375, distance between: 186.6278020006386
+     Tower candidate found @: distance :360.22908366533864, degrees :251.546875, count :3
+         Reference @: distance :382.72908366533864, degrees :281.5625, distance between: 193.61314961882454
+CHECK
+     Tower candidate found @: distance :391.6832669322709, degrees :253.484375, count :1
+         Reference @: distance :296.87250996015933, degrees :198.734375, distance between: 327.60981310841663
+     Tower candidate found @: distance :391.6832669322709, degrees :253.484375, count :2
+         Reference @: distance :301.83266932270914, degrees :200.703125, distance between: 318.5942701854331
+     Tower candidate found @: distance :391.6832669322709, degrees :253.484375, count :3
+         Reference @: distance :264.83067729083666, degrees :228.1875, distance between: 189.69904970446217
+     Tower candidate found @: distance :391.6832669322709, degrees :253.484375, count :4
+         Reference @: distance :382.72908366533864, degrees :281.5625, distance between: 188.06028001660468
+CHECK
+     Tower candidate found @: distance :396.1752988047809, degrees :255.4375, count :1
+         Reference @: distance :307.1314741035856, degrees :202.6875, distance between: 322.4636457106361
+     Tower candidate found @: distance :396.1752988047809, degrees :255.4375, count :2
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 187.44786214725755
+     Tower candidate found @: distance :396.1752988047809, degrees :255.4375, count :3
+         Reference @: distance :387.0219123505976, degrees :283.578125, distance between: 190.61188934868446
+CHECK
+     Tower candidate found @: distance :391.12549800796813, degrees :257.390625, count :1
+         Reference @: distance :307.1314741035856, degrees :202.6875, distance between: 329.3737140654781
+     Tower candidate found @: distance :391.12549800796813, degrees :257.390625, count :2
+         Reference @: distance :305.6274900398406, degrees :204.625, distance between: 318.9468656992184
+     Tower candidate found @: distance :391.12549800796813, degrees :257.390625, count :3
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 192.2998701745853
+     Tower candidate found @: distance :391.12549800796813, degrees :257.390625, count :4
+         Reference @: distance :335.2191235059761, degrees :287.59375, distance between: 196.7824289246719
+CHECK
+     Tower candidate found @: distance :388.6553784860558, degrees :259.328125, count :1
+         Reference @: distance :305.6274900398406, degrees :204.625, distance between: 327.401174806805
+     Tower candidate found @: distance :388.6553784860558, degrees :259.328125, count :2
+         Reference @: distance :313.85458167330677, degrees :206.578125, distance between: 319.2000022007896
+     Tower candidate found @: distance :388.6553784860558, degrees :259.328125, count :3
+         Reference @: distance :274.99003984063745, degrees :232.09375, distance between: 191.35311161516512
+     Tower candidate found @: distance :388.6553784860558, degrees :259.328125, count :4
+         Reference @: distance :431.703187250996, degrees :306.328125, distance between: 329.49072686935114
+CHECK
+     Tower candidate found @: distance :386.2051792828685, degrees :261.296875, count :1
+         Reference @: distance :313.85458167330677, degrees :206.578125, distance between: 328.0808289180905
+     Tower candidate found @: distance :386.2051792828685, degrees :261.296875, count :2
+         Reference @: distance :322.7988047808765, degrees :208.546875, distance between: 320.05258611812144
+     Tower candidate found @: distance :386.2051792828685, degrees :261.296875, count :3
+         Reference @: distance :267.3605577689243, degrees :234.0625, distance between: 192.39949017878246
+     Tower candidate found @: distance :386.2051792828685, degrees :261.296875, count :4
+         Reference @: distance :435.77689243027885, degrees :235.9375, distance between: 186.79471202056803
+     Tower candidate found @: distance :386.2051792828685, degrees :261.296875, count :5
+         Reference @: distance :460.73705179282865, degrees :237.90625, distance between: 186.55080674656213
+     Tower candidate found @: distance :386.2051792828685, degrees :261.296875, count :6
+         Reference @: distance :396.45418326693226, degrees :289.578125, distance between: 191.4638545652118
+CHECK
+     Tower candidate found @: distance :387.82868525896413, degrees :263.25, count :1
+         Reference @: distance :323.37649402390434, degrees :210.5, distance between: 321.182100580953
+     Tower candidate found @: distance :387.82868525896413, degrees :263.25, count :2
+         Reference @: distance :472.898406374502, degrees :239.84375, distance between: 193.4449285598649
+     Tower candidate found @: distance :387.82868525896413, degrees :263.25, count :3
+         Reference @: distance :399.9003984063745, degrees :291.5625, distance between: 193.00784962212398
+CHECK
+     Tower candidate found @: distance :124.97011952191234, degrees :265.53125, count :1
+         Reference @: distance :286.9721115537848, degrees :171.203125, distance between: 321.53311992685167
+     Tower candidate found @: distance :124.97011952191234, degrees :265.53125, count :2
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 190.3110014927671
+CHECK
+     Tower candidate found @: distance :125.88645418326692, degrees :267.4375, count :1
+         Reference @: distance :286.9721115537848, degrees :171.203125, distance between: 325.64802066660684
+     Tower candidate found @: distance :125.88645418326692, degrees :267.4375, count :2
+         Reference @: distance :285.79681274900395, degrees :173.15625, distance between: 320.7785799945118
+     Tower candidate found @: distance :125.88645418326692, degrees :267.4375, count :3
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 193.42411305263457
+     Tower candidate found @: distance :125.88645418326692, degrees :267.4375, count :4
+         Reference @: distance :274.99003984063745, degrees :232.09375, distance between: 187.0619330219936
+CHECK
+     Tower candidate found @: distance :126.07569721115537, degrees :269.40625, count :1
+         Reference @: distance :286.9721115537848, degrees :171.203125, distance between: 329.5036718990805
+     Tower candidate found @: distance :126.07569721115537, degrees :269.40625, count :2
+         Reference @: distance :285.79681274900395, degrees :173.15625, distance between: 324.68490746380945
+     Tower candidate found @: distance :126.07569721115537, degrees :269.40625, count :3
+         Reference @: distance :283.62549800796813, degrees :175.109375, distance between: 318.8994134091783
+     Tower candidate found @: distance :126.07569721115537, degrees :269.40625, count :4
+         Reference @: distance :264.83067729083666, degrees :228.1875, distance between: 189.21003192449763
+     Tower candidate found @: distance :126.07569721115537, degrees :269.40625, count :5
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 197.15177732741142
+     Tower candidate found @: distance :126.07569721115537, degrees :269.40625, count :6
+         Reference @: distance :274.99003984063745, degrees :232.09375, distance between: 190.6996042871043
+CHECK
+     Tower candidate found @: distance :129.77091633466134, degrees :271.359375, count :1
+         Reference @: distance :283.62549800796813, degrees :175.109375, distance between: 324.49637353266996
+     Tower candidate found @: distance :129.77091633466134, degrees :271.359375, count :2
+         Reference @: distance :282.3406374501992, degrees :177.078125, distance between: 319.41696030575326
+     Tower candidate found @: distance :129.77091633466134, degrees :271.359375, count :3
+         Reference @: distance :264.83067729083666, degrees :228.1875, distance between: 191.9564848185489
+     Tower candidate found @: distance :129.77091633466134, degrees :271.359375, count :4
+         Reference @: distance :274.99003984063745, degrees :232.09375, distance between: 192.88034549117006
+CHECK
+     Tower candidate found @: distance :261.2450199203187, degrees :273.078125, count :1
+         Reference @: distance :307.1314741035856, degrees :202.6875, distance between: 329.73171242746145
+     Tower candidate found @: distance :261.2450199203187, degrees :273.078125, count :2
+         Reference @: distance :305.6274900398406, degrees :204.625, distance between: 320.95169553645775
+     Tower candidate found @: distance :261.2450199203187, degrees :273.078125, count :3
+         Reference @: distance :313.85458167330677, degrees :206.578125, distance between: 318.3778207832028
+     Tower candidate found @: distance :261.2450199203187, degrees :273.078125, count :4
+         Reference @: distance :232.0019920318725, degrees :226.265625, distance between: 197.77066022054694
+     Tower candidate found @: distance :261.2450199203187, degrees :273.078125, count :5
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 197.98147321052411
+     Tower candidate found @: distance :261.2450199203187, degrees :273.078125, count :6
+         Reference @: distance :274.99003984063745, degrees :232.09375, distance between: 188.16599686734585
+     Tower candidate found @: distance :261.2450199203187, degrees :273.078125, count :7
+         Reference @: distance :491.03585657370513, degrees :310.171875, distance between: 323.6032871705651
+CHECK
+     Tower candidate found @: distance :380.3486055776892, degrees :275.578125, count :1
+         Reference @: distance :307.1314741035856, degrees :220.34375, distance between: 325.2257729740472
+     Tower candidate found @: distance :380.3486055776892, degrees :275.578125, count :2
+         Reference @: distance :410.2788844621514, degrees :247.71875, distance between: 192.53274400474677
+     Tower candidate found @: distance :380.3486055776892, degrees :275.578125, count :3
+         Reference @: distance :512.8884462151394, degrees :314.0, distance between: 319.45572679097836
+     Tower candidate found @: distance :380.3486055776892, degrees :275.578125, count :4
+         Reference @: distance :329.58167330677287, degrees :328.28125, distance between: 318.3889759958341
+CHECK
+     Tower candidate found @: distance :382.72908366533864, degrees :277.5625, count :1
+         Reference @: distance :300.53784860557766, degrees :222.3125, distance between: 325.08041886537256
+     Tower candidate found @: distance :382.72908366533864, degrees :277.5625, count :2
+         Reference @: distance :409.97011952191235, degrees :249.671875, distance between: 192.85781446318413
+CHECK
+     Tower candidate found @: distance :383.7948207171315, degrees :279.5625, count :1
+         Reference @: distance :431.703187250996, degrees :306.328125, distance between: 194.42108960674585
+     Tower candidate found @: distance :383.7948207171315, degrees :279.5625, count :2
+         Reference @: distance :536.4243027888446, degrees :315.9375, distance between: 321.75283081393025
+CHECK
+     Tower candidate found @: distance :382.72908366533864, degrees :281.5625, count :1
+         Reference @: distance :242.35059760956173, degrees :224.328125, distance between: 323.75462006773205
+     Tower candidate found @: distance :382.72908366533864, degrees :281.5625, count :2
+         Reference @: distance :435.77689243027885, degrees :235.9375, distance between: 321.09356132645513
+     Tower candidate found @: distance :382.72908366533864, degrees :281.5625, count :3
+         Reference @: distance :460.73705179282865, degrees :237.90625, distance between: 321.8723512755178
+     Tower candidate found @: distance :382.72908366533864, degrees :281.5625, count :4
+         Reference @: distance :360.22908366533864, degrees :251.546875, distance between: 193.61314961882454
+     Tower candidate found @: distance :382.72908366533864, degrees :281.5625, count :5
+         Reference @: distance :391.6832669322709, degrees :253.484375, distance between: 188.06028001660468
+CHECK
+     Tower candidate found @: distance :387.0219123505976, degrees :283.578125, count :1
+         Reference @: distance :232.0019920318725, degrees :226.265625, distance between: 326.5389049841839
+     Tower candidate found @: distance :387.0219123505976, degrees :283.578125, count :2
+         Reference @: distance :264.83067729083666, degrees :228.1875, distance between: 321.7002312604733
+     Tower candidate found @: distance :387.0219123505976, degrees :283.578125, count :3
+         Reference @: distance :396.1752988047809, degrees :255.4375, distance between: 190.61188934868446
+     Tower candidate found @: distance :387.0219123505976, degrees :283.578125, count :4
+         Reference @: distance :557.6195219123506, degrees :317.859375, distance between: 322.620147200559
+CHECK
+     Tower candidate found @: distance :334.19322709163345, degrees :285.609375, count :1
+         Reference @: distance :60.169322709163346, degrees :358.625, distance between: 321.80401357355964
+     Tower candidate found @: distance :334.19322709163345, degrees :285.609375, count :2
+         Reference @: distance :62.25099601593625, degrees :0.578125, distance between: 323.6811855917172
+     Tower candidate found @: distance :334.19322709163345, degrees :285.609375, count :3
+         Reference @: distance :39.91035856573705, degrees :2.546875, distance between: 327.4887923062342
+     Tower candidate found @: distance :334.19322709163345, degrees :285.609375, count :4
+         Reference @: distance :66.23505976095618, degrees :4.5, distance between: 327.9360026666576
+     Tower candidate found @: distance :334.19322709163345, degrees :285.609375, count :5
+         Reference @: distance :557.6195219123506, degrees :317.859375, distance between: 327.74589717586986
+CHECK
+     Tower candidate found @: distance :335.2191235059761, degrees :287.59375, count :1
+         Reference @: distance :60.169322709163346, degrees :358.625, distance between: 320.74858405119267
+     Tower candidate found @: distance :335.2191235059761, degrees :287.59375, count :2
+         Reference @: distance :62.25099601593625, degrees :0.578125, distance between: 322.542864125761
+     Tower candidate found @: distance :335.2191235059761, degrees :287.59375, count :3
+         Reference @: distance :39.91035856573705, degrees :2.546875, distance between: 327.1363968568258
+     Tower candidate found @: distance :335.2191235059761, degrees :287.59375, count :4
+         Reference @: distance :66.23505976095618, degrees :4.5, distance between: 326.6479246636598
+     Tower candidate found @: distance :335.2191235059761, degrees :287.59375, count :5
+         Reference @: distance :61.20517928286852, degrees :6.453125, distance between: 328.9215457416636
+     Tower candidate found @: distance :335.2191235059761, degrees :287.59375, count :6
+         Reference @: distance :391.12549800796813, degrees :257.390625, distance between: 196.7824289246719
+     Tower candidate found @: distance :335.2191235059761, degrees :287.59375, count :7
+         Reference @: distance :470.4880478087649, degrees :308.25, distance between: 196.40703934065448
+CHECK
+     Tower candidate found @: distance :396.45418326693226, degrees :289.578125, count :1
+         Reference @: distance :267.3605577689243, degrees :234.0625, distance between: 329.5927873211215
+     Tower candidate found @: distance :396.45418326693226, degrees :289.578125, count :2
+         Reference @: distance :386.2051792828685, degrees :261.296875, distance between: 191.4638545652118
+CHECK
+     Tower candidate found @: distance :399.9003984063745, degrees :291.5625, count :1
+         Reference @: distance :387.82868525896413, degrees :263.25, distance between: 193.00784962212398
+     Tower candidate found @: distance :399.9003984063745, degrees :291.5625, count :2
+         Reference @: distance :513.3266932270916, degrees :312.078125, distance between: 197.24238305040697
+     Tower candidate found @: distance :399.9003984063745, degrees :291.5625, count :3
+         Reference @: distance :600.8565737051792, degrees :322.28125, distance between: 328.35022366932884
+CHECK
+     Tower candidate found @: distance :404.8705179282868, degrees :293.578125, count :1
+         Reference @: distance :512.8884462151394, degrees :314.0, distance between: 194.34605347553943
+CHECK
+     Tower candidate found @: distance :387.2908366533864, degrees :295.578125, count :1
+         Reference @: distance :410.2788844621514, degrees :247.71875, distance between: 324.18810074347454
+     Tower candidate found @: distance :387.2908366533864, degrees :295.578125, count :2
+         Reference @: distance :190.5776892430279, degrees :297.71875, distance between: 196.9748105519576
+     Tower candidate found @: distance :387.2908366533864, degrees :295.578125, count :3
+         Reference @: distance :512.8884462151394, degrees :314.0, distance between: 190.08654377428462
+     Tower candidate found @: distance :387.2908366533864, degrees :295.578125, count :4
+         Reference @: distance :91.7629482071713, degrees :340.015625, distance between: 328.12188904439734
+TOWER TEST DATA: 297.71875:4783.5
+
+(False,10,26.0625,7580.0),#Possible Tower C
+(False,15,49.984375,3716.75),# Possible Tower D
+(False,14,297.71875,4783.5),#Possible Tower A
+(False,15,328.28125,8272.5),#Possible Tower B
+
+     Tower candidate found @: distance :190.5776892430279, degrees :297.71875, count :1
+         Reference @: distance :65.3187250996016, degrees :16.1875, distance between: 188.704810333556
+     Tower candidate found @: distance :190.5776892430279, degrees :297.71875, count :2
+         Reference @: distance :307.1314741035856, degrees :220.34375, distance between: 324.1340056647382
+     Tower candidate found @: distance :190.5776892430279, degrees :297.71875, count :3
+         Reference @: distance :410.2788844621514, degrees :247.71875, distance between: 322.69101323916493
+     Tower candidate found @: distance :190.5776892430279, degrees :297.71875, count :4
+         Reference @: distance :387.2908366533864, degrees :295.578125, distance between: 196.9748105519576
+     Tower candidate found @: distance :190.5776892430279, degrees :297.71875, count :5
+         Reference @: distance :329.58167330677287, degrees :328.28125, distance between: 191.76579146008103
+CHECK
+     Tower candidate found @: distance :431.703187250996, degrees :306.328125, count :1
+         Reference @: distance :388.6553784860558, degrees :259.328125, distance between: 329.49072686935114
+     Tower candidate found @: distance :431.703187250996, degrees :306.328125, count :2
+         Reference @: distance :383.7948207171315, degrees :279.5625, distance between: 194.42108960674585
+     Tower candidate found @: distance :431.703187250996, degrees :306.328125, count :3
+         Reference @: distance :581.2350597609561, degrees :319.78125, distance between: 190.07902259609173
+CHECK
+     Tower candidate found @: distance :470.4880478087649, degrees :308.25, count :1
+         Reference @: distance :335.2191235059761, degrees :287.59375, distance between: 196.40703934065448
+     Tower candidate found @: distance :470.4880478087649, degrees :308.25, count :2
+         Reference @: distance :329.58167330677287, degrees :328.28125, distance between: 196.50836533350522
+CHECK
+     Tower candidate found @: distance :491.03585657370513, degrees :310.171875, count :1
+         Reference @: distance :261.2450199203187, degrees :273.078125, distance between: 323.6032871705651
+CHECK
+     Tower candidate found @: distance :513.3266932270916, degrees :312.078125, count :1
+         Reference @: distance :399.9003984063745, degrees :291.5625, distance between: 197.24238305040697
+CHECK
+     Tower candidate found @: distance :512.8884462151394, degrees :314.0, count :1
+         Reference @: distance :380.3486055776892, degrees :275.578125, distance between: 319.45572679097836
+     Tower candidate found @: distance :512.8884462151394, degrees :314.0, count :2
+         Reference @: distance :404.8705179282868, degrees :293.578125, distance between: 194.34605347553943
+     Tower candidate found @: distance :512.8884462151394, degrees :314.0, count :3
+         Reference @: distance :387.2908366533864, degrees :295.578125, distance between: 190.08654377428462
+CHECK
+     Tower candidate found @: distance :536.4243027888446, degrees :315.9375, count :1
+         Reference @: distance :383.7948207171315, degrees :279.5625, distance between: 321.75283081393025
+CHECK
+     Tower candidate found @: distance :557.6195219123506, degrees :317.859375, count :1
+         Reference @: distance :387.0219123505976, degrees :283.578125, distance between: 322.620147200559
+     Tower candidate found @: distance :557.6195219123506, degrees :317.859375, count :2
+         Reference @: distance :334.19322709163345, degrees :285.609375, distance between: 327.74589717586986
+CHECK
+     Tower candidate found @: distance :581.2350597609561, degrees :319.78125, count :1
+         Reference @: distance :431.703187250996, degrees :306.328125, distance between: 190.07902259609173
+CHECK
+     Tower candidate found @: distance :600.8565737051792, degrees :322.28125, count :1
+         Reference @: distance :399.9003984063745, degrees :291.5625, distance between: 328.35022366932884
+TOWER TEST DATA: 328.28125:8272.5
+     Tower candidate found @: distance :329.58167330677287, degrees :328.28125, count :1
+         Reference @: distance :380.3486055776892, degrees :275.578125, distance between: 318.3889759958341
+     Tower candidate found @: distance :329.58167330677287, degrees :328.28125, count :2
+         Reference @: distance :190.5776892430279, degrees :297.71875, distance between: 191.76579146008103
+     Tower candidate found @: distance :329.58167330677287, degrees :328.28125, count :3
+         Reference @: distance :470.4880478087649, degrees :308.25, distance between: 196.50836533350522
+CHECK
+     Tower candidate found @: distance :91.7629482071713, degrees :340.015625, count :1
+         Reference @: distance :245.97609561752986, degrees :118.28125, distance between: 320.3312821434208
+     Tower candidate found @: distance :91.7629482071713, degrees :340.015625, count :2
+         Reference @: distance :250.93625498007967, degrees :120.25, distance between: 326.78603865352693
+     Tower candidate found @: distance :91.7629482071713, degrees :340.015625, count :3
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 320.89776031904177
+     Tower candidate found @: distance :91.7629482071713, degrees :340.015625, count :4
+         Reference @: distance :387.2908366533864, degrees :295.578125, distance between: 328.12188904439734
+CHECK
+     Tower candidate found @: distance :90.78685258964143, degrees :341.984375, count :1
+         Reference @: distance :250.93625498007967, degrees :120.25, distance between: 324.36470060780044
+     Tower candidate found @: distance :90.78685258964143, degrees :341.984375, count :2
+         Reference @: distance :254.94023904382468, degrees :122.203125, distance between: 329.8646058086579
+     Tower candidate found @: distance :90.78685258964143, degrees :341.984375, count :3
+         Reference @: distance :277.8585657370518, degrees :230.125, distance between: 322.8503492660539

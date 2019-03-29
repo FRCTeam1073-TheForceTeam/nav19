@@ -157,8 +157,14 @@ tc1_data =[
 class TestExtractFeatures(unittest.TestCase):
 
     def test_point_getter(self):
-        points = distance_methods.auto_hatch.point_getter(tc1_data)
-        unittest.self.assertEqual(2, len(points), 'too many points')
+        arraySetup = distance_methods.auto_hatch.array_setup(tc1_data)
+        coordinateSetup = distance_methods.auto_hatch.coordinate_setup(arraySetup)
+        betterPointGetter = distance_methods.auto_hatch.better_point_getter(arraySetup, coordinateSetup)
+
+        self.assertEqual(2, len(points), 'too many points')
+        self.assertEqual(298.875, points[0][0], 'nope')
+        self.assertEqual(319.546875, points[1][0], 'nope')
+        self.assertEqual(4, len(finalArray), "nope")
         return
 
     def setup(self):

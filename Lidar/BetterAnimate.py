@@ -36,7 +36,6 @@ class mockLidarIterator:
             if len(parts) == 1:
                 parts = line.strip().split("\t") # try tab separated
                 print(parts)
-
             scan.append((int(parts[1]),float(parts[2]),float(parts[3])))
 
             if parts[0] == 'True':
