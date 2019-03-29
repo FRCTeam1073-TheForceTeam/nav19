@@ -8,6 +8,7 @@ import numpy as np
 from rplidar import RPLidar
 import time
 import math
+from networktables import NetworkTables
 
 degreesAndDistanceArray = []
 relaventPoints = []
@@ -66,7 +67,7 @@ def run(path):
     '''Main function'''
 
     NetworkTables.initialize("10.10.73.2")
-    sd = NetworkTables.getTable("LidarSendTable")
+    sd = NetworkTables.getTable("1073table")
 
     lidar = RPLidar(PORT_NAME)
     time.sleep(3)
@@ -78,10 +79,14 @@ def run(path):
             #
             points = distance_methods.auto_hatch.point_getter(scan)
 
-            if(len(points)):
+            if(len(points) == 2 ):
+                distance = distance_methods.auto_hatch.produceTargetRangeSimple(points)
+                sd.putNumber("simple distance", distance) 
+                print("put distance to network table : " + str(distance))   
+            else:
+                sd.putValue("simple distance from hatch:", -1)
+                print("put distance to network table : " + str(distance)) 
 
-
-            print (len(scan))
             data.append(np.array(scan))
 
     except KeyboardInterrupt:
