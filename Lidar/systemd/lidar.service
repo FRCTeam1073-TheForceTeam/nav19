@@ -10,8 +10,8 @@ Type=simple
 Restart=always
 RestartSec=1
 User=pi
-WorkingDirectory=/home/pi/GitHub/nav19/Lidar
-ExecStart=/usr/bin/python direct_methods.py lidaroutput
+WorkingDirectory=/home/pi/GitHub/nav19/Lidar/AutoHatch
+ExecStart=/usr/bin/python distance_methods.py lidaroutput
 
 [Install]
 WantedBy=multi-user.target
