@@ -7,6 +7,7 @@ import sys
 import numpy as np
 from rplidar import RPLidar
 import time
+from networktables import NetworkTables
 
 degreesAndDistanceArray = []
 relaventPoints = []
@@ -17,7 +18,7 @@ PORT_NAME = 'COM3'
 class auto_hatch:
 
     def find_distance(self, array, outputArray):
-        
+
     def point_getter(self, array):
         for i in array:
             if i[2] > 90 and i[2] < 270 and i[3] == 0.0 and i[3] > 762:
@@ -28,7 +29,7 @@ class auto_hatch:
                 if i[2] < 90:
                     i[2] = i[2] + 90
                degreesAndDistanceArray.append((i[2], i[3]))
-        
+
 
         for i in range(len(degreesAndDistanceArray)-1):
             outputArray = []
@@ -38,21 +39,33 @@ class auto_hatch:
             #can we have the lidar mounted so the first 180 degrees are facing outward?
 
             distanceBetween = (math.pow(point1[1],2) + math.pow(point2[1],2)) - ((2*point1[1]*point2[1])*(math.cos(degreesBetween)))
-            
+
             if distanceBetween >= 152.6:
                 outputArray.append(point1)
                 outputArray.append(point2)
                 return outputArray
 def run(path):
     '''Main function'''
+
+    NetworkTables.initialize("10.10.73.2")
+    sd = NetworkTables.getTable("LidarSendTable")
+
     lidar = RPLidar(PORT_NAME)
     time.sleep(3)
     data = []
+
     try:
         print('Recording measurments... Press Crl+C to stop.')
         for scan in lidar.iter_scans():
+            #
+            points = distance_methods.auto_hatch.point_getter(scan)
+
+            if(len(points)):
+
+
             print (len(scan))
             data.append(np.array(scan))
+
     except KeyboardInterrupt:
         print('Stoping.')
 
