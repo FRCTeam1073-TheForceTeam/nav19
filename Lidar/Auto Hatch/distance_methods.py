@@ -69,7 +69,7 @@ def run(path):
     '''Main function'''
 
     NetworkTables.initialize("10.10.73.2")
-    sd = NetworkTables.getTable("1073table")
+    sd = NetworkTables.getTable("1073Table")
 
     lidar = RPLidar(PORT_NAME)
     time.sleep(3)
