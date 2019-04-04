@@ -15,8 +15,8 @@ relaventPoints = []
 outputArray = []
 distance = 0
 
-#PORT_NAME = '/dev/ttyUSB0'
-PORT_NAME = 'COM3'
+PORT_NAME = '/dev/ttyUSB0'
+#PORT_NAME = 'COM3'
 class auto_hatch:
 
     def point_getter(array):
@@ -26,7 +26,6 @@ class auto_hatch:
                 continue
             else:
                 degreesAndDistanceArray.append((h[1], h[2]))
-
 
         for i in range(len(degreesAndDistanceArray)-1):
             point1 = degreesAndDistanceArray[i]
@@ -71,6 +70,10 @@ def run(path):
     NetworkTables.initialize("10.10.73.2")
     sd = NetworkTables.getTable("1073Table")
 
+    
+    if NetworkTables.isConnected()== False:
+        print("Error")
+
     lidar = RPLidar(PORT_NAME)
     time.sleep(3)
     data = []
@@ -100,4 +103,5 @@ def run(path):
     np.save(path, np.array(data))
 
 if __name__ == '__main__':
-    run(sys.argv[1])
+
+    run("output")
