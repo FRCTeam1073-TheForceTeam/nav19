@@ -47,7 +47,7 @@ class mockLidarIterator:
 class NetworkTableIterator:
     """Class that takes LiDAR imput directly from Network Tables and then sends it to the driverstation"""
     chair = None #represents the NetworkTable, horrible pun I apologize (totally worth it, though)
-    
+
     def __init__(self, adress): #adress is the IP Adress it is asking for, allows it to connect with no probs
         NetworkTables.initialize(server = adress)
         self.chair = NetworkTables.getTable("1073Table")
@@ -56,7 +56,8 @@ class NetworkTableIterator:
         return self
 
     def __next__(self):
-        stringScan = self.chair.getString("lidarScan", " ")
+        stringScan = self.chair.getString("lidarScan", "Undefined")
+        print(stringScan)
         jsonScan = json.loads(stringScan)
         scan = tuple(jsonScan)
         return scan
