@@ -56,7 +56,7 @@ class NetworkTableIterator:
         return self
 
     def __next__(self):
-        stringScan = self.chair.getString("lidarScan", "")
+        stringScan = self.chair.getString("lidarScan", " ")
         jsonScan = json.loads(stringScan)
         scan = tuple(jsonScan)
         return scan
