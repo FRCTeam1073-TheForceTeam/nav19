@@ -9,11 +9,11 @@ from rplidar import RPLidar
 import time
 import math
 from networktables import NetworkTables
+import json
 
 relaventPoints = []
 distance = 0
-
-PORT_NAME = '/dev/ttyUSB0'
+PORT_NAME = '/dev/ttyUSB1'
 #PORT_NAME = 'COM3'
 class auto_hatch:
 
@@ -86,6 +86,8 @@ def run(path):
         auto = auto_hatch()
         print('Recording measurments... Press Crl+C to stop.')
         for scan in lidar.iter_scans():
+            sd.putString("lidarScan", json.dumps(scan))
+            print(json.dumps(scan))
             #print(scan)
             print("start loop")
             points = auto.point_getter(scan)
