@@ -9,7 +9,7 @@ from networktables import NetworkTables
 import json
 
 PORT_NAME = '/dev/ttyUSB0'
-DMAX = 12000
+DMAX = 1500
 IMIN = 0
 IMAX = 50
 
@@ -45,13 +45,14 @@ class mockLidarIterator:
         return scan
 
 class NetworkTableIterator:
-    """Class that takes LiDAR imput directly from Network Tables and then sends it to the driverstation"""
+    """Class that takes LiDAR imput directly from Network Tables and then sends it to the driverstation,
+    should update with every new scan"""
     chair = None #represents the NetworkTable, horrible pun I apologize (totally worth it, though)
 
-    def __init__(self, adress): #adress is the IP Adress it is asking for, allows it to connect with no probs
+    def __init__(self, adress): #adress is the IP Adress (spelled wrong nbd) it is asking for, allows it to connect with no probs
         NetworkTables.initialize(server = adress)
         self.chair = NetworkTables.getTable("1073Table")
-        print(adress)
+        self.chair.addTableListener(lidarScanListener)
 
     def __iter__(self):
         return self
@@ -59,12 +60,13 @@ class NetworkTableIterator:
     def __next__(self):
         stringScan = self.chair.getString("lidarScan", "Undefined")
         try:
+            print(stringScan)
             jsonScan = json.loads(stringScan)
             scan = tuple(jsonScan)
             return scan
         except:
-            print(stringScan)
             return[(0,0,0)]
+            print(stringScan)
 
 def update_line(num, iterator, line):
     scan = next(iterator)
@@ -97,8 +99,8 @@ def animateDataStream(iterator):
     ax.set_rmax(DMAX)
     ax.grid(True)
 
-    ani = animation.FuncAnimation(fig, update_line,
-        fargs=(iterator, line), interval=50)
+    ani = animation.FuncAnimation(fig, update_line
+    fargs=(iterator, line), interval=50)
     plt.show()
 
 if __name__ == '__main__':
