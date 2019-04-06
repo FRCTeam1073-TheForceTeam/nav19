@@ -1,0 +1,6 @@
+# ignore all files in any directory named output
+output/
+Lidar/Demos/
+Lidar/AutoHatch/__pycache__/
+Lidar/Auto Hatch/__pycache__/
+"Lidar/Auto Hatch/__pycache__/"

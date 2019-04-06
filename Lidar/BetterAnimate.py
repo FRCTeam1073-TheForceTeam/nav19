@@ -7,7 +7,7 @@ import numpy as np
 import matplotlib.animation as animation
 
 PORT_NAME = '/dev/ttyUSB0'
-DMAX = 12000
+DMAX = 1500
 IMIN = 0
 IMAX = 50
 
@@ -32,8 +32,10 @@ class mockLidarIterator:
                 return scan;
 
             parts = line.strip().split(",")
-            if(len(parts) == 0:
+            print(parts)
+            if len(parts) == 1:
                 parts = line.strip().split("\t") # try tab separated
+                print(parts)
 
             scan.append((int(parts[1]),float(parts[2]),float(parts[3])))
 
