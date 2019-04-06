@@ -64,7 +64,7 @@ def isTowerPairCandidate(reference, compare):
     return False;
 
 def run():
-    Towercheck(('false',20,298.4,4843.5), ('false',20,53.3,3497.8);
+    towercheck = (('false',20,298.4,4843.5), ('false',20,53.3,3497.8))
 
     if __name__ == '__main__':
-    run()
+        run()
