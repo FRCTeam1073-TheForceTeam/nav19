@@ -5,6 +5,8 @@ from rplidar import RPLidar
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.animation as animation
+from networktables import NetworkTables
+import json
 
 PORT_NAME = '/dev/ttyUSB0'
 DMAX = 12000
@@ -29,7 +31,7 @@ class mockLidarIterator:
             line = self.fd.readline()
             if not line:
                 self.fd.seek(0) # reset to beginning of input file
-                return scan;
+                return scan
 
             parts = line.strip().split(",")
             print(parts)
@@ -40,6 +42,23 @@ class mockLidarIterator:
 
             if parts[0] == 'True':
                 break
+        return scan
+
+class NetworkTableIterator:
+    """Class that takes LiDAR imput directly from Network Tables and then sends it to the driverstation"""
+    chair = None #represents the NetworkTable, horrible pun I apologize (totally worth it, though)
+    
+    def __init__(self, adress): #adress is the IP Adress it is asking for, allows it to connect with no probs
+        NetworkTables.initialize(server = adress)
+        self.chair = NetworkTables.getTable("1073Table")
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        stringScan = self.chair.getString("lidarScan", "")
+        jsonScan = json.loads(stringScan)
+        scan = tuple(jsonScan)
         return scan
 
 def update_line(num, iterator, line):
@@ -62,6 +81,10 @@ def runFromFile(file):
     iterator = mockLidarIterator(file)
     animateDataStream(iterator)
 
+def runFromChair(adress):
+    iterator = NetworkTableIterator(adress)
+    animateDataStream(iterator)
+
 def animateDataStream(iterator):
     fig = plt.figure()
     ax = plt.subplot(111, projection='polar')
@@ -69,8 +92,8 @@ def animateDataStream(iterator):
     ax.set_rmax(DMAX)
     ax.grid(True)
 
-    ani = animation.FuncAnimation(fig, update_line,
-        fargs=(iterator, line), interval=50)
+    ani = animation.FuncAnimation(fig, update_line)
+    fargs=(iterator, line), interval=50
     plt.show()
 
 if __name__ == '__main__':
@@ -79,6 +102,8 @@ if __name__ == '__main__':
     if len(args) > 0:
         if args[0] == "-i":
             runFromFile(args[1])
+        if args[0] == "-nt":
+            runFromChair(args[1])
 
     else:
         runLidar()

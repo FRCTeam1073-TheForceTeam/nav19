@@ -24,7 +24,7 @@ class mockLidarIterator:
             line = self.fd.readline()
             if not line:
                 self.eof = True
-                return scan;
+                return scan
 
             parts = line.strip().split(",")
             scan.append((parts[0],parts[1],parts[2],parts[3]))
@@ -64,8 +64,7 @@ def isTowerPairCandidate(reference, compare):
     return False;
 
 def run():
-    towercheck(('false',20,298.4,4843.5), ('false',20,53.3,3497.8))
+    Towercheck(('false',20,298.4,4843.5), ('false',20,53.3,3497.8);
 
-
-if __name__ == '__main__':
+    if __name__ == '__main__':
     run()
