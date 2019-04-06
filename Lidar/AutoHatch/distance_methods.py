@@ -45,7 +45,8 @@ class auto_hatch:
                 print("found gap")
                 outputArray.append(point1)
                 outputArray.append(point2)
-                outputArray.append(distanceBetween)
+                #outputArray.append(distanceBetween)
+                outputArray.append(degreesBetween)
                 break
         return outputArray
 
@@ -88,16 +89,24 @@ def run(path):
             #print(scan)
             print("start loop")
             points = auto.point_getter(scan)
+            leftPoint = points[0]
+            rightPoint = points[1]
+            degreesBetween = points[3]
             #print(str(points))
 
             if(len(points) > 0 ):
-                distance = auto.produceTargetRangeSimple(points)
-                sd.putNumber("simple distance", distance) 
-                print("put distance to network table : " + str(distance))   
+                #distance = auto.produceTargetRangeSimple(points)
+                
+                sd.putNumber("point1", leftPoint)
+                sd.putNumber("point2", rightPoint)
+                sd.putNumber("lidarAngle", degreesBetween) 
+                #print("put distance to network table : " + str(distance))   
             else:
-                distance = -1
-                sd.putNumber("simple distance from hatch:", -1)
-                print("put distance to network table : " + str(distance)) 
+                
+                sd.putNumber("point1", -1)
+                sd.putNumber("point2", -1)
+                sd.putNumber("lidarAngle", -1)
+                #print("put distance to network table : " + str(distance)) 
 
             data.append(np.array(scan))
 
