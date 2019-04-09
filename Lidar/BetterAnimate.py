@@ -52,7 +52,6 @@ class NetworkTableIterator:
     def __init__(self, adress): #adress is the IP Adress (spelled wrong nbd) it is asking for, allows it to connect with no probs
         NetworkTables.initialize(server = adress)
         self.chair = NetworkTables.getTable("1073Table")
-        self.chair.addTableListener(lidarScanListener)
 
     def __iter__(self):
         return self
@@ -99,8 +98,7 @@ def animateDataStream(iterator):
     ax.set_rmax(DMAX)
     ax.grid(True)
 
-    ani = animation.FuncAnimation(fig, update_line
-    fargs=(iterator, line), interval=50)
+    ani = animation.FuncAnimation(fig, update_line,fargs=(iterator, line), interval=50)
     plt.show()
 
 if __name__ == '__main__':
