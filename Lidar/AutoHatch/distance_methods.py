@@ -13,17 +13,20 @@ import json
 
 relaventPoints = []
 distance = 0
-PORT_NAME = '/dev/ttyUSB1'
+lidarDeviceNames = ["/dev/ttyUSB0", "/dev/ttyUSB1"]
 #PORT_NAME = 'COM3'
 class auto_hatch:
-
+    #def point_getter_slope(self, array):
+        #for i in array
+        #if (i[2] < 260 or i[2] > 280) or i[3] == 0.0 0r i[3] > 1500:
+            
     def point_getter(self, array):
         
         outputArray = []
         degreesAndDistanceArray = []
         
         for h in array:
-            if (h[1] < 210 or h[1] > 330) or h[2] == 0.0 or h[2] > 1000:
+            if (h[1] < 250 or h[1] > 290) or h[2] == 0.0 or h[2] > 1500:
                 continue
             else:
                 degreesAndDistanceArray.append((h[1], h[2]))
@@ -39,7 +42,7 @@ class auto_hatch:
             distanceBetween = math.sqrt((point1[1]**2 + point2[1]**2) -
             (2*point1[1]*point2[1] * math.cos(math.radians(degreesBetween))))
 
-            if distanceBetween >= 152.6:
+            if distanceBetween >= 60:
                 print(point1)
                 print(point2)
                 print("found gap")
@@ -77,8 +80,13 @@ def run(path):
     
     if NetworkTables.isConnected()== False:
         print("Error")
-
-    lidar = RPLidar(PORT_NAME)
+    for i in range(len(lidarDeviceNames)):
+        try:
+            PORT_NAME = lidarDeviceNames[i]
+            lidar = RPLidar(PORT_NAME)
+            break
+        except RPLidarException:
+             print("error")
     time.sleep(3)
     data = []
 
