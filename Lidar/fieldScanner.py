@@ -243,7 +243,7 @@ class fieldScanner:
             #831fb426526aebd93b1ce482ea1901d963d69ba2
 
             #there are 16 possible combinations for the tower's position
-    def localize(coordinates,gyroHeading):
+    def localize(self,coordinates,gyroHeading):
         """Uses (angle,distance) arrays and the gyro heading to find the robot's position on the field."""
         newCoordinates=[]
         for c in range(len(coordinates)):
