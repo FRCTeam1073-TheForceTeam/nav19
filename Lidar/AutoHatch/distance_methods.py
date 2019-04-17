@@ -13,7 +13,7 @@ import json
 
 relaventPoints = []
 distance = 0
-lidarDeviceNames = ["/dev/ttyUSB0", "/dev/ttyUSB1"]
+lidarDeviceNames = ["/dev/ttyUSB0", "/dev/ttyUSB1", "COM3"]
 #PORT_NAME = 'COM3'
 class auto_hatch:
     #def point_getter_slope(self, array):
@@ -33,7 +33,7 @@ class auto_hatch:
 
 
         for i in range(len(degreesAndDistanceArray)-1):
-            
+            if degreesAnd
             point1 = degreesAndDistanceArray[i]
             point2 = degreesAndDistanceArray[i+1]
             degreesBetween = min(abs(point2[0] - point1[0]), 360-abs(point2[0]-point1[0]))
@@ -91,11 +91,14 @@ def run(path):
     data = []
 
     try:
+        sendArray = []
         auto = auto_hatch()
         print('Recording measurments... Press Crl+C to stop.')
         for scan in lidar.iter_scans():
-            sd.putString("lidarScan", json.dumps(scan))
-            print(json.dumps(scan))
+            for i in range(len(scan)):
+                if scan[i][2] < 180 or scan[i][3] == 0.0 or scan[i][3] >= 1500:
+                    sendArray.append(scan[i])
+            sd.putString(json(sendArray))
             #print(scan)
             print("start loop")
             points = auto.point_getter(scan)
